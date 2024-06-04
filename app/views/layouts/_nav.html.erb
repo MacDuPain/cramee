@@ -33,19 +33,33 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Livre d'or</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Connexion/Inscription
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <% if user_signed_in? %>
-            <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <% if current_user.cart %>
+            <%= link_to 'Panier', cart_path(current_user.cart), class: 'nav-link' %>
           <% else %>
+            <%= link_to 'Panier', '#', class: 'nav-link disabled', title: 'Pas de panier disponible' %>
+          <% end %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarAccountDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mon compte
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarAccountDropdown">
+            <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Connexion/Inscription
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to 'Inscription', new_user_registration_path, class: 'dropdown-item' %>
             <%= link_to 'Se connecter', new_user_session_path, class: 'dropdown-item' %>
-          <% end %>
-        </div>
-      </li>
+          </div>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
