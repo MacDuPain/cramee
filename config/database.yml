@@ -78,7 +78,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  url: postgres://u3bfacpk6t17oe:p6151ea90bfd0ed631c50239f7b94da2d155c530c9c2a3c0381c6ac60c542f95e@cav8p52l9arddb.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d467kag1l3rfs
+  url: <%= ENV["MY_APP_DATABASE_URL"] %>
   <<: *default
   database: cramee_production
   username: cramee
