@@ -2,13 +2,19 @@
 
 <h1>Nos Bijoux</h1>
 
-<div class="items-grid">
-  <% @items.each do |item| %>
-    <div class="item-card">
-    <%= image_tag item.image_url, alt: item.name %>      
-      <h3><%= item.name %></h3>
-      <p><%= item.description %></p>
-      <p><%= item.price %></p>
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <%= image_tag item.image_url, class: 'card-img-top', alt: item.name %>
+          <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <p class="card-text"><strong><%= number_to_currency(item.price) %></strong></p>
+          </div>
+        </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
