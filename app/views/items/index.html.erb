@@ -1,0 +1,14 @@
+<!-- app/views/bijoux/index.html.erb -->
+
+<h1>Nos Bijoux</h1>
+
+<div class="items-grid">
+  <% @items.each do |item| %>
+    <div class="item-card">
+    <%= image_tag item.image_url, alt: item.name %>      
+      <h3><%= item.name %></h3>
+      <p><%= item.description %></p>
+      <p><%= item.price %></p>
+      </div>
+  <% end %>
+</div>
