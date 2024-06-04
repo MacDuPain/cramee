@@ -2,6 +2,10 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+gem 'table_print'
+
+gem 'faker'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
