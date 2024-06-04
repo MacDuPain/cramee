@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "items#index"
+  resources :user
+  resources :item
+  resources :cart
 end
