@@ -46,7 +46,11 @@
             Mon compte
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarAccountDropdown">
-            <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+            <%= form_tag(destroy_user_session_path, method: :delete) do %>
+              <%= button_tag(type: 'submit', class: 'nav-link active', style: 'background: none; border: none; cursor: pointer;') do %>
+                Se déconnecter
+              <% end %>
+            <% end %>
           </div>
         </li>
       <% else %>

@@ -15,8 +15,8 @@
     <tbody>
       <% @cart.items.each do |item| %>
         <tr>
-          <td><img src="<%= item.image_url %>" alt="<%= item.title %>" style="width: 100px;"></td>
-          <td><%= item.title %></td>
+          <td><img src="<%= item.image_url %>" alt="<%= item.name %>" style="width: 100px;"></td>
+          <td><%= item.name %></td>
           <td><%= number_to_currency(item.price) %></td>
           <td>
             <%= button_to 'Retirer', cart_remove_item_path(@cart, item), method: :delete, class: 'btn btn-danger' %>
