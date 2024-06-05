@@ -12,7 +12,7 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <% if item.image.attached? %>
-                            <%= image_tag item.image.variant(resize_to_fit: [300, 200]), class: 'item-image img-fluid' %>
+                            <%= image_tag item.image.variant(resize: "200x200") %>
                             <% end %>
                             <div class="text-center">
                                 

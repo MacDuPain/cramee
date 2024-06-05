@@ -10,7 +10,7 @@
                     <p><%= @item.description %></p>
                     <!-- Affichage de l'image -->
                     <% if @item.image.attached? %>
-                      <%= image_tag @item.image.variant(resize_to_fit: [300, 200]), class: 'img-fluid' %>
+                    <%= image_tag @item.image.variant(resize: "200x200") %>
                     <% end %>
                 <% else %>
                     <p>Item not found</p>
