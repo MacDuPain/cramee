@@ -1,11 +1,20 @@
+<!-- app/views/items/show.html.erb -->
 <section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <!-- Titre, prix, description -->
-                <h2 class="fw-bold"><%= @item.name %></h2>
-                <h3><%= number_to_currency(@item.price) %></h3>
-                <p><%= @item.description %></p>
+                <% if @item.present? %>
+                    <!-- Titre, prix, description -->
+                    <h2 class="fw-bold"><%= @item.name %></h2>
+                    <h3><%= number_to_currency(@item.price) %></h3>
+                    <p><%= @item.description %></p>
+                    <!-- Affichage de l'image -->
+                    <% if @item.image.attached? %>
+                      <%= image_tag @item.image.variant(resize_to_fit: [300, 200]), class: 'img-fluid' %>
+                    <% end %>
+                <% else %>
+                    <p>Item not found</p>
+                <% end %>
                 <!-- Bouton "Ajouter au panier" conditionnel -->
                 <% if user_signed_in? %>
                     <%= form_with url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true do %>
@@ -14,6 +23,8 @@
                 <% else %>
                     <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'btn btn-outline-dark' %>
                 <% end %>
+                <!-- Bouton Edit -->
+                <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
             </div>
         </div>
     </div>

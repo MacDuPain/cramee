@@ -5,11 +5,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :items do
-    collection do
-      get 'index'
-    end
-  end
+  resources :items
+
 
   resources :carts, only: [:show, :create, :edit, :update, :destroy] do
     delete 'remove_item/:item_id', to: 'carts#remove_item', as: 'remove_item'

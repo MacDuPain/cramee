@@ -2,13 +2,20 @@
 
 <h1>Nos Bijoux</h1>
 
+<%= link_to 'Nouvel Item', new_item_path, class: 'btn btn-primary' %>
+
+
  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <% @items.each do |item| %>
                 <div class="col mb-5">
                     <div class="card h-100 shadow-sm border-0">
                         <!-- Product details-->
                         <div class="card-body p-4">
+                            <% if item.image.attached? %>
+                            <%= image_tag item.image.variant(resize_to_fit: [300, 200]), class: 'item-image img-fluid' %>
+                            <% end %>
                             <div class="text-center">
+                                
                                 <!-- Product name-->
                                 <h5 class="fw-bolder"><%= item.name %></h5>
                                 <!-- Product price-->
