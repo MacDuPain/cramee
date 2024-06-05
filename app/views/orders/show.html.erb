@@ -43,5 +43,6 @@
       <input type="text" id="ville" name="ville" class="form-control" required>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Valider la commande</button>
 </form>
+
+<%= button_to "Procéder au paiement", checkout_create_path(total: @order.items.sum(:price), order_id: @order.id), class: "btn btn-primary mt-3", data: { turbo: false } %>
