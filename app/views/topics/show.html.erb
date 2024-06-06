@@ -1,0 +1,26 @@
+<h1><%= @topic.title %></h1>
+<p><%= @topic.content %></p>
+<p>Auteur: <%= @topic.user.username %></p>
+<p>Date de création: <%= @topic.created_at.strftime("%d/%m/%Y") %></p>
+<h3>Commentaires</h3>
+<div>
+  <% @topic.comments.each do |comment| %>
+    <div>
+      <p><%= comment.user.username %></p>
+      <p><%= comment.content %></p>
+      <p>Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
+    </div>
+  <% end %>
+</div>
+<% if user_signed_in? %>
+  <%= form_with(model: @new_comment, url: topic_comments_path(@topic)) do |f| %>
+    <div class="form-group">
+      <%= f.label :content, "Ajouter un commentaire" %>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <%= f.submit "Ajouter", class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "btn btn-primary" %>
+<% end %>
+

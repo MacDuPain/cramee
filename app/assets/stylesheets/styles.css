@@ -10848,45 +10848,4 @@ textarea.form-control-lg {
   border-radius: 50%;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: #FCF7EE;
-}
 
-.footer-content {
-  background-color: #FCF7EE; /* Couleur de fond pour remplir tout le footer */
-  height: 100%; /* Hauteur pour remplir le footer */
-}
-
-.footer-icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Distribue les éléments horizontalement avec un espacement égal */
-}
-
-.footer-icon img {
-  width: 40px; /* Ajuste la taille de toutes les images */
-  margin-right: 10px; /* Espacement entre chaque icône */
-}
-
-.mention-link:hover {
-  text-decoration: underline;
-}
-
-.nav-link img {
-  display: block;
-  margin: auto;
-}
-
-.nav-link {
-  padding: 5px;
-}
-
-header {
-  background-image: url('header.svg');
-  background-size: cover;
-  background-position: center;
-}
