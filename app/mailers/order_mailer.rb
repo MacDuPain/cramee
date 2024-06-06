@@ -7,7 +7,6 @@ class OrderMailer < ApplicationMailer
     subject = 'Merci pour votre commande !'
     content = SendGrid::Content.new(type: 'text/plain', value: 'Merci d\'avoir passé votre commande chez nous. Nous vous enverrons votre adorable photo de chaton très bientôt.')
     mail = SendGrid::Mail.new(from, subject, to, content)
-
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
 
     begin
