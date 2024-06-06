@@ -10834,4 +10834,8 @@ textarea.form-control-lg {
   border-radius: 50%;
 }
 
+.item-image {
+  max-width: 150px;
+  max-height: 150px;
+}
 

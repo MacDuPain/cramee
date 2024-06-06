@@ -1,44 +1,32 @@
 <section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="d-flex">
-          <div class="flex-shrink-0 me-5">
-            <!-- Affichage de l'image -->
-            <% if @item.image.attached? %>
-              <%= image_tag url_for(@item.image), class: 'item-image', alt: @item.name %>
-            <% end %>
-          </div>
-          <div class="flex-fill">
-            <!-- Titre, prix, description -->
-            <h2 class="fw-bold"><%= @item.name %></h2>
-            <h3><%= number_to_currency(@item.price) %></h3>
-            <p><%= @item.description %></p>
-
-            <!-- Affichage des tags -->
-            <% if @item.tags.any? %>
-              <div class="tags">
-                <h4>Tags:</h4>
-                <% @item.tags.each do |tag| %>
-                  <span class="tag btn btn-secondary disabled"><%= tag.name %></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <% if @item.present? %>
+                    <!-- Titre, prix, description -->
+                    <h2 class="fw-bold"><%= @item.name %></h2>
+                    <h3><%= number_to_currency(@item.price) %></h3>
+                    <p><%= @item.description %></p>
+                    <!-- Affichage de l'image -->
+                    <% if @item.image.attached? %>
+                        <%= image_tag url_for(@item.image), class: 'item-image', alt: @item.name %>
+                    <% end %>
+                <% else %>
+                    <p>Item not found</p>
                 <% end %>
-              </div>
-            <% end %>
-
-            <!-- Bouton "Ajouter au panier" conditionnel -->
-            <% if user_signed_in? %>
-              <%= form_with url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true do %>
-                <%= submit_tag 'Ajouter au panier', class: 'btn btn-dark btn-lg' %>
-              <% end %>
-            <% else %>
-              <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'btn btn-outline-dark' %>
-            <% end %>
-            <p>Tout nos bijoux sont fait mains et nécessitent des délais de fabrication importants (entre 1 et 3 semaines)</p>
-            <!-- Bouton Edit -->
-            <% if current_user&.is_admin? %>
-              <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
-            <% end %>
-          </div>
+                <!-- Bouton "Ajouter au panier" conditionnel -->
+                <% if user_signed_in? %>
+                    <%= form_with url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true do %>
+                        <%= submit_tag 'Ajouter au panier', class: 'btn btn-dark btn-lg' %>
+                    <% end %>
+                <% else %>
+                    <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'btn btn-outline-dark' %>
+                <% end %>
+                <!-- Bouton Edit -->
+                    <% if current_user&.is_admin? %>
+                        <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
+                    <% end %>
+            </div>
         </div>
       </div>
     </div>
