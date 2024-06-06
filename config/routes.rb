@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
-
   resources :items
-
 
   resources :carts, only: [:show, :create, :edit, :update, :destroy] do
     delete 'remove_item/:item_id', to: 'carts#remove_item', as: 'remove_item'
@@ -34,4 +32,12 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+
+  # Routes pour le forum
+  resources :topics do
+    resources :comments, only: [:create]
+  end
+
+  # Si vous voulez que la page principale du forum soit l'index des topics
+  get 'forum', to: 'topics#index', as: 'forum'
 end
