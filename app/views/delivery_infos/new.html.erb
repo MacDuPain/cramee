@@ -26,5 +26,5 @@
       <%= f.text_field :ville, class: "form-control", required: true %>
     </div>
   </div>
-<%= button_to 'Checkout', checkout_create_path(order_id: @order.id), method: :get, class: 'btn btn-primary' %>
+<%= link_to 'Checkout', checkout_create_path(order_id: @order.id, total: @order.items.sum(:price)), method: :get, class: 'btn btn-primary' %>
 <% end %>

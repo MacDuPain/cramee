@@ -4,6 +4,25 @@ class Order < ApplicationRecord
   has_many :items, through: :order_items
   has_one :delivery_info
 
+  def subtotal
+    items.sum(:price)
+  end
+
+  def total_price
+    subtotal + delivery_fee
+  end
+
+  def delivery_fee
+    case subtotal
+    when 0..20
+      4
+    when 20..49
+      6
+    else
+      0
+    end
+  end
+
   def mark_as_paid
     update(status: 'succeeded')
     send_emails if saved_change_to_status? && status == 'succeeded'
@@ -59,4 +78,5 @@ class Order < ApplicationRecord
       puts e.message
     end
   end
+
 end
