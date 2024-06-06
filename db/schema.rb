@@ -143,7 +143,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_093506) do
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
-  add_foreign_key "taggings", "tags"
-  add_foreign_key "taggings", "topics"
-  add_foreign_key "topics", "users"
-end
+  add_foreign_key "t
