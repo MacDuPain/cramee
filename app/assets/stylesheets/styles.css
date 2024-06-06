@@ -8087,7 +8087,7 @@ textarea.form-control-lg {
 }
 
 .text-white {
-  color: red !important; /* Simplement rendre le texte rouge */
+  color: white !important;
 }
 
 .text-body {
@@ -8107,7 +8107,7 @@ textarea.form-control-lg {
 
 .text-white-50 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
 }
 
 .text-reset {
@@ -10846,10 +10846,14 @@ textarea.form-control-lg {
 .footer-icons {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Distribue les éléments horizontalement avec un espacement égal */
 }
 
-.footer-icons img {
-  margin: 0 10px;
-  width: 40px; /* Ajuste selon tes besoins */
-  height: auto;
+.footer-icon img {
+  width: 40px; /* Ajuste la taille de toutes les images */
+  margin-right: 10px; /* Espacement entre chaque icône */
+}
+
+.mention-link:hover {
+  text-decoration: underline;
 }

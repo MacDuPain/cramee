@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to 'Miss Cramée', root_path, class: 'navbar-brand' %>
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag 'logo.svg', alt: 'Miss Cramée Logo', width: 40, height: 32 %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,7 +9,7 @@
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Collections
+          COLLECTIONS
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Sorties de l'atelier</a>
@@ -17,7 +19,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Catégories
+          NOS BIJOUX
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Bracelets</a>
@@ -28,10 +30,13 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Forum</a>
+        <a class="nav-link" href="#">FORUM</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Livre d'or</a>
+        <a class="nav-link" href="#">MISS CRAMEÉ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">LIVER D'OR</a>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item">
@@ -72,3 +77,4 @@
     </ul>
   </div>
 </nav>
+
