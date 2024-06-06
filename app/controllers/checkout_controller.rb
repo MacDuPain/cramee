@@ -1,7 +1,8 @@
 class CheckoutController < ApplicationController
   def create
-    @total = params[:total].to_d
     @order_id = params[:order_id]
+    @order = Order.find(@order_id)
+    @total = @order.items.sum(:price) + calculate_delivery_fee(@order.items.sum(:price))
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
@@ -37,5 +38,16 @@ class CheckoutController < ApplicationController
   end
 
   def cancel
+  end
+
+  def calculate_delivery_fee(total)
+    case total
+    when 0..20
+      4
+    when 20..49
+      6
+    else
+      0
+    end
   end
 end

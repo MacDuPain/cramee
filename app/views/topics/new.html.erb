@@ -9,7 +9,7 @@
     <%= f.text_area :content, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :tags %>
+    <%= f.label :tags, "Sélectionnez les tags" %>
     <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, class: "form-control" } %>
   </div>
   <%= f.submit "Créer", class: "btn btn-primary" %>

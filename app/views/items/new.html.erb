@@ -1,4 +1,3 @@
-<!-- app/views/items/new.html.erb -->
 <h1>Nouvel Item</h1>
 
 <%= form_with(model: @item, url: items_path, local: true) do |form| %>
@@ -20,6 +19,11 @@
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
   </div>
 
   <div class="actions">

@@ -23,13 +23,12 @@ class CartsController < ApplicationController
   end
 
   def update
-    @cart = current_user.cart
-    if @cart.update(cart_params)
-      redirect_to @cart, notice: 'Votre panier a été mis à jour avec succès.'
-    else
-      render :edit
-    end
+    @cart = Cart.find(params[:id])
+    @cart.items << Item.find(params[:item_id]) # Ajouter un article au panier
+    @cart.delivery_fee = calculate_delivery_fee(@cart.items.sum(:price))
+    @cart.save
   end
+
 
   def destroy
     @cart = current_user.cart
