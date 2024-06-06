@@ -2,6 +2,7 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :order_items, dependent: :destroy
   has_many :items, through: :order_items
+  has_one :delivery_info
 
   def mark_as_paid
     update(status: 'succeeded')
