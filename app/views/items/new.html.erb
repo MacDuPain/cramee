@@ -1,7 +1,7 @@
 <!-- app/views/items/new.html.erb -->
 <h1>Nouvel Item</h1>
 
-<%= form_with(model: @item, url: items_path, local: true) do |form| %>
+<%= form_with(model: @item, local: true) do |form| %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -23,6 +23,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create Item', class: 'btn btn-primary' %>
   </div>
 <% end %>
