@@ -10901,3 +10901,82 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
+.custom-padding-sides {
+  padding-left: 10px;  /* Ajustez la valeur selon vos besoins */
+}
+
+.custom-container {
+  margin: 0 auto; /* Centre le contenu */
+  max-width: 800px; /* Limite la largeur du conteneur */
+}
+
+.custom-h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #A0B090;
+  text-align: center; /* Centre le texte */
+}
+
+.custom-h3 {
+  font-size: 22px;
+  color: #000;
+  text-align: center; /* Centre le texte */
+}
+
+.custom-form .field {
+  margin-bottom: 10px; /* Réduit l'espace entre les champs */
+}
+
+.custom-form .field input {
+  width: calc(100% - 32px); /* Calcule la largeur des inputs pour être égale à celle du bouton */
+  padding: 8px 16px; /* Réduit la taille du rembourrage */
+  border: 1px solid #8E8383; /* Bordure de couleur 8E8383 */
+  box-sizing: border-box;
+  border-radius: 10px; /* Bordure arrondie moins prononcée */
+  display: block; /* Faire en sorte que le bouton soit un bloc pour centrer */
+  margin: 0 auto; /* Centrer le bouton */
+  font-size: 12px;
+}
+
+.custom-form .field label {
+  display: block; /* Faire en sorte que le label soit un bloc */
+  margin: 5px 0; /* Marge entre le label et l'input */
+  font-size: 12px; /* Taille de la police du label */
+}
+
+.custom-submit-button {
+  width: calc(100% - 32px); /* Calcule la largeur du bouton pour être égale à celle des inputs */
+  background-color: #A1BBA3; /* Fond de couleur A1BBA3 */
+  color: #2A3C2C; /* Couleur de texte 2A3C2C */
+  padding: 8px 16px; /* Réduit la taille du rembourrage */
+  font-size: 12px;
+  border: 1px solid #657166; /* Bordure de couleur 657166 */
+  cursor: pointer;
+  border-radius: 10px; /* Bordure arrondie moins prononcée */
+  display: block; /* Faire en sorte que le bouton soit un bloc pour centrer */
+  margin: 0 auto; /* Centrer le bouton */
+}
+
+.custom-submit-button:hover {
+  background-color: #657166; /* Fond de couleur 8E8383 au survol */
+  color: #fff; /* Changement de couleur de texte au survol */
+}
+
+.custom-form {
+  margin-top: 50px; /* Ajoute de la marge en haut */
+  margin-right: auto; /* Marge à droite */
+  margin-left: auto; /* Marge à gauche */
+}
+
+.custom-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12px;
+  color: #555454;
+  text-align: center; /* Centre le texte */
+}
+
+.custom-link {
+  color: black;
+  text-decoration: underline;
+}
