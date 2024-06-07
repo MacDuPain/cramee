@@ -2,8 +2,8 @@ class User < ApplicationRecord
   after_create :create_cart
   has_one :cart, dependent: :destroy
   has_many :orders, dependent: :destroy
-  has_many :topics
-  has_many :comments
+  has_many :topics, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Add username attribute
   validates :username, presence: true, uniqueness: true
@@ -14,4 +14,3 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 end
-
