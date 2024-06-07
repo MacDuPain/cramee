@@ -10902,6 +10902,9 @@ footer {
   height: auto;
 }
 
+.custom-padding-sides {
+  padding-left: 10px;  /* Ajustez la valeur selon vos besoins */
+}
 
 .custom-container {
   margin: 0 auto; /* Centre le contenu */
