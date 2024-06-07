@@ -10848,4 +10848,29 @@ textarea.form-control-lg {
   border-radius: 50%;
 }
 
+footer {
+  background-color: #FCF7EE; /* Couleur de fond du footer */
+}
 
+.footer-content {
+  padding-top: 20px; /* Conservez cet espacement en haut si nécessaire */
+  padding-bottom: 0; /* Réduisez ou supprimez le padding en bas pour rapprocher les éléments */
+  min-height: auto;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribue les éléments horizontalement avec un espacement égal */
+}
+
+.footer-icon img {
+  width: 40px; /* Ajuste la taille de toutes les images */
+  margin-right: 10px; /* Espacement entre chaque icône */
+}
+
+.header-background {
+  background: url('header.svg') no-repeat center center; /* Chemin vers votre image */
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le header */
+  color: white; /* S'assure que le texte reste blanc */
+}
