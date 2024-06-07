@@ -10869,3 +10869,8 @@ footer {
   margin-right: 10px; /* Espacement entre chaque icône */
 }
 
+.header-background {
+  background: url('header.svg') no-repeat center center; /* Chemin vers votre image */
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le header */
+  color: white; /* S'assure que le texte reste blanc */
+}
