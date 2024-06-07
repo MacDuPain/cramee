@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tags/show'
   root "items#index"
   get 'about', to: 'pages#about', as: 'about'
 
@@ -39,4 +40,14 @@ Rails.application.routes.draw do
 
   # Si vous voulez que la page principale du forum soit l'index des topics
   get 'forum', to: 'topics#index', as: 'forum'
+
+  # Routes pour les tags et catégories
+  resources :tags, only: [:show]
+
+  get 'boucles_oreilles', to: 'items#boucles_oreilles'
+  get 'bracelets', to: 'items#bracelets'
+  get 'colliers', to: 'items#colliers'
+  get 'piece_unique', to: 'items#piece_unique'
+  get 'marque_page', to: 'items#marque_page'
+  get 'porte_cles', to: 'items#porte_cles'
 end

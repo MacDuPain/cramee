@@ -30,19 +30,6 @@
               <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
             <% end %>
           </div>
-            <!-- Affichage des tags -->
-            <% if @item.item_tags.any? %>
-              <div class="tags">
-                <h4>Tags:</h4>
-                <ul>
-                  <% @item.item_tags.each do |tag| %>
-                    <li>
-                      <%= button_tag tag.name, type: 'button', class: 'btn btn-secondary', disabled: true %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
         </div>
       </div>
     </div>

@@ -1,0 +1,27 @@
+<!-- app/views/items/bracelets.html.erb -->
+
+<h1>Pièce Unique</h1>
+
+<h3>Ces pièces étant uniques, elles ne sont peut être pas disponibles à la vente...</h3>
+<h3>Par contre, si elles vous plaisent, n'hésitez pas à me contacter pour passer une commande !</h3>
+
+<% if @items.any? %>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <% if item.image.attached? %>
+            <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <%= link_to 'Voir les détails', item_path(item), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Aucune pièce unique n'a été trouvée.</p>
+<% end %>
