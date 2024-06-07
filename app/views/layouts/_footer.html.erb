@@ -4,22 +4,27 @@
 
       <div class="col-auto me-auto">
         <div class="footer-icons">
+<<<<<<< HEAD
           <%= link_to https://www.facebook.com/lesmondesdemisscramee/, class: 'navbar-brand' do %>
           <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %> 
           <% end %>
           <%= link_to https://www.facebook.com/lesmondesdemisscramee/, class: 'navbar-brand' do %>
           <%= image_tag 'instagram.svg', alt: 'Logo Instagram' %>
           <% end %>
+=======
+          <%= image_tag 'facebook.svg', alt: 'Logo Facebook', class: 'footer-icon' %>
+          <%= image_tag 'instagram.svg', alt: 'Logo Instagram', class: 'footer-icon' %>
+>>>>>>> fb44d299dbfeffd0630643319e91065988871ebb
         </div>
       </div>
 
       <div class="col-auto">
-        <p class="text-body-secondary">CONTACT: MISS.CRAMEE@EMAIL.COM</p>
+        <p class="text-body-secondary mb-0">CONTACT: MISS.CRAMEE@EMAIL.COM</p> <!-- Ajout de mb-0 pour supprimer la marge en bas -->
       </div>
 
       <div class="col">
         <h5>COLLECTIONS</h5>
-        <ul class="nav flex-column">
+        <ul class="nav flex-column mb-0"> <!-- Ajout de mb-0 pour supprimer la marge en bas -->
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sorties de l'atelier</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Meilleures ventes</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tous les bijoux</a></li>
@@ -46,23 +51,24 @@
       </div>
     </div>
 
-    <div class="row justify-content-center mt-3">
-      <div class="footer-icons">
-        <%= image_tag 'stripe.svg', alt: 'Logo Stripe' %>
-        <%= image_tag 'paypal.svg', alt: 'Logo Paypal' %>  
-        <%= image_tag 'mastercard.svg', alt: 'Logo Mastercard' %>
-        <%= image_tag 'visa.svg', alt: 'Logo Visa' %>  
-      </div>
-    </div>
-
-<div class="row justify-content-center mt-3">
-  <div class="col text-center">
-    <p class="text-body-secondary">© LES M'ONDES DE MISS CRAMEÉ, SIRET: 123456789</p>
-    <p class="text-body-secondary">
-      <a href="#" class="nav-link p-0 text-body-secondary mention-link">MENTIONS LÉGALES</a>
-    </p>
+<div class="row justify-content-center footer-icons-row">
+  <div class="footer-icons">
+    <%= image_tag 'stripe.svg', alt: 'Logo Stripe', class: 'footer-icon' %>
+    <%= image_tag 'paypal.svg', alt: 'Logo Paypal', class: 'footer-icon' %>  
+    <%= image_tag 'mastercard.svg', alt: 'Logo Mastercard', class: 'footer-icon' %>
+    <%= image_tag 'visa.svg', alt: 'Logo Visa', class: 'footer-icon' %>  
   </div>
 </div>
 
-  </footer>
-</div>
+    <div class="row justify-content-center mt-3">
+      <div class="col text-center">
+        <p class="text-body-secondary mb-0">© LES M'ONDES DE MISS CRAMEÉ, SIRET: 123456789</p> 
+        <p class="text-body-secondary mb-0"> 
+          <a href="#" class="nav-link p-0 text-body-secondary mention-link">MENTIONS LÉGALES</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</footer>
