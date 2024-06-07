@@ -2,6 +2,26 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :order_items, dependent: :destroy
   has_many :items, through: :order_items
+  has_one :delivery_info
+
+  def subtotal
+    items.sum(:price)
+  end
+
+  def total_price
+    subtotal + delivery_fee
+  end
+
+  def delivery_fee
+    case subtotal
+    when 0..20
+      4
+    when 20..49
+      6
+    else
+      0
+    end
+  end
 
   def mark_as_paid
     update(status: 'succeeded')
@@ -58,4 +78,5 @@ class Order < ApplicationRecord
       puts e.message
     end
   end
+
 end

@@ -10869,21 +10869,3 @@ footer {
   margin-right: 10px; /* Espacement entre chaque icône */
 }
 
-.mention-link:hover {
-  text-decoration: underline;
-}
-
-.nav-link img {
-  display: block;
-  margin: auto;
-}
-
-.nav-link {
-  padding: 5px;
-}
-
-header {
-  background-image: url('header.svg');
-  background-size: cover;
-  background-position: center;
-}

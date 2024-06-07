@@ -1,0 +1,12 @@
+<h1>Forum</h1>
+<%= link_to 'Ajouter un Topic', new_topic_path, class: "btn btn-primary" %>
+<div>
+  <% @topics.each do |topic| %>
+    <div>
+      <h2><%= link_to topic.title, topic %></h2>
+      <p>Auteur: <%= topic.user.username %></p>
+      <p>Date de publication: <%= topic.created_at.strftime("%d/%m/%Y") %></p>
+      <p>Tags: <%= topic.tags.map(&:name).join(", ") %></p>
+    </div>
+  <% end %>
+</div>
