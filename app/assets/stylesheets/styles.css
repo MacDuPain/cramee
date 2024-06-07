@@ -10901,3 +10901,7 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
+.custom-padding-sides {
+  padding-left: 10px;  /* Ajustez la valeur selon vos besoins */
+}

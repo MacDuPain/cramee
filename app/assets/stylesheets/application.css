@@ -17,3 +17,5 @@
  @import 'bootstrap/scss/bootstrap';
  @import 'bootstrap-icons/font/bootstrap-icons';
  @import 'styles';
+ @import "font-awesome-sprockets";
+ @import "font-awesome";

@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+gem 'font-awesome-sass', '~> 5.15.1'
+
 gem 'table_print'
 
 gem 'faker'
