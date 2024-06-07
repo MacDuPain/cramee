@@ -22,6 +22,14 @@
     <%= form.file_field :image %>
   </div>
 
+  <div class="field">
+    <%= form.label :item_tag_ids, 'Tags' %><br>
+    <% ItemTag.all.each do |tag| %>
+      <%= check_box_tag 'item[item_tag_ids][]', tag.id, @item.item_tags.include?(tag) %>
+      <%= tag.name %><br>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Update Item', class: 'btn btn-primary' %>
   </div>
