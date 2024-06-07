@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'delivery_info/new'
-  get 'delivery_info/create'
   root "items#index"
 
   devise_for :users
@@ -14,13 +12,10 @@ Rails.application.routes.draw do
     post 'confirm_order', to: 'carts#confirm_order', as: 'confirm_order'
   end
 
-  resources :orders do
-    resources :delivery_infos, only: [:new, :create]
-  end
+  resources :orders, only: [:show]
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
-    get 'create', to: 'checkout#create'
     get 'success', to: 'checkout#success', as: 'checkout_success'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   end

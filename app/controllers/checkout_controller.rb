@@ -33,15 +33,8 @@ class CheckoutController < ApplicationController
     @order_id = @session.metadata.order_id
     @order = Order.find(@order_id)
     if @payment_intent.status == 'succeeded'
-      @order.update(status: 'paid') # Mettre à jour le statut de la commande
-      redirect_to checkout_success_path
-    else
-      flash[:alert] = "Le paiement a échoué"
-      redirect_to checkout_cancel_path
+      @order.mark_as_paid
     end
-  rescue => e
-    flash[:alert] = "Le paiement a échoué: #{e.message}"
-    redirect_to checkout_cancel_path
   end
 
   def cancel

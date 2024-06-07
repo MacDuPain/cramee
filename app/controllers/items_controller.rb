@@ -5,10 +5,6 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def new
-    @item = Item.new
-  end
-
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -29,7 +25,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item
+      redirect_to @item, notice: 'Item was successfully updated.'
     else
       render :edit
     end
