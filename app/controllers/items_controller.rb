@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def new
+    @item = Item.new
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -38,6 +42,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image, tag_ids: [])
+    params.require(:item).permit(:name, :description, :price, :image, item_tag_ids: [])
   end
 end

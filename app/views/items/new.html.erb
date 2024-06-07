@@ -1,6 +1,6 @@
 <h1>Nouvel Item</h1>
 
-<%= form_with(model: @item, url: items_path, local: true) do |form| %>
+<%= form_with(model: @item, local: true) do |form| %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -25,7 +25,6 @@
     <%= form.label :item_tag_ids, 'Tags' %>
     <%= form.collection_select :item_tag_ids, ItemTag.all, :id, :name, {}, { multiple: true } %>
   </div>
-
 
   <div class="actions">
     <%= form.submit %>
