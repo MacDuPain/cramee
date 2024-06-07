@@ -17,5 +17,10 @@
  @import 'bootstrap/scss/bootstrap';
  @import 'bootstrap-icons/font/bootstrap-icons';
  @import 'styles';
+<<<<<<< HEAD
 
  
+=======
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+>>>>>>> cf38a1a56b8bc7847e543475c45706b974fbb837
