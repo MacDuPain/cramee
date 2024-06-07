@@ -22,9 +22,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :tags %>
-    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+    <%= form.label :item_tag_ids, 'Tags' %>
+    <%= form.collection_select :item_tag_ids, ItemTag.all, :id, :name, {}, { multiple: true } %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>

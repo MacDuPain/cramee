@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.1].define(version: 2024_06_07_083519) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema[7.1].define(version: 2024_06_06_093506) do
+=======
 ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
+>>>>>>> 55a4b1550c22419d74153ddebde934a00ef949de
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +86,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
     t.integer "order_id"
   end
 
+  create_table "item_taggings", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "item_tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_taggings_on_item_id"
+    t.index ["item_tag_id"], name: "index_item_taggings_on_item_tag_id"
+  end
+
+  create_table "item_tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -112,16 +134,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "topic_taggings", force: :cascade do |t|
     t.bigint "topic_id", null: false
-    t.bigint "tag_id", null: false
+    t.bigint "topic_tag_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-    t.index ["topic_id"], name: "index_taggings_on_topic_id"
+    t.index ["topic_id"], name: "index_topic_taggings_on_topic_id"
+    t.index ["topic_tag_id"], name: "index_topic_taggings_on_topic_tag_id"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "topic_tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -158,10 +180,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
   add_foreign_key "carts", "users"
   add_foreign_key "comments", "topics"
   add_foreign_key "comments", "users"
+  add_foreign_key "item_taggings", "item_tags"
+  add_foreign_key "item_taggings", "items"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
-  add_foreign_key "taggings", "tags"
-  add_foreign_key "taggings", "topics"
+  add_foreign_key "topic_taggings", "topic_tags"
+  add_foreign_key "topic_taggings", "topics"
   add_foreign_key "topics", "users"
 end
