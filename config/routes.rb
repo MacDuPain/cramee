@@ -12,10 +12,13 @@ Rails.application.routes.draw do
     post 'confirm_order', to: 'carts#confirm_order', as: 'confirm_order'
   end
 
-  resources :orders, only: [:show]
+  resources :orders do
+    resources :delivery_infos, only: [:new, :create]
+  end
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'create', to: 'checkout#create'
     get 'success', to: 'checkout#success', as: 'checkout_success'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   end
