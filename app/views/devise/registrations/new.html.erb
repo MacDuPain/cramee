@@ -14,9 +14,6 @@
 
   <div class="field">
     <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> caractères minimum)</em>
-    <% end %><br />
   </div>
 
   <div class="field">
@@ -26,6 +23,9 @@
   <div class="actions">
     <%= f.submit "M'INSCRIRE", class: "custom-submit-button" %>
   </div>
-<% end %>
+<% end %><br>
 
-<%= render "devise/shared/links" %>
+<p class="custom-text"><span>Déjà un compte ?</span> 
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link"%><br />
+<% end %>
