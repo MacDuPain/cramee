@@ -10849,16 +10849,13 @@ textarea.form-control-lg {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: #FCF7EE;
+  background-color: #FCF7EE; /* Couleur de fond du footer */
 }
 
 .footer-content {
-  background-color: #FCF7EE; /* Couleur de fond pour remplir tout le footer */
-  height: 100%; /* Hauteur pour remplir le footer */
+  padding-top: 20px; /* Conservez cet espacement en haut si nécessaire */
+  padding-bottom: 0; /* Réduisez ou supprimez le padding en bas pour rapprocher les éléments */
+  min-height: auto;
 }
 
 .footer-icons {
