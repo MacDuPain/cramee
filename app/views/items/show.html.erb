@@ -32,11 +32,11 @@
             <% end %>
           </div>
             <!-- Affichage des tags -->
-            <% if @item.tags.any? %>
+            <% if @item.item_tags.any? %>
               <div class="tags">
                 <h4>Tags:</h4>
                 <ul>
-                  <% @item.tags.each do |tag| %>
+                  <% @item.item_tags.each do |tag| %>
                     <li>
                       <%= button_tag tag.name, type: 'button', class: 'btn btn-secondary', disabled: true %>
                     </li>
