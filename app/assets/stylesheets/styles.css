@@ -10869,8 +10869,35 @@ footer {
   margin-right: 10px; /* Espacement entre chaque icône */
 }
 
+.mention-link:hover {
+  text-decoration: underline; /* Ajoute le soulignement au survol */
+}
+
 .header-background {
   background: url('header.svg') no-repeat center center; /* Chemin vers votre image */
   background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le header */
   color: white; /* S'assure que le texte reste blanc */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
 }

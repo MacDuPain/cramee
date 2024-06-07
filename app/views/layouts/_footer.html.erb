@@ -4,18 +4,22 @@
 
       <div class="col-auto me-auto">
         <div class="footer-icons">
-          <%= image_tag 'facebook.svg', alt: 'Logo Facebook', class: 'footer-icon' %>
-          <%= image_tag 'instagram.svg', alt: 'Logo Instagram', class: 'footer-icon' %>
+          <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class: 'navbar-brand' do %>
+          <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %> 
+          <% end %>
+          <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class: 'navbar-brand' do %>
+          <%= image_tag 'instagram.svg', alt: 'Logo Instagram' %>
+          <% end %>
         </div>
       </div>
 
       <div class="col-auto">
-        <p class="text-body-secondary mb-0">CONTACT: MISS.CRAMEE@EMAIL.COM</p> <!-- Ajout de mb-0 pour supprimer la marge en bas -->
+        <p class="text-body-secondary mb-0">CONTACT: MISS.CRAMEE@EMAIL.COM</p>
       </div>
 
       <div class="col">
         <h5>COLLECTIONS</h5>
-        <ul class="nav flex-column mb-0"> <!-- Ajout de mb-0 pour supprimer la marge en bas -->
+        <ul class="nav flex-column mb-0"> 
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sorties de l'atelier</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Meilleures ventes</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tous les bijoux</a></li>
@@ -54,9 +58,9 @@
     <div class="row justify-content-center mt-3">
       <div class="col text-center">
         <p class="text-body-secondary mb-0">© LES M'ONDES DE MISS CRAMEÉ, SIRET: 123456789</p> 
-        <p class="text-body-secondary mb-0"> 
+        <p class="text-body-secondary mb-0">
           <a href="#" class="nav-link p-0 text-body-secondary mention-link">MENTIONS LÉGALES</a>
-        </p>
+          </p>
       </div>
     </div>
   </div>

@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_093506) do
 =======
 ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
 >>>>>>> 55a4b1550c22419d74153ddebde934a00ef949de
->>>>>>> fb44d299dbfeffd0630643319e91065988871ebb
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,8 +73,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_comments_on_topic_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-<<<<<<< HEAD
-=======
   end
 
   create_table "delivery_infos", force: :cascade do |t|
@@ -87,7 +84,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_142256) do
     t.string "code_postal"
     t.string "ville"
     t.integer "order_id"
->>>>>>> 55a4b1550c22419d74153ddebde934a00ef949de
   end
 
   create_table "item_taggings", force: :cascade do |t|
