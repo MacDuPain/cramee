@@ -23,11 +23,13 @@
             NOS BIJOUX
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <a class="dropdown-item" href="#">Bracelets</a>
-            <a class="dropdown-item" href="#">Colliers</a>
-            <a class="dropdown-item" href="#">Boucles d'Oreille</a>
-            <a class="dropdown-item" href="#">Porte-Clés</a>
-            <a class="dropdown-item" href="#">Marque-Pages</a>
+            <%= link_to 'Bracelets', bracelets_path, class: 'dropdown-item' %>
+            <%= link_to 'Colliers', colliers_path, class: 'dropdown-item' %>
+            <%= link_to 'Boucles d\'Oreille', boucles_oreilles_path, class: 'dropdown-item' %>
+            <%= link_to 'Porte Clés', porte_cles_path, class: 'dropdown-item' %>
+            <%= link_to 'Marque Pages', marque_page_path, class: 'dropdown-item' %>
+            <%= link_to 'Pièces Uniques', piece_unique_path, class: 'dropdown-item' %>
+
           </div>
         </li>
         <li class="nav-item">

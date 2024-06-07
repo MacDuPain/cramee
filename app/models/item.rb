@@ -10,4 +10,9 @@ class Item < ApplicationRecord
   has_many :order_items
   has_many :orders, through: :order_items
   has_one_attached :image
+  accepts_nested_attributes_for :item_tags
+
+  def self.with_tag(tag_name)
+    joins(:item_tags).where(item_tags: { name: tag_name })
+  end
 end
