@@ -10901,3 +10901,52 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
+.custom-container {
+  margin: 0 auto; /* Centre le contenu */
+  max-width: 600px; /* Limite la largeur du conteneur */
+}
+
+.custom-h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #A0B090;
+}
+
+.custom-h3 {
+  font-size: 22px;
+  color: #000;
+}
+
+.custom-form .field {
+  margin-bottom: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.custom-form .field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #8E8383; /* Bordure de couleur 8E8383 */
+  box-sizing: border-box;
+  border-radius: 8px; /* Bordure arrondie moins prononcée */
+}
+
+.custom-submit-button {
+  background-color: #A1BBA3; /* Fond de couleur A1BBA3 */
+  color: #2A3C2C; /* Couleur de texte 2A3C2C */
+  padding: 10px 20px;
+  font-size: 12px;
+  border: 1px solid #657166; /* Bordure de couleur 657166 */
+  cursor: pointer;
+  border-radius: 10px; /* Bordure arrondie moins prononcée */
+}
+
+.custom-submit-button:hover {
+  background-color: #657166; /* Fond de couleur 8E8383 au survol */
+  color: #fff; /* Changement de couleur de texte au survol */
+}
+
+.custom-form {
+  margin-top: 50px; /* Ajoute de la marge en haut */
+}
