@@ -5,9 +5,18 @@ class CartsController < ApplicationController
   def show
     @cart = current_user.cart
     @cart_items = @cart.cart_items
-    @total_price = @cart.items.sum(&:price)
+    @total_price = @cart.cart_items.sum do |cart_item|
+      if cart_item.quantity.present?
+        cart_item.item.price * cart_item.quantity.to_i
+      else
+        0
+      end
+    end
 
+    # Si le panier est vide, initialiser @total_price à zéro
+    @total_price ||= 0
   end
+
 
   def edit
     @cart = Cart.find(params[:id])
@@ -39,23 +48,46 @@ class CartsController < ApplicationController
   def add_item
     @cart = current_user.cart || current_user.create_cart
     item = Item.find(params[:item_id])
-    @cart.items << item
+    quantity = params[:quantity].to_i # Récupérer la quantité à partir des paramètres
+
+    # Vérifier si l'article est déjà dans le panier
+    cart_item = @cart.cart_items.find_by(item: item)
+
+    if cart_item
+      # Si l'article est déjà dans le panier, augmenter la quantité
+      cart_item.quantity += quantity
+      cart_item.save
+    else
+      # Sinon, ajouter un nouvel article au panier avec la quantité spécifiée
+      @cart.cart_items.create(item: item, quantity: quantity)
+    end
+
     redirect_to @cart, notice: 'L\'article a été ajouté à votre panier.'
   end
+
 
   def remove_item
     @cart = current_user.cart
     item = Item.find(params[:item_id])
-    @cart.items.delete(item)
-    redirect_to @cart, notice: 'L\'article a été retiré de votre panier.'
+    cart_item = @cart.cart_items.find_by(item_id: item.id)
+
+    if cart_item.quantity > 1
+      cart_item.quantity -= 1
+      cart_item.save
+    else
+      @cart.items.delete(item)
+    end
+
+    redirect_to @cart, notice: 'Un article a été retiré de votre panier.'
   end
+
 
   def confirm_order
     @cart = current_user.cart
     if @cart.items.any?
       order = current_user.orders.create
-      @cart.items.each do |item|
-        order.order_items.create(item: item)
+      @cart.cart_items.each do |cart_item|
+        order.order_items.create(item: cart_item.item, quantity: cart_item.quantity, price: cart_item.item.price)
       end
       @cart.items.clear
       redirect_to order_path(order), notice: 'Votre commande a été passée avec succès.'
@@ -63,6 +95,7 @@ class CartsController < ApplicationController
       redirect_to @cart, alert: 'Votre panier est vide.'
     end
   end
+
 
   private
 

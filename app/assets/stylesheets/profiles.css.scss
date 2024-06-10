@@ -46,3 +46,26 @@
   color: #65635F;
   margin-top: 5px; /* Decrease the margin-top to reduce spacing */
 }
+
+.profile-content .order {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.profile-content .order-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-content .order-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.profile-content .item-thumbnail {
+  display: block;
+  margin: 0 auto 5px;
+}
