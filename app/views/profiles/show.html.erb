@@ -21,14 +21,25 @@
   </div>
 
   <!-- Order History Section -->
-  <div class="profile-content">
-    <h2 class="profile-subtitle">HISTORIQUE DES COMMANDES</h2>
-    <% @orders.each do |order| %>
-      <div class="order">
-        <p>Date: <%= order.created_at.strftime("%d/%m/%Y") %></p>
-        <p>Total Price: <%= number_to_currency(order.total_price) %></p>
-        <!-- Add more order details as needed -->
+<div class="profile-content">
+  <h2 class="profile-subtitle">HISTORIQUE DES COMMANDES</h2>
+  <% @orders.each do |order| %>
+    <div class="order">
+      <p>Date: <%= order.created_at.strftime("%d/%m/%Y") %></p>
+      <p>Total Price: <%= number_to_currency(order.total_price) %></p>
+      <div class="order-items">
+        <% order.order_items.each do |order_item| %>
+          <div class="order-item">
+            <% item = order_item.item %>
+            <% if item.image.attached? %>
+              <%= image_tag item.image.variant(resize_to_limit: [100, 100]), alt: item.name, class: 'item-thumbnail' %>
+            <% end %>
+            <p><%= item.name %> x<%= order_item.quantity %></p>
+            <p>Prix: <%= number_to_currency(item.price) %></p>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
+
