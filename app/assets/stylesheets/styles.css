@@ -10983,11 +10983,15 @@ footer {
 
 .carousel-container {
   text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 
 .carousel-container h1 {
   position: absolute;
-  top: 420px; /* Ajustez la valeur selon vos préférences */
+  top: -10px; /* Ajustez la valeur selon vos préférences */
   left: 0;
   right: 0;
   margin: auto;
@@ -10997,14 +11001,60 @@ footer {
 .carousel-card {
   width: 300px; /* Définir la largeur fixe */
   height: 300px; /* Définir la hauteur fixe */
-  margin-top: 50px;
-  margin-left: 500px;
+  margin-top: 50px; /* Centrer les cartes horizontalement */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 5%; /* Ajustez selon vos besoins */
+  height: 100%;
+  margin-top: 25px;
 }
 
 .carousel-control-prev {
-  margin-left: 480px;
+  left: -20px; /* Ajustez selon vos besoins */
 }
 
 .carousel-control-next {
-  margin-right: -20px;
+  right: -20px; /* Ajustez selon vos besoins */
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+  background-color: black; /* Change la couleur de l'icône ici si nécessaire */
+  background-size: 100%, 100%;
+}
+
+.carousel-item {
+  display: none; /* Par défaut, masquer toutes les slides */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.carousel-item.active {
+  display: flex; /* Afficher seulement la slide active */
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
