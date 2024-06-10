@@ -53,5 +53,5 @@ Rails.application.routes.draw do
   get 'porte_cles', to: 'items#porte_cles'
 
   # Profile route
-  resource :profile, only: [:show]
+  resource :profile, only: [:show, :edit, :update]
 end
