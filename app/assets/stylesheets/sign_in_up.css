@@ -1,0 +1,38 @@
+.custom-h2 {
+  font-weight: bold;
+  color: #A0B090;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.custom-h3 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.actions {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.custom-text {
+  color: #555454;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.custom-link {
+  color: black;
+  text-decoration: underline;
+  margin: 0px;
+}
+
+.custom-text-password {
+  color: #555454;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 12px;
+}
+
+

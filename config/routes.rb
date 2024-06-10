@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  root "static_pages#landing_page"
+  get 'static_pages/about', as: 'about'
   get 'tags/show'
-  root "items#index"
-  get 'about', to: 'pages#about', as: 'about'
 
   devise_for :users
 
   resources :users
+
   resources :items
 
   resources :carts, only: [:show, :create, :edit, :update, :destroy] do

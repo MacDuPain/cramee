@@ -1,0 +1,83 @@
+
+/* DELIVERY INFO */
+/* Titre des informations de livraison */
+.delivery-info-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Styles pour le formulaire personnalisé */
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.custom-form .field {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.custom-form .field input,
+.custom-form .field textarea {
+  width: calc(100% - 32px);
+  padding: 8px 16px;
+  border: 1px solid #8E8383;
+  border-radius: 10px;
+  font-size: 12px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+}
+
+.custom-form .field label {
+  display: block;
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+/* Bouton de soumission personnalisé */
+.custom-submit-button {
+  width: calc(100% - 32px);
+  background-color: #A1BBA3;
+  color: #2A3C2C;
+  padding: 8px 16px;
+  font-size: 12px;
+  border: 1px solid #657166;
+  cursor: pointer;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 20px;
+  text-align: center; /* Centre le texte */
+  text-decoration: none; /* Retire le soulignement */
+}
+
+.custom-submit-button:hover {
+  background-color: #657166;
+  color: #fff;
+  text-decoration: none; /* Retire le soulignement au survol */
+}
+
+/* Lien personnalisé */
+.custom-link {
+  color: black;
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Texte personnalisé */
+.custom-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12px;
+  color: #555454;
+  text-align: center;
+}
