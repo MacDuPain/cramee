@@ -4,4 +4,5 @@ class CartItem < ApplicationRecord
 
   validates :cart, presence: true
   validates :item, presence: true
+  attribute :quantity, :integer
 end

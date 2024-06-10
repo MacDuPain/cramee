@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_cart, only: [:show, :edit, :update, :destroy, :confirm_order]
+  before_action :set_cart, only: [:show, :edit, :destroy, :confirm_order]
 
   def show
     @cart = current_user.cart
@@ -22,11 +22,17 @@ class CartsController < ApplicationController
     end
   end
 
-  def update
-    @cart = Cart.find(params[:id])
-    @cart.items << Item.find(params[:item_id]) # Ajouter un article au panier
-    @cart.delivery_fee = calculate_delivery_fee(@cart.items.sum(:price))
-    @cart.save
+  def update_item_quantity
+    # Trouver l'article dans le panier de l'utilisateur actuel
+    cart_item = current_user.cart.items.find_by(id: params[:item_id])
+
+    if cart_item.nil?
+      render json: { status: 'error', message: 'Cart item not found' }, status: :not_found
+    elsif cart_item.update(quantity: params[:quantity])
+      render json: { status: 'success', message: 'Quantity updated', total_price: current_user.cart.total_price }, status: :ok
+    else
+      render json: { status: 'error', message: 'Failed to update quantity' }, status: :unprocessable_entity
+    end
   end
 
 

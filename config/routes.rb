@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     delete 'remove_item/:item_id', to: 'carts#remove_item', as: 'remove_item'
     post 'add_item/:item_id', to: 'carts#add_item', as: 'add_item'
     post 'confirm_order', to: 'carts#confirm_order', as: 'confirm_order'
+    patch 'items/:id', to: 'carts#update_item_quantity', as: 'update_cart_item'
+
   end
 
   resources :orders do
