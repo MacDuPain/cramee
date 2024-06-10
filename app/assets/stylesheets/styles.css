@@ -10980,3 +10980,31 @@ footer {
   color: black;
   text-decoration: underline;
 }
+
+.carousel-container {
+  text-align: center;
+}
+
+.carousel-container h1 {
+  position: absolute;
+  top: 420px; /* Ajustez la valeur selon vos préférences */
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1; /* Assurez-vous que le titre se trouve au-dessus du carrousel */
+}
+
+.carousel-card {
+  width: 300px; /* Définir la largeur fixe */
+  height: 300px; /* Définir la hauteur fixe */
+  margin-top: 50px;
+  margin-left: 500px;
+}
+
+.carousel-control-prev {
+  margin-left: 480px;
+}
+
+.carousel-control-next {
+  margin-right: -20px;
+}
