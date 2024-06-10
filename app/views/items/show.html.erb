@@ -6,7 +6,7 @@
           <div class="flex-shrink-0 me-5">
             <!-- Affichage de l'image -->
             <% if @item.image.attached? %>
-              <%= image_tag url_for(@item.image), class: 'item-image', alt: @item.name %>
+              <%= image_tag url_for(@item.image.variant(resize: "500x500")), class: 'item-image', alt: @item.name %>
             <% end %>
           </div>
           <div class="flex-fill">
