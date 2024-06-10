@@ -1,0 +1,20 @@
+<div class="profile-container">
+  <h1 class="profile-title">MON COMPTE</h1>
+  <div class="profile-content">
+    <h2 class="profile-subtitle">PROFIL</h2>
+    <p class="profile-label">Adresse e-mail</p>
+    <p class="profile-email"><%= @user.email %></p>
+  </div>
+
+  <!-- Order History Section -->
+  <div class="profile-content">
+    <h2 class="profile-subtitle">HISTORIQUE DES COMMANDES</h2> <!-- Updated to use profile-subtitle class -->
+    <% @orders.each do |order| %>
+      <div class="order">
+        <p>Date: <%= order.created_at.strftime("%d/%m/%Y") %></p>
+        <p>Total Price: <%= number_to_currency(order.total_price) %></p>
+        <!-- Add more order details as needed -->
+      </div>
+    <% end %>
+  </div>
+</div>
