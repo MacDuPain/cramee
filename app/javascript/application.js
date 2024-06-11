@@ -4,5 +4,17 @@ import "controllers"
 
 //= require jquery
 //= require jquery_ujs
+//= require popper
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+import * as bootstrap from "bootstrap"
+
+document.addEventListener('turbolinks:load', function() {
+    // Réinitialiser Bootstrap dropdowns
+    var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+        return new bootstrap.Dropdown(dropdownToggleEl)
+    });
+});
