@@ -102,6 +102,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_10_141539) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
   end
 
   create_table "items_tags", id: false, force: :cascade do |t|

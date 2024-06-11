@@ -1,2 +1,17 @@
-<h1>Checkout#cancel</h1>
-<p>Find me in app/views/checkout/cancel.html.erb</p>
+<h1>Votre paiement a malheureusement échoué...</h1>
+<p>Veuillez réessayé et sinon veuillez contacter miss.cramée@email.com </p>
+
+<!-- Bouton pour continuer les achats -->
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center">
+    <%= link_to "RETOUR A L'ACCEUIL", items_path, class: 'btn btn-dark btn-lg  w-100' %>
+  </div>
+</div><br>
+
+<!-- Bouton pour continuer les achats -->
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center">
+    <%= link_to "CONTINUER VOS ACHATS", items_path,class: 'btn custom-submit-button w-100' %>
+  </div>
+</div>
+

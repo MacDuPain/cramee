@@ -1,0 +1,10 @@
+.header-background {
+  position: relative;
+  background: url('header.jpg') no-repeat center center;
+  background-size: cover;
+  height: 300px; /* Hauteur définie pour le header */
+  display: flex; /* Utilisation de Flexbox pour centrer le contenu */
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  text-align: center; /* Centrage du texte à l'intérieur du header */
+}

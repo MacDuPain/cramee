@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
-  root "items#index"
-  
-  get 'about', to: 'pages#about', as: 'about'
+  root "static_pages#landing_page"
+  get 'static_pages/about', as: 'about'
+  get 'tags/show'
 
   devise_for :users
 
   resources :users
+
   resources :items
 
   resources :carts, only: [:show, :create, :edit, :update, :destroy] do
     delete 'remove_item/:item_id', to: 'carts#remove_item', as: 'remove_item'
     post 'add_item/:item_id', to: 'carts#add_item', as: 'add_item'
     post 'confirm_order', to: 'carts#confirm_order', as: 'confirm_order'
+    patch 'items/:id', to: 'carts#update_item_quantity', as: 'update_cart_item'
+
   end
 
   resources :orders do

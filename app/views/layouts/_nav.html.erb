@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FCF7EE;">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <%= link_to root_path, class: 'navbar-brand' do %>
-      <%= image_tag 'logo.svg', alt: 'Miss Cramée Logo', width: 60, height: 48 %>
+      <%= image_tag 'logo.svg', alt: 'Miss Cramée Logo', width: 70, height: 58 %>
     <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            COLLECTIONS
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <a class="dropdown-item" href="#">Sorties de l'atelier</a>
-            <a class="dropdown-item" href="#">Meilleures ventes</a>
-            <a class="dropdown-item" href="#">Tous les bijoux</a>
+  <a class="nav-link dropdown-toggle color-primary keep-white-on-click" href="#" role="button" id="navbarDropdown1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    COLLECTIONS
+  </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+            <%= link_to 'Sorties de l\'atelier', bracelets_path, class: 'dropdown-item' %>
+            <%= link_to 'Meilleures ventes', colliers_path, class: 'dropdown-item' %>
+            <%= link_to 'Tous les bijoux', porte_cles_path, class: 'dropdown-item' %>
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            NOS BIJOUX
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+  <a class="nav-link dropdown-toggle color-primary keep-white-on-click" href="#" role="button" id="navbarDropdown2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    NOS BIJOUX
+  </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
             <%= link_to 'Bracelets', bracelets_path, class: 'dropdown-item' %>
             <%= link_to 'Colliers', colliers_path, class: 'dropdown-item' %>
             <%= link_to 'Boucles d\'Oreille', boucles_oreilles_path, class: 'dropdown-item' %>
@@ -32,52 +32,54 @@
           </div>
         </li>
         <li class="nav-item">
-          <%= link_to 'FORUM', forum_path, class: 'nav-link' %>
+          <%= link_to 'FORUM', forum_path, class: 'nav-link color-primary' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'MISS CRAMEÉ', about_path, class: 'nav-link' %>
+          <%= link_to 'MISS CRAMEÉ', about_path, class: 'nav-link color-primary' %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">LIVRE D'OR</a>
+          <a class="nav-link color-primary" href="#">LIVRE D'OR</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
             <% if current_user.cart %>
-              <%= link_to cart_path(current_user.cart), class: 'nav-link' do %>
+              <%= link_to cart_path(current_user.cart), class: 'nav-link color-primary' do %>
                 <%= image_tag 'basket.png', alt: 'Panier', width: 20, height: 20 %>
               <% end %>
             <% else %>
-              <%= link_to '#', class: 'nav-link disabled', title: 'Pas de panier disponible' do %>
+              <%= link_to '#', class: 'nav-link disabled color-primary', title: 'Pas de panier disponible' do %>
                 <%= image_tag 'basket.png', alt: 'Panier', width: 20, height: 20 %>
               <% end %>
             <% end %>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarAccountDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a  class="nav-link dropdown-toggle color-primary keep-white-on-click" href="#" role="button" id="navbarAccountDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Mon compte
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarAccountDropdown">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarAccountDropdown">
               <%= link_to 'Profil', profile_path, class: 'dropdown-item' %>
               <%= form_tag(destroy_user_session_path, method: :delete) do %>
-                <%= button_tag(type: 'submit', class: 'nav-link active', style: 'background: none; border: none; cursor: pointer;') do %>
+                <%= button_tag(type: 'submit', class: 'dropdown-item color-primary') do %>
                   Se déconnecter
                 <% end %>
               <% end %>
               <% if current_user.is_admin? %>
-                <%= link_to 'Dashboard', admin_dashboard_path, class: 'dropdown-item' %>
+                <li class="nav-item">
+                  <%= link_to 'Dashboard', admin_dashboard_path, class: 'dropdown-item color-primary' %>
+                </li>
               <% end %>
             </div>
           </li>
         <% else %>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle color-primary keep-white-on-click" href="#" role="button" id="navbarDropdown2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Connexion/Inscription
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-              <%= link_to 'Inscription', new_user_registration_path, class: 'dropdown-item' %>
-              <%= link_to 'Se connecter', new_user_session_path, class: 'dropdown-item' %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+              <%= link_to 'Inscription', new_user_registration_path, class: 'dropdown-item color-primary' %>
+              <%= link_to 'Se connecter', new_user_session_path, class: 'dropdown-item color-primary' %>
             </div>
           </li>
         <% end %>

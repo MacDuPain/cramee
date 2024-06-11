@@ -22,7 +22,15 @@
   </div>
 <% end %><br>
 
-<p class="custom-text"><span>Déjà un compte ?</span> 
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link"%><br />
+
+<div class="custom-line"></div>
+
+
+<div class="actions custom-text">
+  <p>Déjà un compte ? 
+ <%- if controller_name != 'sessions' %>
+  <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link"%>
 <% end %>
+
+</div> 
+
