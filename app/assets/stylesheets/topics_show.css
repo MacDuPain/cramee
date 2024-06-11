@@ -1,0 +1,62 @@
+/* Styles pour le conteneur du topic principal */
+.topic-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E8E0D3;
+}
+
+.topic-container h1 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.topic-content {
+  font-family: "Josefin Sans", sans-serif;
+  color: #555454;
+  margin-bottom: 20px;
+}
+
+.topic-meta {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Styles spécifiques pour les commentaires */
+.comments-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box {
+  border: 1px solid #E8E0D3;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.comment-content {
+  color: #555454;
+  margin-bottom: 10px;
+}
+
+.comment-date {
+  color: #888;
+  font-size: 0.8rem;
+}

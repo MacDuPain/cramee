@@ -11,3 +11,41 @@
   text-decoration: underline;
 }
 
+.footer-container {
+  text-align: center; /* Centrer tout le contenu du conteneur */
+}
+
+.custom-line {
+  margin: 0 auto; /* Centrer la ligne si elle a une largeur définie */
+  width: 80%; /* Définissez la largeur de la ligne comme vous le souhaitez */
+  height: 2px; /* Hauteur de la ligne */
+  background-color: #E8E0D3; /* Couleur de la ligne */
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* Centrer les éléments de la navigation */
+  padding: 0; /* Enlever le padding par défaut de la liste */
+}
+
+.nav-item {
+  list-style: none; /* Enlever les puces de la liste */
+  margin: 0 10px; /* Marge entre les éléments de la liste */
+}
+
+.nav-item img {
+  max-height: 50px; /* Ajuster la hauteur des logos */
+  display: block; /* Assurer que les images soient des blocs pour un alignement correct */
+}
+
+.text-center {
+  margin: 10px 0; /* Marge pour espacer les paragraphes */
+}
+
+.mention-link {
+  cursor: pointer; /* Changer le curseur au survol pour les mentions légales */
+}
+
+.text-body-secondary {
+  color: #6c757d; /* Couleur de texte secondaire */
+}

@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
-  get 'reviews/create'
-  get 'reviews/index'
-  root "static_pages#landing_page"
+  root 'static_pages#landing_page'
   get 'static_pages/about', as: 'about'
   get 'tags/show'
 
