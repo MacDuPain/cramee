@@ -1,51 +1,55 @@
-<h1 class="fw-bold delivery-info-title">PANIER</h1>
 
-<% if @cart.cart_items.any? %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Nom</th>
-        <th>Quantité</th>
-        <th>Prix Unité</th> <!-- Ajout d'une colonne de prix unitaire -->
-        <th>Total</th> <!-- Renommage de la colonne Prix en Total -->
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @cart.cart_items.each do |cart_item| %>
+
+<div class="custom-container">
+  <h1 class="fw-bold delivery-info-title">PANIER</h1>
+
+  <% if @cart.cart_items.any? %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= image_tag cart_item.item.image.variant(resize_to_limit: [100, 100]), alt: cart_item.item.name, class: 'item-image' %></td>
-          <td><%= cart_item.item.name %></td>
-          <td><%= cart_item.quantity %></td>
-          <td><%= number_to_currency(cart_item.item.price) %></td> <!-- Affichage du prix unitaire pour chaque article -->
-          <td><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></td> <!-- Mise à jour du total pour refléter la quantité -->
-          <td>
-            <%= button_to 'Retirer', cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-danger' %>
-          </td>
+          <th>Image</th>
+          <th>Nom</th>
+          <th>Quantité</th>
+          <th>Prix Unité</th> <!-- Ajout d'une colonne de prix unitaire -->
+          <th>Total</th> <!-- Renommage de la colonne Prix en Total -->
+          <th>Action</th>
         </tr>
-      <% end %>
-      <tr>
-        <td colspan="3"><strong>Total</strong></td>
-        <td colspan="3"><%= number_to_currency(@total_price) %></td>
-      </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td><%= image_tag cart_item.item.image.variant(resize_to_limit: [100, 100]), alt: cart_item.item.name, class: 'item-image' %></td>
+            <td><%= cart_item.item.name %></td>
+            <td><%= cart_item.quantity %></td>
+            <td><%= number_to_currency(cart_item.item.price) %></td> <!-- Affichage du prix unitaire pour chaque article -->
+            <td><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></td> <!-- Mise à jour du total pour refléter la quantité -->
+            <td>
+              <%= button_to 'Retirer', cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td colspan="3"><strong>Total</strong></td>
+          <td colspan="3"><%= number_to_currency(@total_price) %></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <!-- Bouton pour passer la commande -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-md-6 text-center">
-      <%= button_to 'PASSER COMMANDE', cart_confirm_order_path(@cart), method: :post, class: 'btn custom-submit-button w-100' %>
+    <!-- Bouton pour passer la commande -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6 text-center">
+        <%= button_to 'PASSER COMMANDE', cart_confirm_order_path(@cart), method: :post, class: 'btn custom-submit-button w-100' %>
+      </div>
     </div>
-  </div>
 
-<% else %>
-  <p class="text-center">Votre panier est vide.</p>
-<% end %>
+  <% else %>
+    <p class="text-center">Votre panier est vide.</p>
+  <% end %>
 
-<!-- Bouton pour continuer les achats -->
-<div class="row justify-content-center">
-  <div class="col-md-6 text-center">
-    <%= link_to "CONTINUER VOS ACHATS", items_path, class: 'btn btn-dark btn-lg  w-100' %>
+  <!-- Bouton pour continuer les achats -->
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <%= link_to "CONTINUER VOS ACHATS", items_path, class: 'btn custom-submit-button w-100' %>
+    </div>
   </div>
 </div>
