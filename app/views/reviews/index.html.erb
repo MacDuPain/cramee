@@ -7,13 +7,22 @@
   <%= link_to 'Connectez-vous pour laisser un avis', new_user_session_path %>
 <% end %>
 
-<% @reviews.each do |review| %>
-  <div class="review">
-    <h3><%= review.name %></h3>
-    <p><%= review.content %></p>
-    <% if user_signed_in? && current_user.is_admin? %>
-      <%= link_to 'Supprimer', reviews_path, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
-    <% end %>
-    <hr>
-  </div>
-<% end %>
+<div class="row">
+  <% @reviews.each do |review| %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= review.name %></h5>
+          <p class="card-text"><%= review.content %></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Date de création : <%= review.created_at.strftime("%d %B %Y à %H:%M") %></small>
+          <% if user_signed_in? && current_user.is_admin? %>
+            <%= link_to 'Supprimer', reviews_path(review), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: 'Êtes-vous sûr?' } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

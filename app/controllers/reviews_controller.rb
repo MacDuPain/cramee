@@ -2,8 +2,9 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:destroy]
   before_action :authorize_admin, only: [:destroy]
 
+
   def index
-    @reviews = Review.all
+    @reviews = Review.order(created_at: :desc)
   end
 
   def new
@@ -22,8 +23,9 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to reviews_path, notice: 'Avis supprimé avec succès.'
+    redirect_to reviews_path, notice: "L'avis a été supprimé avec succès."
   end
+
 
   private
 
