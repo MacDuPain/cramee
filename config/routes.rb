@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
+  get 'reviews/index'
   root "static_pages#landing_page"
   get 'static_pages/about', as: 'about'
   get 'tags/show'
@@ -57,4 +60,8 @@ Rails.application.routes.draw do
 
   # Profile route
   resource :profile, only: [:show, :edit, :update]
+
+  #Routes livre d'or
+  resources :reviews, only: [:new, :create, :index]
+
 end
