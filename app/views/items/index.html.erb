@@ -8,7 +8,7 @@
                     <!-- Product details-->
                     <div class="card-body p-4 text-center">
                         <% if item.image.attached? %>
-                            <%= image_tag url_for(item.image.variant(resize: "300x300")), class: 'item-image mb-3', alt: item.name %>
+                            <%= image_tag item.image.variant(resize_to_fill: [300, 300]), class: 'item-image mb-3', alt: item.name %>
                         <% end %>
                         <!-- Product name-->
                         <h5 class="fw-bolder"><%= item.name %></h5>
