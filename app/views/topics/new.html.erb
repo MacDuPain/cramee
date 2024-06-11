@@ -1,16 +1,25 @@
 <h1>Ajouter un Topic</h1>
-<%= form_for @topic do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+
+<%= form_with(model: @topic, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control" %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
   </div>
-  <div class="form-group">
-    <%= f.label :tags, "Sélectionnez les tags" %>
-    <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, class: "form-control" } %>
+
+  <div class="field">
+    <%= form.label :topic_tag_ids, 'Tags' %><br>
+    <% TopicTag.all.each do |tag| %>
+      <%= check_box_tag 'topic[topic_tag_ids][]', tag.id, @topic.topic_tags.include?(tag) %>
+      <%= tag.name %><br>
+    <% end %>
   </div>
-  <%= f.submit "Créer", class: "btn btn-primary" %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
