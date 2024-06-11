@@ -1,8 +1,38 @@
-<h1>Tableau de bord Admin</h1>
+<div class="admin-dashboard">
+  <h1>Tableau de bord Admin</h1>
 
-<div class="statistics">
-  <p>Nombre total de commandes: <%= @orders_count %></p>
-  <!-- Ajoutez d'autres statistiques ici -->
+  <div class="statistics">
+    <p>Nombre total de commandes: <%= @orders_count %></p>
+    <!-- Ajoutez d'autres statistiques ici -->
+  </div>
+
+  <%= link_to 'Nouvel Item', new_item_path, class: 'btn btn-primary' %>
+
+  <h2>Liste des commandes</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Utilisateur</th>
+        <th>Date de commande</th>
+        <th>Total</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.user.email %></td>
+          <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
+          <td><%= number_to_currency(order.total_price) %></td>
+          <td>
+            <%= link_to 'Voir', order_path(order), class: 'btn btn-info' %>
+            <%= link_to 'Supprimer', order_path(order), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette commande ?' }, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-<%= link_to 'Nouvel Item', new_item_path, class: 'btn btn-primary' %>

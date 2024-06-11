@@ -4,13 +4,17 @@ class OrdersController < ApplicationController
 
 
   def show
-    @order = current_user.orders.find(params[:id])
+    @order
   end
 
   private
 
   def set_order
-    @order = current_user.orders.find(params[:id])
+    if current_user.is_admin?
+      @order = Order.find(params[:id])
+    else
+      @order = current_user.orders.find(params[:id])
+    end
   end
 
   def items

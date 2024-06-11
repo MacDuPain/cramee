@@ -6,9 +6,8 @@ module Admin
     def index
       @orders_count = Order.count
       #@average_price = Order.average(:total_price)
-
-      # ajouter un buyer counter
-      # Ajoutez d'autres statistiques nécessaires ici
+      @orders = Order.includes(:user).order(created_at: :desc)
+      # Ajouter d'autres statistiques nécessaires ici
     end
 
     private
