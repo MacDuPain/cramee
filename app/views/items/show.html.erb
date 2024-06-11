@@ -26,16 +26,18 @@
             </div>
 
             <!-- Bouton "Ajouter au panier" conditionnel -->
-            <% if user_signed_in? %>
-              <%= form_with(url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true) do |form| %>
-              <%= form.hidden_field :item_id, value: @item.id %>
-              <%= form.label :quantity, "Quantité" %>
-              <%= form.number_field :quantity, value: 1, min: 1 %>
-              <%= form.submit "Ajouter au panier", class: "btn btn-dark btn-lg" %>
-            <% end %>
-            <% else %>
-              <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'btn btn-outline-dark' %>
-            <% end %>
+            <div class="d-flex align-items-center mt-3">
+              <% if user_signed_in? %>
+                <%= form_with(url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true) do |form| %>
+                  <%= form.hidden_field :item_id, value: @item.id %>
+                  <%= form.label :quantity, "Quantité", class: 'me-2' %>
+                  <%= form.number_field :quantity, value: 1, min: 1, class: 'custom-number-field me-2' %>
+                  <%= form.submit "Ajouter au panier", class: "custom-submit-button", style: 'margin-top: 25px;' %>
+                <% end %>
+              <% else %>
+                <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'custom-submit-button', style: 'margin-top: 25px;' %>
+              <% end %>
+            </div>
             <br>
             <div class="d-flex align-items-center">
               <%= image_tag 'prayer 2.png', class: 'me-2', style: 'margin-bottom: 5px;' %> <!-- Utilisation de l'image -->
@@ -44,7 +46,7 @@
             <p>Tout nos bijoux sont fait mains et nécessitent des délais de fabrication importants (entre 1 et 3 semaines)</p>
             <!-- Bouton Edit -->
             <% if current_user&.is_admin? %>
-              <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
+              <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
             <% end %>
           </div>
         </div>

@@ -22,13 +22,15 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+ @import 'carousel';
  @import 'cart';
  @import 'delivery_info';
  @import 'footer';
  @import 'header';
  @import 'nav';
  @import 'sign_in_up';
- @import 'carousel';
+ @import 'item';
+
 
 
  body {
@@ -112,33 +114,5 @@ p {
   width: 50%; /* Définissez la largeur de la ligne, ajustez selon vos besoins */
   margin: 0 auto; /* Centre la ligne horizontalement */
   margin-bottom: 15px;
-}
-
-/* app/assets/stylesheets/application.css */
-
-/* app/assets/stylesheets/application.css */
-
-.image-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.image-item {
-  flex: 0 0 calc(50% - 20px); /* 50% width minus the gap */
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.image-item img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
