@@ -1,35 +1,26 @@
+.custom-container {
+  margin-left: 20px;  /* Marge à gauche */
+  margin-right: 20px;  /* Marge à droite */
+  background-color: transparent; /* Fond transparent */
+}
+
+
 .fw-bold.delivery-info-title {
   margin-top: 20px;  /* Marge au-dessus */
   margin-bottom: 20px;  /* Marge en dessous */
-  margin-right: 20px;  /* Marge à droite */
-  margin-left: 20px;  /* Marge à gauche */
-}
-
-.table {
-  margin-top: 20px;  /* Marge au-dessus */
-  margin-bottom: 20px;  /* Marge en dessous */
-  margin-right: 20px;  /* Marge à droite */
-  margin-left: 20px;  /* Marge à gauche */
-  background-color: transparent; /* Enlever le fond blanc */
-}
-
-.custom-submit-button {
-  border: none;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .item-image {
   border-radius: 4px; /* Pour arrondir légèrement les images, optionnel */
 }
 
-.custom-container {
-  background-color: transparent; /* Enlève le fond blanc */
-  margin-top: 20px; /* Ajoute une marge en haut */
-  margin-bottom: 20px; /* Ajoute une marge en bas */
-  margin-right: 20px; /* Ajoute une marge à droite */
-  margin-left: 20px; /* Ajoute une marge à gauche */
+.table-transparent {
+  background-color: transparent !important; /* Fond transparent */
+  border: none; /* Add border with color E8E0D3 */
 }
 
+.table-transparent th,
+.table-transparent td {
+  background-color: transparent !important; /* Fond transparent */
+  border: none; /* Add border with color E8E0D3 to table cells */
+}

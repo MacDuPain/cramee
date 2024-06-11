@@ -1,36 +1,40 @@
-<h1>Commande #<%= @order.id %></h1>
+<div class="custom-container mt-3 mb-3">
+  <h1>Commande #<%= @order.id %></h1>
 
-<div class="card mt-3">
-  <div class="card-header">
-    Détails de la commande
+  <div class="card mt-3">
+    <table class="table table-transparent">
+      <tbody>
+        <% @order.order_items.each do |order_item| %>
+          <tr>
+            <td>
+              <img src="<%= order_item.item.image_url %>" alt="<%= order_item.item.name %>" class="item-image" width="50" height="50">
+              <%= "#{order_item.item.name} x#{order_item.quantity}" %>
+            </td>
+            <td class="text-end"><%= number_to_currency(order_item.item.price * order_item.quantity) %></td>
+          </tr>
+          <% puts "Order Item: #{order_item.inspect}" %> <!-- Debugging line -->
+        <% end %>
+        <tr>
+          <td><strong>Sous-total</strong></td>
+          <% subtotal = @order.subtotal %>
+          <% puts "Subtotal: #{subtotal}" %> <!-- Debugging line -->
+          <td class="text-end"><%= number_to_currency(subtotal) %></td>
+        </tr>
+        <tr>
+          <td><strong>Frais de livraison</strong></td>
+          <% delivery_fee = @order.delivery_fee %>
+          <% puts "Delivery Fee: #{delivery_fee}" %> <!-- Debugging line -->
+          <td class="text-end"><%= number_to_currency(delivery_fee) %></td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <% total_price = @order.total_price %>
+          <% puts "Total Price: #{total_price}" %> <!-- Debugging line -->
+          <td class="text-end"><strong><%= number_to_currency(total_price) %></strong></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <ul class="list-group list-group-flush">
-    <% @order.order_items.each do |order_item| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <%= "#{order_item.item.name} x#{order_item.quantity}" %>
-        <span><%= number_to_currency(order_item.item.price * order_item.quantity) %></span>
-      </li>
-      <% puts "Order Item: #{order_item.inspect}" %> <!-- Ajoutez cette ligne pour déboguer -->
-    <% end %>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <strong>Sous-total</strong>
-      <% subtotal = @order.subtotal %>
-      <% puts "Subtotal: #{subtotal}" %> <!-- Ajoutez cette ligne pour déboguer -->
-      <span><%= number_to_currency(subtotal) %></span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <strong>Frais de livraison</strong>
-      <% delivery_fee = @order.delivery_fee %>
-      <% puts "Delivery Fee: #{delivery_fee}" %> <!-- Ajoutez cette ligne pour déboguer -->
-      <span><%= number_to_currency(delivery_fee) %></span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <strong>Total</strong>
-      <% total_price = @order.total_price %>
-      <% puts "Total Price: #{total_price}" %> <!-- Ajoutez cette ligne pour déboguer -->
-      <strong><%= number_to_currency(total_price) %></strong>
-    </li>
-  </ul>
-</div>
 
-<%= link_to "Continuer la commande", new_order_delivery_info_path(@order), class: "btn btn-primary mt-3" %>
+  <%= link_to "Continuer la commande", new_order_delivery_info_path(@order), class: 'btn custom-submit-button' %>
+</div>
