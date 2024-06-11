@@ -31,33 +31,33 @@
  @import 'sign_in_up';
  @import 'item';
 
-
-
  body {
-  font-family: "Josefin Sans", sans-serif; /* Ajout de la police Josefin Sans */
+  font-family: "Josefin Sans", sans-serif;
   font-style: normal;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
+  font-weight: normal;
   --background_color: #F4EAE3;
   color: var(--current_color);
   height: 100%;
   width: 100%;
-  background-color: var(--background_color); /* Définition de la couleur de fond */
+  background-color: var(--background_color);
 }
 
 h1 {
   font-family: "Libre Baskerville", serif;
   font-style: normal;
+  font-weight: normal;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: "Josefin Sans", sans-serif;
-  line-height: 2rem;
+  font-weight: normal;
 }
 
 p {
   font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
 }
+
 
 .card {
   background: none;
@@ -68,51 +68,29 @@ p {
   margin: 20px; /* Ajustez cette valeur selon vos besoins */
 }
 
-
-.custom-form .field {
-  margin-bottom: 10px; /* Réduit l'espace entre les champs */
-}
-.custom-form .field input {
-  width: 100%;
-  padding: 8px 16px;
-  border: 1px solid #8E8383;
-  box-sizing: border-box;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-  background-color: transparent; /* Enlève le fond */
-}
-
-.custom-form .field label {
-  display: block; /* Faire en sorte que le label soit un bloc */
-  margin: 5px 0; /* Marge entre le label et l'input */
-}
-
-.custom-form {
-  width: 300px; /* Set a specific width for the form */
-  max-width: 100%; /* Ensure the form doesn't exceed the width of its container */
-}
-
-.custom-submit-button {
-  width: 300px; /* Set a specific width for the form */
-  max-width: 100%; /* Ensure the form doesn't exceed the width of its container */
-  padding: 8px 16px;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Media Queries pour rendre le formulaire responsive */
-@media screen and (max-width: 600px) {
-  .custom-form .field input {
-    width: 100%; /* Ajuste la largeur des inputs pour être égale à celle du bouton sur les petits écrans */
-  }
-}
-
 .custom-line {
   border-bottom: 1px solid #E8E0D3; /* Crée une ligne de bordure grise de 1 pixel */
   width: 50%; /* Définissez la largeur de la ligne, ajustez selon vos besoins */
   margin: 0 auto; /* Centre la ligne horizontalement */
   margin-bottom: 15px;
+}
+
+.custom-submit-button {
+  width: 300px;
+  max-width: 100%;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  background-color: #A1BBA3;
+  color: #2A3C2C;
+  border: 1px solid #657166;
+  transition: background-color 0.3s ease;
+  font-weight: normal;
+}
+
+.custom-submit-button:hover {
+  background-color: #2A3C2C;
+  color: #A1BBA3;
 }
 
