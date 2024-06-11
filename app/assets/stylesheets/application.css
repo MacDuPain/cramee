@@ -22,13 +22,15 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+ @import 'carousel';
  @import 'cart';
  @import 'delivery_info';
  @import 'footer';
  @import 'header';
  @import 'nav';
  @import 'sign_in_up';
- @import 'carousel';
+ @import 'item';
+
 
 
  body {
@@ -113,3 +115,4 @@ p {
   margin: 0 auto; /* Centre la ligne horizontalement */
   margin-bottom: 15px;
 }
+

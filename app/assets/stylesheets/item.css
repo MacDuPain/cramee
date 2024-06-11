@@ -1,0 +1,22 @@
+  .custom-number-field {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    width: 60px; /* Ajustez la largeur selon vos besoins */
+    text-align: center;
+  }
+
+  .custom-submit-button {
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .item-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }

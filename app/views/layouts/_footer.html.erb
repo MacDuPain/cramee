@@ -1,60 +1,49 @@
-
-
 <footer>
+  <div style="background-color: #E8E0D3; padding: 0; margin: 0;">
+    <div class="container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 justify-content-center">
+      <div class="col mb-3" style="margin-bottom: 10px;">  
+          <h5>COLLECTIONS</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><%= link_to 'Sorties de l\'atelier', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Meilleures ventes', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Tous les bijoux', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
+          </ul>
+        </div>
 
+        <div class="col mb-3">
+          <h5>NOS BIJOUX</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><%= link_to 'Bracelets', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Colliers', colliers_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Boucles d\'Oreille', boucles_oreilles_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Porte Clés', porte_cles_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Marque Pages', marque_page_path, class:"nav-link p-0 text-body-secondary" %></li>
+            <li class="nav-item mb-2"><%= link_to 'Pièces Uniques', piece_unique_path, class:"nav-link p-0 text-body-secondary" %></li>
+          </ul>
+        </div>
 
-<div class="b-example-divider"></div>
+        <div class="col mb-3">
+          <h6><%= link_to 'FORUM', bracelets_path, class:"nav-link p-0 text-body-secondary" %></h6>
+          <h6><%= link_to 'MISS CRAMEÉ', bracelets_path, class:"nav-link p-0 text-body-secondary" %></h6>
+          <h6><%= link_to 'LIVRE D\'OR', bracelets_path, class:"nav-link p-0 text-body-secondary" %></h6>
+        </div>
+      </footer>
+      
+      <p class="text-center text-body-secondary" style="margin-bottom: 20px;">CONTACT: MISS.CRAMEE@EMAIL.COM</p>
 
-<div class="container">
- <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
-  <div class="col mb-3 d-flex flex-column align-items-start">
-    <div class="d-flex">
-      <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class:"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" do %>
-        <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %> 
-      <% end %>
-      <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class:"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none ml-3" do %>
-        <%= image_tag 'instagram.svg', alt: 'Logo Instagram' %>
-      <% end %>  
-    </div>     
-    <p class="text-body-secondary w-100 text-nowrap">CONTACT: MISS.CRAMEE@EMAIL.COM</p>
+      <div class="d-flex justify-content-center mb-3">
+        <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class:"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" do %>
+          <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %> 
+        <% end %>
+        <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class:"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none ml-3" do %>
+          <%= image_tag 'instagram.svg', alt: 'Logo Instagram' %>
+        <% end %>  
+      </div>
+    </div>
   </div>
 
-
-    <div class="col mb-3">
-
-    </div>
-
-    <div class="col mb-3">
-      <h5>COLLECTIONS</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><%= link_to 'Sorties de l\'atelier', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to 'Meilleures ventes', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to  'Tous les bijoux', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
-      </ul>
-    </div>
-
-    <div class="col mb-3">
-      <h5>NOS BIJOUX</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><%= link_to 'Bracelets', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to link_to 'Colliers', colliers_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to link_to 'Boucles d\'Oreille', boucles_oreilles_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to link_to 'Porte Clés', porte_cles_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to link_to 'Marque Pages', marque_page_path, class:"nav-link p-0 text-body-secondary" %></li>
-        <li class="nav-item mb-2"><%= link_to link_to 'Pièces Uniques', piece_unique_path, class:"nav-link p-0 text-body-secondary" %></li>
-      </ul>
-    </div>
-
-    <div class="col mb-3">
-      <h5><%= link_to 'FORUM', bracelets_path, class:"nav-link p-0 text-body-secondary" %></h5>
-      <h5><%= link_to 'MISS CRAMEÉ', bracelets_path %></h5>
-      <h5><%= link_to 'LIVRE D\'OR', bracelets_path %></h5>
-    </div>
-</div>
-
-
-<div class="custom-line"></div>
-
+  <div class="container">
     <ul class="nav justify-content-center">
       <li class="nav-item"><%= image_tag 'stripe.svg', alt: 'Logo Stripe', class:"nav-link px-2 text-body-secondary" %></li>
       <li class="nav-item"><%= image_tag 'paypal.svg', alt: 'Logo Paypal', class:"nav-link px-2 text-body-secondary" %></li>
@@ -62,8 +51,7 @@
       <li class="nav-item"><%= image_tag 'visa.svg', alt: 'Logo Visa', class:"nav-link px-2 text-body-secondary" %></li>
     </ul>
 
-    <p class="text-center text-body-secondary">&copy; 2024 LES M'ONDES DE MISS CRAMEÉ</p>
+    <p class="text-center text-body-secondary">&copy; 2024 LES MONDES DE MISS CRAMEÉ</p>
     <p class="text-center text-body-secondary mention-link">MENTIONS LÉGALES</p>
-</div>
-
-<div class="b-example-divider"></div>
+  </div>
+</footer>

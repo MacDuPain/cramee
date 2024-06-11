@@ -1,16 +1,31 @@
-<h1>Ajouter un Topic</h1>
-<%= form_for @topic do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+<h1 class="custom-h2">Ajouter un Topic</h1>
+
+<%= form_with(model: @topic, local: true, class: 'custom-form') do |form| %>
+  <div class="field">
+    <%= form.label :title, class: 'custom-label' %>
+    <%= form.text_field :title, class: 'custom-input' %>
   </div>
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control" %>
+
+  <div class="field">
+    <%= form.label :content, class: 'custom-label' %>
+    <%= form.text_area :content, class: 'custom-textarea' %>
   </div>
-  <div class="form-group">
-    <%= f.label :tags, "Sélectionnez les tags" %>
-    <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, class: "form-control" } %>
+
+  <div class="field">
+    <%= form.label :topic_tag_ids, 'Tags', class: 'custom-label' %><br>
+    <div class="custom-checkbox-group">
+      <% TopicTag.all.each do |tag| %>
+        <div class="custom-checkbox">
+          <%= check_box_tag 'topic[topic_tag_ids][]', tag.id, @topic.topic_tags.include?(tag), class: 'custom-checkbox-input' %>
+          <%= tag.name %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <%= f.submit "Créer", class: "btn btn-primary" %>
+
+  <div class="actions">
+    <%= form.submit 'Enregistrer', class: 'custom-submit-button' %>
+  </div>
+  <%= link_to 'Revenir en arrière', 'javascript:history.back()', class: "btn btn-secondary back-button" %>
+
 <% end %>
