@@ -57,4 +57,8 @@ Rails.application.routes.draw do
 
   # Profile route
   resource :profile, only: [:show, :edit, :update]
+
+  #Routes livre d'or
+  resources :reviews, only: [:new, :create, :index]
+
 end
