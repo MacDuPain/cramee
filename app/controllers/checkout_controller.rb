@@ -2,7 +2,7 @@ class CheckoutController < ApplicationController
   def create
     @order_id = params[:order_id]
     @order = Order.find(@order_id)
-    @total = @order.items.sum(:price) + calculate_delivery_fee(@order.items.sum(:price))
+    @total = @order.order_items.sum('price * quantity') + calculate_delivery_fee(@order.order_items.sum('price * quantity'))
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [

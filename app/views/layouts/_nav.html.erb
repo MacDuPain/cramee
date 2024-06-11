@@ -59,6 +59,7 @@
               Mon compte
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarAccountDropdown">
+              <%= link_to 'Profil', profile_path, class: 'dropdown-item' %>
               <%= form_tag(destroy_user_session_path, method: :delete) do %>
                 <%= button_tag(type: 'submit', class: 'dropdown-item color-primary') do %>
                   Se déconnecter

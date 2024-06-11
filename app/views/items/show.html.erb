@@ -6,7 +6,7 @@
           <div class="flex-shrink-0 me-5">
             <!-- Affichage de l'image -->
             <% if @item.image.attached? %>
-              <%= image_tag url_for(@item.image), class: 'item-image', alt: @item.name %>
+              <%= image_tag url_for(@item.image.variant(resize: "500x500")), class: 'item-image', alt: @item.name %>
             <% end %>
           </div>
           <div class="flex-fill">
@@ -27,9 +27,12 @@
 
             <!-- Bouton "Ajouter au panier" conditionnel -->
             <% if user_signed_in? %>
-              <%= form_with url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true do %>
-                <%= submit_tag 'Ajouter au panier', class: 'btn btn-dark btn-lg' %>
-              <% end %>
+              <%= form_with(url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true) do |form| %>
+              <%= form.hidden_field :item_id, value: @item.id %>
+              <%= form.label :quantity, "Quantité" %>
+              <%= form.number_field :quantity, value: 1, min: 1 %>
+              <%= form.submit "Ajouter au panier", class: "btn btn-dark btn-lg" %>
+            <% end %>
             <% else %>
               <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'btn btn-outline-dark' %>
             <% end %>

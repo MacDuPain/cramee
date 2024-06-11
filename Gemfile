@@ -15,6 +15,8 @@ gem 'stripe'
 gem 'dotenv-rails'
 
 gem 'mini_magick'
+
+gem 'image_processing', '~> 1.2'
 gem 'sendgrid-ruby'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

@@ -1,0 +1,71 @@
+.profile-container {
+  background-color: #FCF7EE; /* Same as navbar background color */
+  padding: 20px;
+  min-height: 100vh; /* Ensure the container covers the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  color: #161412;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-content {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  margin-top: 20px; /* Add some top margin to space out from the title */
+  margin-left: 20px; /* Adjust the margin to push content to the left */
+  align-self: flex-start; /* Align content to the start of the flex container */
+}
+
+.profile-subtitle {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  color: #161412;
+  margin-top: 30px; /* Increase the margin-top to add more spacing */
+  margin-bottom: 20px; /* Add margin-bottom to separate it from the content */
+}
+
+
+.profile-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  color: #161412;
+  margin-top: 20px; /* Decrease the margin-top to reduce spacing */
+}
+
+.profile-email {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  color: #65635F;
+  margin-top: 5px; /* Decrease the margin-top to reduce spacing */
+}
+
+.profile-content .order {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.profile-content .order-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-content .order-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.profile-content .item-thumbnail {
+  display: block;
+  margin: 0 auto 5px;
+}

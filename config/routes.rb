@@ -47,10 +47,14 @@ Rails.application.routes.draw do
   # Routes pour les tags et catégories
   resources :tags, only: [:show]
 
+  # Custom item categories routes
   get 'boucles_oreilles', to: 'items#boucles_oreilles'
   get 'bracelets', to: 'items#bracelets'
   get 'colliers', to: 'items#colliers'
   get 'piece_unique', to: 'items#piece_unique'
   get 'marque_page', to: 'items#marque_page'
   get 'porte_cles', to: 'items#porte_cles'
+
+  # Profile route
+  resource :profile, only: [:show, :edit, :update]
 end

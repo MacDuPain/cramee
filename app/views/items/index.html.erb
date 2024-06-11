@@ -7,7 +7,7 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <% if item.image.attached? %>
-                                <%= image_tag url_for(item.image), class: 'item-image', alt: item.name %>
+                                <%= image_tag url_for(item.image.variant(resize: "300x300")), class: 'item-image', alt: item.name %>
                             <% end %>
                             <div class="text-center">
                                 

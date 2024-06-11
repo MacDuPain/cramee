@@ -5,22 +5,31 @@ class Order < ApplicationRecord
   has_one :delivery_info
 
   def subtotal
-    items.sum(:price)
-  end
-
-  def total_price
-    subtotal + delivery_fee
+    subtotal_amount = order_items.sum { |order_item| order_item.item.price * order_item.quantity }
+    puts "Subtotal: #{subtotal_amount}" # Ajoutez ce journal de débogage
+    subtotal_amount
   end
 
   def delivery_fee
-    case subtotal
+    subtotal_amount = subtotal
+    case subtotal_amount
     when 0..20
-      4
+      fee = 4
     when 20..49
-      6
+      fee = 6
     else
-      0
+      fee = 0
     end
+    puts "Delivery Fee: #{fee}" # Ajoutez ce journal de débogage
+    fee
+  end
+
+  def total_price
+    subtotal_amount = subtotal
+    delivery_fee_amount = delivery_fee
+    total = subtotal_amount + delivery_fee_amount
+    puts "Total Price: #{total}" # Ajoutez ce journal de débogage
+    total
   end
 
   def mark_as_paid

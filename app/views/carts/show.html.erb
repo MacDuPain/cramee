@@ -1,40 +1,36 @@
 <h1 class="fw-bold delivery-info-title">PANIER</h1>
 
-<!-- Articles dans le panier -->
-<% if @cart.items.any? %>
-  <% @cart.items.each do |item| %>
-    <div class="row align-items-center mb-4 cart-item">
-      <!-- Image de l'article -->
-      <div class="col-md-2 text-center">
-        <img src="https://via.placeholder.com/100" alt="<%= item.name %>" class="img-fluid">
-      </div>
-      <!-- Titre et description de l'article -->
-      <div class="col-md-3">
-        <h5 class="mb-1"><%= item.name %></h5>
-        <p style="color: #65635F;"><%= item.description %></p>
-      </div>
-      <!-- Prix de l'article -->
-      <div class="col-md-2 text-center">
-        <span class="price"><%= number_to_currency(item.price) %></span>
-      </div>
-      <!-- Bouton de mise à jour de la quantité -->
-      <div class="col-md-2 text-center">
-        <div class="quantity-box" data-item-id="<%= item.id %>" data-price="<%= item.price %>">
-          <button type="button" class="btn btn-sm btn-secondary decrease-quantity" disabled>-</button>
-          <span class="quantity">1</span>
-          <button type="button" class="btn btn-sm btn-secondary increase-quantity">+</button>
-        </div>
-      </div>
-      <!-- Bouton de suppression de l'article -->
-      <div class="col-md-2 text-center">
-        <%= form_tag cart_remove_item_path(@cart, item), method: :delete do %>
-          <%= button_tag(type: 'submit', style: 'background: none; border: none; cursor: pointer') do %>
-            <%= image_tag 'bin.png', alt: 'Poubelle', width: 20, height: 20 %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+<% if @cart.cart_items.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Quantité</th>
+        <th>Prix Unité</th> <!-- Ajout d'une colonne de prix unitaire -->
+        <th>Total</th> <!-- Renommage de la colonne Prix en Total -->
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td><%= image_tag cart_item.item.image.variant(resize_to_limit: [100, 100]), alt: cart_item.item.name, class: 'item-image' %></td>
+          <td><%= cart_item.item.name %></td>
+          <td><%= cart_item.quantity %></td>
+          <td><%= number_to_currency(cart_item.item.price) %></td> <!-- Affichage du prix unitaire pour chaque article -->
+          <td><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></td> <!-- Mise à jour du total pour refléter la quantité -->
+          <td>
+            <%= button_to 'Retirer', cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+      <tr>
+        <td colspan="3"><strong>Total</strong></td>
+        <td colspan="3"><%= number_to_currency(@total_price) %></td>
+      </tr>
+    </tbody>
+  </table>
 
   <!-- Bouton pour passer la commande -->
   <div class="row justify-content-center mb-4">

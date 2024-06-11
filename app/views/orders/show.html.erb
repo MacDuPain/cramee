@@ -5,23 +5,30 @@
     Détails de la commande
   </div>
   <ul class="list-group list-group-flush">
-    <% @order.items.each do |item| %>
+    <% @order.order_items.each do |order_item| %>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <%= item.name %>
-        <span><%= number_to_currency(item.price) %></span>
+        <%= "#{order_item.item.name} x#{order_item.quantity}" %>
+        <span><%= number_to_currency(order_item.item.price * order_item.quantity) %></span>
       </li>
+      <% puts "Order Item: #{order_item.inspect}" %> <!-- Ajoutez cette ligne pour déboguer -->
     <% end %>
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <strong>Sous-total</strong>
-      <span><%= number_to_currency(@order.subtotal) %></span>
+      <% subtotal = @order.subtotal %>
+      <% puts "Subtotal: #{subtotal}" %> <!-- Ajoutez cette ligne pour déboguer -->
+      <span><%= number_to_currency(subtotal) %></span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <strong>Frais de livraison</strong>
-      <span><%= number_to_currency(@order.delivery_fee) %></span>
+      <% delivery_fee = @order.delivery_fee %>
+      <% puts "Delivery Fee: #{delivery_fee}" %> <!-- Ajoutez cette ligne pour déboguer -->
+      <span><%= number_to_currency(delivery_fee) %></span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <strong>Total</strong>
-      <strong><%= number_to_currency(@order.total_price) %></strong>
+      <% total_price = @order.total_price %>
+      <% puts "Total Price: #{total_price}" %> <!-- Ajoutez cette ligne pour déboguer -->
+      <strong><%= number_to_currency(total_price) %></strong>
     </li>
   </ul>
 </div>
