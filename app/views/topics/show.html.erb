@@ -1,19 +1,26 @@
-<h1><%= @topic.title %></h1>
-<p><%= @topic.content %></p>
-<p>Auteur: <%= @topic.user.email %></p>
-<p>Date de création: <%= @topic.created_at.strftime("%d/%m/%Y") %></p>
+<div class="topic-container">
+  <h1><%= @topic.title %></h1>
+  <p class="topic-content"><%= @topic.content %></p>
+  <p class="topic-meta">Auteur: <%= @topic.user.email %></p>
+  <p class="topic-meta">Date de création: <%= @topic.created_at.strftime("%d/%m/%Y") %></p>
+</div>
+
+<%= link_to 'Revenir en arrière', 'javascript:history.back()', class: "btn btn-secondary back-button" %>
+
+
 <h3>Commentaires</h3>
-<div>
+<div class="comments-container">
   <% @topic.comments.each do |comment| %>
-    <div>
-      <p><%= comment.user.email %></p>
-      <p><%= comment.content %></p>
-      <p>Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
+    <div class="comment-box">
+      <p class="comment-author"><%= comment.user.email %></p>
+      <p class="comment-content"><%= comment.content %></p>
+      <p class="comment-date">Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
     </div>
   <% end %>
 </div>
+
 <% if user_signed_in? %>
-  <%= form_with(model: @new_comment, url: topic_comments_path(@topic)) do |f| %>
+  <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true) do |f| %>
     <div class="form-group">
       <%= f.label :content, "Ajouter un commentaire" %>
       <%= f.text_area :content, class: "form-control" %>
@@ -23,4 +30,3 @@
 <% else %>
   <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "btn btn-primary" %>
 <% end %>
-
