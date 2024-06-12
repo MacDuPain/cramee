@@ -1,16 +1,17 @@
-<!-- edit.html.erb -->
-<div class="profile-container">
-  <h1 class="profile-title">MODIFIER LE PROFIL</h1>
-  <div class="profile-content">
-    <%= form_with(model: current_user, url: profile_path, method: :patch) do |form| %>
-      <div class="form-group">
-        <%= form.label :email, "Nouvelle adresse e-mail" %>
-        <%= form.email_field :email, class: "form-control" %>
+<h3 class="custom-h3">Modifier le profil</h3>
+    <%= form_with(model: current_user, url: profile_path, method: :patch, class: 'custom-form') do |form| %>
+      <div class="field">
+    <p>Nouvelle adresse email :</p>
+        <%= form.email_field :email %>
       </div>
-      <!-- Add fields for other attributes as needed -->
+
       <div class="actions">
-        <%= form.submit "Enregistrer", class: "btn btn-primary" %>
+        <%= form.submit "Enregistrer", class:"custom-submit-button mb-4" %>
       </div>
     <% end %>
+    <div class="custom-line mb-4"></div>
+<%= link_to 'Revenir à mon profil', profile_path, class: "custom-link" %>
   </div>
-</div>
+
+
+
