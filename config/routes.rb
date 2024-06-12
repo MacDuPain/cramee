@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   end
 
   resources :orders do
+    member do
+      put :mark_as_processed
+    end
     resources :delivery_infos, only: [:new, :create]
   end
 
