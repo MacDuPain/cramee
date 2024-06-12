@@ -1,53 +1,56 @@
-<div class="container bg-transparent">
-  <h1 class="fw-bold delivery-info-title bg-transparent">PANIER</h1>
+<h1 class="text-center my-4">Votre panier</h1>
 
-  <% if @cart.cart_items.any? %>
-    <table class="table table-hover table-transparent">
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Nom</th>
-          <th>Quantité</th>
-          <th>Prix Unité</th>
-          <th>Total</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @cart.cart_items.each do |cart_item| %>
-          <tr>
-            <td><%= image_tag cart_item.item.image.variant(resize_to_limit: [100, 100]), alt: cart_item.item.name, class: 'item-image' %></td>
-            <td><%= cart_item.item.name %></td>
-            <td><%= cart_item.quantity %></td>
-            <td><%= number_to_currency(cart_item.item.price) %></td>
-            <td><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></td>
-            <td>
+<% if @cart.cart_items.any? %>
+  <div class="topics-container">
+    <% @cart.cart_items.each do |cart_item| %>
+      <div class="card topic-card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-2">
+              <%= image_tag cart_item.item.image.variant(resize_to_limit: [100, 100]), alt: cart_item.item.name, class: 'item-image' %>
+            </div>
+            <div class="col-md-5">
+              <h2 class="card-title"><%= cart_item.item.name %></h2>
+            </div>
+            <div class="col-md-2">
+              <p class="card-text"><%= cart_item.quantity %></p>
+            </div>
+            <div class="col-md-2">
+              <p class="card-text"><%= number_to_currency(cart_item.item.price) %></p>
+            </div>
+            <div class="col-md-1">
+              <p class="card-text"><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></p>
+            </div>
+            <div class="col-md-2">
               <%= button_to cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-link' do %>
                 <%= image_tag 'bin.png', alt: 'Poubelle', width: 20, height: 20 %>
               <% end %>
-            </td>
-          </tr>
-        <% end %>
-        <tr>
-          <td colspan="3"><strong>Total</strong></td>
-          <td colspan="3"><%= number_to_currency(@total_price) %></td>
-        </tr>
-      </tbody>
-    </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="card topic-card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">TOTAL</h2>
+        <p class="card-text text-right text-black"><%= number_to_currency(@total_price) %></p>
+      </div>
+    </div>
 
     <div class="row justify-content-center mb-4">
       <div class="col-md-6 text-center">
         <%= button_to 'PASSER COMMANDE', cart_confirm_order_path(@cart), method: :post, class: 'btn custom-submit-button w-100' %>
       </div>
     </div>
-
-  <% else %>
-    <p class="text-center">Votre panier est vide.</p>
-  <% end %>
-
-  <div class="row justify-content-center">
-    <div class="col-md-6 text-center">
-      <%= link_to "Continuer vos achats", items_path, class: 'custom-link' %>
-    </div>
   </div>
+<% else %>
+  <p class="text-center">Votre panier est vide.</p>
+<% end %>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center">
+    <%= link_to "Continuer vos achats", items_path, class: 'custom-link' %>
+  </div>
+</div>
 </div>

@@ -1,40 +1,40 @@
-<div class="custom-container mt-3 mb-3">
-  <h1>Commande #<%= @order.id %></h1>
+<h1 class="text-center my-4">Résumé de votre commande</h1>
 
-  <div class="card mt-3">
-    <table class="table table-transparent">
-      <tbody>
-        <% @order.order_items.each do |order_item| %>
-          <tr>
-            <td>
-              <img src="<%= order_item.item.image_url %>" alt="<%= order_item.item.name %>" class="item-image" width="50" height="50">
-              <%= "#{order_item.item.name} x#{order_item.quantity}" %>
-            </td>
-            <td class="text-end"><%= number_to_currency(order_item.item.price * order_item.quantity) %></td>
-          </tr>
-          <% puts "Order Item: #{order_item.inspect}" %> <!-- Debugging line -->
-        <% end %>
-        <tr>
-          <td><strong>Sous-total</strong></td>
-          <% subtotal = @order.subtotal %>
-          <% puts "Subtotal: #{subtotal}" %> <!-- Debugging line -->
-          <td class="text-end"><%= number_to_currency(subtotal) %></td>
-        </tr>
-        <tr>
-          <td><strong>Frais de livraison</strong></td>
-          <% delivery_fee = @order.delivery_fee %>
-          <% puts "Delivery Fee: #{delivery_fee}" %> <!-- Debugging line -->
-          <td class="text-end"><%= number_to_currency(delivery_fee) %></td>
-        </tr>
-        <tr>
-          <td><strong>Total</strong></td>
-          <% total_price = @order.total_price %>
-          <% puts "Total Price: #{total_price}" %> <!-- Debugging line -->
-          <td class="text-end"><strong><%= number_to_currency(total_price) %></strong></td>
-        </tr>
-      </tbody>
-    </table>
+<div class="topics-container">
+  <% @order.order_items.each_with_index do |order_item, index| %>
+    <div class="card topic-card mb-4">
+      <div class="card-body">
+        <h2 class="card-title"><%= "#{order_item.item.name} / #{number_to_currency(order_item.item.price)} x#{order_item.quantity}" %></h2>
+        <p class="card-text text-right"><%= number_to_currency(order_item.item.price * order_item.quantity) %></p>
+      </div>
+    </div>
+    <% if index < @order.order_items.length - 1 %>
+      <div class="custom-line mb-4"></div>
+    <% end %>
+  <% end %>
+
+  <div class="card topic-card mb-4">
+    <div class="card-body">
+      <h2 class="card-title">Sous-total</h2>
+      <p class="card-text text-right"><%= number_to_currency(@order.subtotal) %></p>
+    </div>
   </div>
 
-  <%= link_to "Continuer la commande", new_order_delivery_info_path(@order), class: 'btn custom-submit-button' %>
+  <div class="card topic-card mb-4">
+    <div class="card-body">
+      <h2 class="card-title">Frais de livraison</h2>
+      <p class="card-text text-right"><%= number_to_currency(@order.delivery_fee) %></p>
+    </div>
+  </div>
+
+  <div class="custom-line"></div>
+
+  <div class="card topic-card mb-4">
+    <div class="card-body">
+      <h2 class="card-title">TOTAL</h2>
+      <p class="card-text text-right text-black"><strong><%= number_to_currency(@order.total_price) %></strong></p>
+    </div>
+  </div>
+
+  <%= link_to 'Poursuivre la commande', new_order_delivery_info_path(@order), class: "custom-submit-button mb-4" %>
 </div>
