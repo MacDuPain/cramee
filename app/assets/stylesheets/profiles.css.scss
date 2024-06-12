@@ -69,3 +69,12 @@
   display: block;
   margin: 0 auto 5px;
 }
+
+
+.accordion .accordion-item {
+  width: 100% !important;
+}
+
+.accordion .accordion-body {
+  background-color: transparent !important;
+}
