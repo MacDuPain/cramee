@@ -8,13 +8,15 @@
 <% if user_signed_in? %>
   <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, html: { class: "custom-form" }) do |f| %>
     <div class="field">
-      <%= f.text_field :content, placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "Ajouter un commentaire" %>
+      <%= f.text_field :content, placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "Ajouter un commentaire", class: "form-control" %>
     </div>
     <%= f.submit "Ajouter", class: "custom-submit-button mb-4" %>
   <% end %>
 <% else %>
   <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "custom-link" %>
 <% end %>
+
+<%= javascript_include_tag "comment_form_validation" %>
 
 
 <%= link_to 'Revenir au forum', topics_path, class: "custom-link" %>
@@ -34,17 +36,3 @@
   <% end %>
 </div>
 
-<% if user_signed_in? %>
-  <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, id: "comment-form") do |f| %>
-    <div class="form-group">
-      <%= f.label :content, "Ajouter un commentaire" %>
-      <%= f.text_area :content, class: "form-control", id: "comment-content" %>
-    </div>
-    <%= f.submit "Ajouter", class: "btn btn-primary" %>
-  <% end %>
-<% else %>
-  <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "btn btn-primary" %>
-<% end %>
-
-
-<%= javascript_include_tag "comment_form_validation" %>
