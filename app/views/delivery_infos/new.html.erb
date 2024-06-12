@@ -29,7 +29,7 @@
     </div>
 
     <div class="field">
-      <%= f.text_field :code_postal, class: "input", placeholder: "Code postal", required: true %>
+      <%= f.text_field :code_postal, class: "input", placeholder: "Code postal", required: true, pattern: "[0-9]*", title: "Code postal doit contenir uniquement des chiffres" %>
     </div>
     
     <div class="field">
