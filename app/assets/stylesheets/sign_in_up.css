@@ -1,4 +1,5 @@
 .custom-h2 {
+  font-family: "Libre Baskerville", serif;
   font-weight: bold;
   color: #A0B090;
   text-align: center;
@@ -6,6 +7,7 @@
 }
 
 .custom-h3 {
+  font-family: "Libre Baskerville", serif;
   color: #000;
   text-align: center;
   margin-bottom: 50px;
@@ -20,19 +22,61 @@
   color: #555454;
   text-align: center;
   margin-bottom: 50px;
+  font-size: 1em; 
 }
 
 .custom-link {
   color: black;
   text-decoration: underline;
-  margin: 0px;
+  margin: 0;
+  font-size: 1em; 
 }
 
 .custom-text-password {
   color: #555454;
-  text-align: center;
+  text-align: left;
   margin-bottom: 25px;
-  font-size: 12px;
 }
 
 
+.custom-form {
+  width: 300px;
+  max-width: 100%;
+  background-color: transparent; /* Ajout de cette ligne pour rendre le fond transparent */
+}
+
+.custom-form .field {
+  margin-bottom: 10px; /* Réduit l'espace entre les champs */
+}
+
+.custom-form .field input {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #8E8383;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent; /* Ajout de cette ligne pour rendre le fond transparent */
+  font-size: 1em; 
+
+}
+
+.custom-form .field label {
+  display: block; /* Faire en sorte que le label soit un bloc */
+  margin: 5px 0; /* Marge entre le label et l'input */
+}
+
+.custom-error {
+  color: #FF0000; /* Couleur rouge pour les erreurs */
+  font-size: 0.9em; /* Taille de police légèrement plus petite */
+  margin-bottom: 10px; /* Marge inférieure pour espacer les erreurs */
+  text-align: left; /* Aligner le texte à gauche */
+}
+
+
+@media screen and (max-width: 600px) {
+  .custom-form .field input {
+    width: 100%;
+  }
+}

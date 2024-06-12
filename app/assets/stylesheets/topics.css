@@ -1,38 +1,9 @@
-/* Application-wide styles */
-body {
-  font-family: "Josefin Sans", sans-serif;
-  font-style: normal;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
-  --background_color: #F4EAE3;
-  --current_color: #000000; /* Définir une couleur par défaut */
-  color: var(--current_color);
-  height: 100%;
-  width: 100%;
-  background-color: var(--background_color);
-}
-
-h1 {
-  font-family: "Libre Baskerville", serif;
-  font-style: normal;
-}
-
-h2, h3, h4, h5, h6 {
-  font-family: "Josefin Sans", sans-serif;
-  line-height: 2rem;
-}
-
-p {
-  font-family: "Josefin Sans", sans-serif;
-}
-
 .card {
   background: none;
   border: 1px solid #E8E0D3;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 1.5rem;
-  background-color: white; /* Ajouté pour éviter la redondance */
 }
 
 .card-title {
@@ -52,40 +23,9 @@ p {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
-  width: 20%;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  background-color: #A0B090;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-}
 
-.btn-primary:hover {
-  background-color: #8A9A79;
-}
 
-.mb-4 {
-  margin-bottom: 1.5rem !important;
-}
-
-/* Styles spécifiques pour le forum */
-.custom-h2 {
-  font-weight: bold;
-  color: #A0B090;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Correction du sélecteur de classe multiple */
-.btn.btn-primary.mb-4 {
-  background-color: #8A9A79;
-}
