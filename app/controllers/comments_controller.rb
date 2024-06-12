@@ -1,4 +1,3 @@
-# app/controllers/comments_controller.rb
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -24,4 +23,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
+
 end

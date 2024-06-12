@@ -7,8 +7,8 @@
 
 <% if user_signed_in? %>
 <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, html: { class: "custom-form", id: "comment-form" }) do |f| %>
-  <div class="field">
-    <%= f.text_field :comment, id: "comment-content", placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "off" %>
+  <div class='field'>
+    <%= f.text_area :content, id: "comment-content", placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "off", class: "custom-form" %>
   </div>
   <%= f.submit "Ajouter", class: "custom-submit-button mb-4" %>
 <% end %>
