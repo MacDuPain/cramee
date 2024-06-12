@@ -6,45 +6,37 @@
 </div>
 
 <% if user_signed_in? %>
-  <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, html: { class: "custom-form" }) do |f| %>
-    <div class="field">
-      <%= f.text_field :content, placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "Ajouter un commentaire" %>
-    </div>
-    <%= f.submit "Ajouter", class: "custom-submit-button mb-4" %>
-  <% end %>
+<%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, html: { class: "custom-form", id: "comment-form" }) do |f| %>
+  <div class='field'>
+    <%= f.text_area :content, id: "comment-content", placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "off", class: "custom-form" %>
+  </div>
+  <%= f.submit "Ajouter", class: "custom-submit-button mb-4" %>
+<% end %>
+
 <% else %>
   <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "custom-link" %>
 <% end %>
-
 
 <%= link_to 'Revenir au forum', topics_path, class: "custom-link" %>
 
 <h3 class="text-center my-4">Commentaires</h3>
 <div class="comments-container">
+
   <% if @topic.comments.empty? %>
-    <p class="no-comments">Il n'y a pas de commentaires, soit le premier à réagir.</p>
+    <p class="no-comments">Il n'y a pas de commentaires, soyez le premier à réagir.</p>
   <% else %>
     <% @topic.comments.each do |comment| %>
       <div class="comment-box">
         <p class="comment-content"><%= comment.content %></p>
         <p class="comment-author"><%= comment.user.email %></p>
-        <p class="comment-date">Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
+        <% if comment.created_at %>
+          <p class="comment-date">Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
+        <% else %>
+          <p class="comment-date">Date de création inconnue</p>
+        <% end %>
       </div>
     <% end %>
   <% end %>
 </div>
-
-<% if user_signed_in? %>
-  <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, id: "comment-form") do |f| %>
-    <div class="form-group">
-      <%= f.label :content, "Ajouter un commentaire" %>
-      <%= f.text_area :content, class: "form-control", id: "comment-content" %>
-    </div>
-    <%= f.submit "Ajouter", class: "btn btn-primary" %>
-  <% end %>
-<% else %>
-  <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "btn btn-primary" %>
-<% end %>
-
 
 <%= javascript_include_tag "comment_form_validation" %>
