@@ -16,7 +16,7 @@
 
 .topic-content {
   font-family: "Josefin Sans", sans-serif;
-  color: #555454;
+  color: black;
   margin-bottom: 20px;
 }
 
@@ -43,17 +43,23 @@
 }
 
 .comment-author {
-  font-weight: bold;
-  color: #333;
+  color: #555454;
   margin-bottom: 5px;
 }
 
 .comment-content {
-  color: #555454;
   margin-bottom: 10px;
+  color: black;
 }
 
 .comment-date {
-  color: #888;
+  color: #555454;
   font-size: 0.8rem;
+}
+
+.no-comments {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-align: center;
 }
