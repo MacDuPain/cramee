@@ -1,30 +1,34 @@
 <h1 class="text-center my-4">Tous les bijoux (<%= @items.count %>)</h1>
 
 <div class="container">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-        <% @items.each do |item| %>
-            <div class="col mb-5">
-                <div class="card h-100 shadow-sm border-0">
-                    <!-- Product details-->
-                    <div class="card-body p-4 text-center">
-                        <% if item.image.attached? %>
-                            <%= image_tag item.image.variant(resize_to_fill: [300, 300]), class: 'item-image mb-3', alt: item.name %>
-                        <% end %>
-                        <!-- Product name-->
-                        <h5 class="fw-bolder"><%= item.name %></h5>
-                        <!-- Product price-->
-                        <div class="product-price">
-                            <%= number_to_currency(item.price) %>
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <%= link_to "Voir plus", item_path(item), class: "custom-submit-button" %>
-                        </div>
-                    </div>
-                </div>
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <% @items.each do |item| %>
+      <div class="col mb-5">
+        <div class="card h-100 shadow-sm border-0">
+          <!-- Product details-->
+          <div class="card-body p-4 text-center">
+            <% if item.image.attached? %>
+              <%= image_tag item.image.variant(resize_to_fill: [300, 300]), class: 'item-image mb-3', alt: item.name %>
+            <% end %>
+            <!-- Product name-->
+            <h5 class="fw-bolder"><%= item.name %></h5>
+            <!-- Product price-->
+            <div class="product-price">
+              <%= number_to_currency(item.price) %>
             </div>
-        <% end %>
-    </div>
+            <!-- Stock status -->
+            <% if item.in_stock %> <!-- Vérifiez si l'article est en stock -->
+              <div class="badge bg-success">En stock</div>
+            <% end %>
+          </div>
+          <!-- Product actions-->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">
+              <%= link_to "Voir plus", item_path(item), class: "custom-submit-button" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#landing_page'
   get 'static_pages/about', as: 'about'
   get 'tags/show'
+  get '/stocked_items', to: 'items#stocked_items'
 
   devise_for :users
 

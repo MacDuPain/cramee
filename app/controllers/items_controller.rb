@@ -64,6 +64,10 @@ class ItemsController < ApplicationController
     @items = Item.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Porte Clés") })
   end
 
+  def stocked_items
+    @items = Item.where(in_stock: true)
+  end
+
   private
 
   def set_item
@@ -75,7 +79,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image, item_tag_ids: [])
+    params.require(:item).permit(:name, :description, :price, :image, :in_stock, item_tag_ids: [])
   end
 
   def load_items_by_tag

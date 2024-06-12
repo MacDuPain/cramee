@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_12_090229) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_12_093436) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
@@ -104,6 +104,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_090229) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
+    t.boolean "in_stock"
   end
 
   create_table "items_tags", id: false, force: :cascade do |t|
