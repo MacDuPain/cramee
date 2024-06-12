@@ -7,9 +7,6 @@
             <!-- Affichage de l'image -->
             <% if @item.image.attached? %>
               <%= image_tag url_for(@item.image.variant(resize: "500x500")), class: 'item-image', alt: @item.name %>
-              <% if @item.in_stock %> <!-- Vérifiez si l'article est en stock -->
-                <span class="stock-label">En stock</span> <!-- Ajoutez une étiquette "En stock" sur l'image -->
-              <% end %>
             <% end %>
           </div>
           <div class="flex-fill">

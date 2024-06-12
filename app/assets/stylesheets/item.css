@@ -20,13 +20,3 @@
     height: auto;
     object-fit: cover;
   }
-
-  .stock-label {
-    position: absolute;
-    top: 10px; /* Ajustez ces valeurs selon votre mise en page */
-    right: 10px; /* Ajustez ces valeurs selon votre mise en page */
-    background-color: green; /* Couleur de l'étiquette */
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-  }

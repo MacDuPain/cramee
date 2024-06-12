@@ -30,11 +30,16 @@
     <% end %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= form.label :in_stock, class: "checkbox" do %>
       <%= form.check_box :in_stock %>
       En stock
     <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visible_on_site %>
+    <%= form.check_box :visible_on_site %>
   </div>
 
 
