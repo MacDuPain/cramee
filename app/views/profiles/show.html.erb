@@ -25,29 +25,29 @@
   <div class="order-history-section">
     <h3 class="text-center my-4">HISTORIQUE DE VOS COMMANDES</h3>
     <h4 class="text-center my-4">Retrouvez ici toutes vos commandes passées</h4>
-  
+
     <div class="section-body">
       <% @orders.each do |order| %>
         <div class="card order mb-4">
           <div class="card-body">
-            <p>Date: <%= order.created_at.strftime("%d/%m/%Y") %></p>
-            <p>Total Price: <%= number_to_currency(order.total_price) %></p>
             <div class="order-items">
               <% order.order_items.each do |order_item| %>
-                <div class="order-item d-flex mb-2">
-                  <% item = order_item.item %>
-                  <% if item.image.attached? %>
-                    <%= image_tag item.image.variant(resize_to_limit: [100, 100]), alt: item.name, class: 'item-thumbnail mr-2' %>
-                  <% end %>
-                  <div>
-                    <p><%= item.name %>, <%= number_to_currency(item.price) %> x<%= order_item.quantity %> </p>
-                  </div>
+                <% item = order_item.item %>
+                <div>
+                  <h5><strong>Date de la commande :</strong> <%= order.created_at.strftime("%d/%m/%Y") %></h5>
+                  <h5><strong>Prix total :</strong> <%= number_to_currency(order.total_price) %></h5>
+                  
+                  <%= image_tag item.image.variant(resize_to_limit: [100, 100]), alt: item.name, class: 'item-thumbnail mr-2' %>
+                  
+                  <p><strong>Nom :</strong> <%= item.name %></p>
+                  <p><strong>Prix :</strong> <%= number_to_currency(item.price) %></p>
+                  <p><strong>Quantité :</strong> <%= order_item.quantity %></p>
                 </div>
               <% end %>
             </div>
           </div>
         </div>
-              <div class="custom-line mb-4"></div>
+        <div class="custom-line mb-4"></div>
       <% end %>
     </div>
   </div>
