@@ -1,6 +1,5 @@
-<div class="custom-container">
-  <h2 class="delivery-info-title">INFORMATIONS DE LIVRAISON</h2>
-
+ <h2 class="custom-h2">Vous y êtes presque !</h2>
+<h3 class="custom-h3">Informations de livraison</h3>
   <%= form_for [@order, @delivery_info], html: { class: 'custom-form' } do |f| %>
     <% if @delivery_info.errors.any? %>
       <div id="error_explanation">
@@ -38,4 +37,4 @@
 
     <%= f.submit 'VALIDER', class: 'custom-submit-button' %>
   <% end %> 
-</div>
+
