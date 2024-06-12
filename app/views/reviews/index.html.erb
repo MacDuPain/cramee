@@ -9,9 +9,15 @@
 <div class="topics-container">
   <% @reviews.each_with_index do |review, index| %>
     <div class="card topic-card mb-4">
-      <div class="card-body">
-        <h2 class="card-title text-center my-4">‘‘<%= review.content %>’’</h2>
-        <p class="card-text text-center my-4">Auteur: <%= review.name %></p>
+      <div class="card-body text-center">
+        <div class="d-flex align-items-center">
+              <%= image_tag 'prayer 2.png', class: 'me-2', style: 'margin-bottom: 5px;' %> <!-- Utilisation de l'image -->
+              <p class="m-0">DELAIS DE FABRICATION</p>
+         
+            <p>Tout nos bijoux sont fait mains et nécessitent des délais de fabrication importants (entre 1 et 3 semaines)</p>
+
+        <h2 class="card-title center-text my-4">‘‘<%= review.content %>’’</h2>
+        <p class="card-text my-4 center-text">Auteur: <%= review.name %></p>
         <% if user_signed_in? && current_user.is_admin? %>
           <%= link_to 'Supprimer', reviews_path, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
         <% end %>
