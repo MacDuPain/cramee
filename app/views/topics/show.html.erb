@@ -17,16 +17,20 @@
 <% end %>
 
 
-<%= link_to 'Revenir en arrière', 'javascript:history.back()', class: "custom-link" %>
+<%= link_to 'Revenir au forum', topics_path, class: "custom-link" %>
 
 <h3 class="text-center my-4">Commentaires</h3>
 <div class="comments-container">
-  <% @topic.comments.each do |comment| %>
-    <div class="comment-box">
-      <p class="comment-content"><%= comment.content %></p>
-      <p class="comment-author"><%= comment.user.email %></p>
-      <p class="comment-date">Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
-    </div>
+  <% if @topic.comments.empty? %>
+    <p class="no-comments">Il n'y a pas de commentaires, soit le premier à réagir.</p>
+  <% else %>
+    <% @topic.comments.each do |comment| %>
+      <div class="comment-box">
+        <p class="comment-content"><%= comment.content %></p>
+        <p class="comment-author"><%= comment.user.email %></p>
+        <p class="comment-date">Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

@@ -1,6 +1,7 @@
-<h1>Laisser un avis</h1>
+<h2 class="custom-h2">Laissez un avis</h2>
+<h3 class="custom-h3">Je considère votre avis précieusement.</h3>
 
-<%= form_with(model: @review, local: true) do |form| %>
+<%= form_with(model: @review, local: true, class: 'custom-form') do |form| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "erreur") %> trouvée(s) :</h2>
@@ -13,18 +14,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Votre nom d'utilisateur", autofocus: true, autocomplete: "Votre nom d'utilisateur" %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_field :content, placeholder: "Votre message d'amour", autofocus: true, autocomplete: "Votre message d'amourr" %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Ajouter Avis' %>
+    <%= form.submit 'Ajouter Avis', class: 'custom-submit-button mb-4' %>
   </div>
 <% end %>
 
-<%= link_to 'Retour', reviews_path %>
+<%= link_to 'Retour', reviews_path, class: "custom-link mb-4"  %>
+
+

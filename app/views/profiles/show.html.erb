@@ -1,45 +1,54 @@
 <div class="profile-container">
-  <h1 class="profile-title">MON COMPTE</h1>
-  <div class="profile-content">
-    <h2 class="profile-subtitle">PROFIL</h2>
-    <!-- Button to toggle edit mode -->
-    <%= link_to "MODIFIER", edit_profile_path, class: "btn btn-primary" %>
-    <p class="profile-label">Adresse e-mail</p>
-    <p class="profile-email"><%= @user.email %></p>
-  </div>
+  <h1 class="text-center my-4">Mon compte</h1>
 
-  <!-- Form to edit email address -->
-  <div id="edit-email-form" style="display: none;">
-    <h2 class="profile-subtitle">MODIFIER LE PROFIL</h2>
-    <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
-      <div class="form-group">
-        <%= form.label :email, "Nouvelle adresse e-mail" %>
-        <%= form.email_field :email, class: "form-control" %>
-      </div>
-      <button type="submit" class="btn btn-primary">Enregistrer</button>
-    <% end %>
-  </div>
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="section-body">
+      <p class="profile-email">Vous êtes connecté avec l'adresse mail <%= @user.email %></p>
+      <%= link_to "MODIFIER MON PROFIL", edit_profile_path, class: 'custom-submit-button mb-4' %>
 
-  <!-- Order History Section -->
-<div class="profile-content">
-  <h2 class="profile-subtitle">HISTORIQUE DES COMMANDES</h2>
-  <% @orders.each do |order| %>
-    <div class="order">
-      <p>Date: <%= order.created_at.strftime("%d/%m/%Y") %></p>
-      <p>Total Price: <%= number_to_currency(order.total_price) %></p>
-      <div class="order-items">
-        <% order.order_items.each do |order_item| %>
-          <div class="order-item">
-            <% item = order_item.item %>
-            <% if item.image.attached? %>
-              <%= image_tag item.image.variant(resize_to_limit: [100, 100]), alt: item.name, class: 'item-thumbnail' %>
-            <% end %>
-            <p><%= item.name %> x<%= order_item.quantity %></p>
-            <p>Prix: <%= number_to_currency(item.price) %></p>
+      <!-- Form to edit email address -->
+      <div id="edit-email-form" style="display: none;">
+        <h2 class="profile-subtitle">MODIFIER LE PROFIL</h2>
+        <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
+          <div class="form-group">
+            <%= form.label :email, "Nouvelle adresse e-mail" %>
+            <%= form.email_field :email, class: "form-control" %>
           </div>
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
         <% end %>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
 
+  <!-- Order History Section -->
+  <div class="order-history-section">
+    <h3 class="text-center my-4">HISTORIQUE DE VOS COMMANDES</h3>
+    <h4 class="text-center my-4">Retrouvez ici toutes vos commandes passées</h4>
+  
+    <div class="section-body">
+      <% @orders.each do |order| %>
+        <div class="card order mb-4">
+          <div class="card-body">
+            <p>Date: <%= order.created_at.strftime("%d/%m/%Y") %></p>
+            <p>Total Price: <%= number_to_currency(order.total_price) %></p>
+            <div class="order-items">
+              <% order.order_items.each do |order_item| %>
+                <div class="order-item d-flex mb-2">
+                  <% item = order_item.item %>
+                  <% if item.image.attached? %>
+                    <%= image_tag item.image.variant(resize_to_limit: [100, 100]), alt: item.name, class: 'item-thumbnail mr-2' %>
+                  <% end %>
+                  <div>
+                    <p><%= item.name %>, <%= number_to_currency(item.price) %> x<%= order_item.quantity %> </p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+              <div class="custom-line mb-4"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
