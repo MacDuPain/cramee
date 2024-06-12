@@ -4,11 +4,8 @@
     </h6>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li style="color: red;"><%= message %></li>
+        <li ><%= message %></li>
       <% end %>
-      <li style="color: red;"> <% if @minimum_password_length %>
-      <%= @minimum_password_length %> caractères minimum
-      <% end %></li><br/>
     </ul>
   </div>
 <% end %>

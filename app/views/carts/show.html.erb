@@ -21,11 +21,11 @@
             <td><%= cart_item.quantity %></td>
             <td><%= number_to_currency(cart_item.item.price) %></td>
             <td><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></td>
-<td>
-  <%= button_to cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-link' do %>
-    <%= image_tag 'bin.png', alt: 'Poubelle', width: 20, height: 20 %>
-  <% end %>
-</td>
+            <td>
+              <%= button_to cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-link' do %>
+                <%= image_tag 'bin.png', alt: 'Poubelle', width: 20, height: 20 %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
         <tr>
@@ -47,7 +47,7 @@
 
   <div class="row justify-content-center">
     <div class="col-md-6 text-center">
-      <%= link_to "CONTINUER VOS ACHATS", items_path, class: 'btn custom-submit-button w-100' %>
+      <%= link_to "CONTINUER VOS ACHATS", items_path, class: 'custom-link' %>
     </div>
   </div>
 </div>

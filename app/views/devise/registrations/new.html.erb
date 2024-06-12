@@ -2,19 +2,27 @@
 <h3 class="custom-h3">Heureux de vous compter parmi nous !</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "custom-form" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.email_field :email, placeholder: "Email", autocomplete: "email" %>
+    <% if resource.errors[:email].any? %>
+      <p class="custom-error"><%= resource.errors.full_messages_for(:email).join("") %></p>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "new-password" %>
+    <% if resource.errors[:password].any? %>
+      <p class="custom-error"><%= resource.errors.full_messages_for(:password).first %></p>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.password_field :password_confirmation, placeholder: "Confirmer le mot de passe", autocomplete: "new-password" %>
-      <small>Le mot de passe doit contenir au moins 8 caractères, incluant au moins deux des types suivants : majuscules, minuscules, chiffres, caractères spéciaux.</small>
+    <% if resource.errors[:password_confirmation].any? %>
+      <p class="custom-error"><%= resource.errors.full_messages_for(:password_confirmation) %></p>
+    <% end %>
+    <p  class="custom-text-password">Le mot de passe doit contenir au moins 8 caractères, incluant au moins deux des types suivants : majuscules, minuscules, chiffres, caractères spéciaux.</p>
   </div>
 
   <div class="actions">
@@ -22,15 +30,12 @@
   </div>
 <% end %><br>
 
-
 <div class="custom-line"></div>
-
 
 <div class="actions custom-text">
   <p>Déjà un compte ? 
- <%- if controller_name != 'sessions' %>
-  <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link"%>
-<% end %>
-
-</div> 
-
+    <% if controller_name != 'sessions' %>
+      <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link"%>
+    <% end %>
+  </p>
+</div>
