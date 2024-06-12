@@ -3,7 +3,6 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #E8E0D3;
@@ -32,7 +31,6 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -42,7 +40,6 @@
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 15px;
-  background-color: #f9f9f9;
 }
 
 .comment-author {

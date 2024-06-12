@@ -5,28 +5,28 @@
   <p class="topic-meta">Date de création: <%= @topic.created_at.strftime("%d/%m/%Y") %></p>
 </div>
 
-<%= link_to 'Revenir en arrière', 'javascript:history.back()', class: "btn btn-secondary back-button" %>
+<% if user_signed_in? %>
+  <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true, html: { class: "custom-form" }) do |f| %>
+    <div class="field">
+      <%= f.text_field :content, placeholder: "Ajouter un commentaire", autofocus: true, autocomplete: "Ajouter un commentaire" %>
+    </div>
+    <%= f.submit "Ajouter", class: "custom-submit-button mb-4" %>
+  <% end %>
+<% else %>
+  <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "custom-link" %>
+<% end %>
 
 
-<h3>Commentaires</h3>
+<%= link_to 'Revenir en arrière', 'javascript:history.back()', class: "custom-link" %>
+
+<h3 class="text-center my-4">Commentaires</h3>
 <div class="comments-container">
   <% @topic.comments.each do |comment| %>
     <div class="comment-box">
-      <p class="comment-author"><%= comment.user.email %></p>
       <p class="comment-content"><%= comment.content %></p>
+      <p class="comment-author"><%= comment.user.email %></p>
       <p class="comment-date">Date: <%= comment.created_at.strftime("%d/%m/%Y") %></p>
     </div>
   <% end %>
 </div>
 
-<% if user_signed_in? %>
-  <%= form_with(model: @new_comment, url: topic_comments_path(@topic), local: true) do |f| %>
-    <div class="form-group">
-      <%= f.label :content, "Ajouter un commentaire" %>
-      <%= f.text_area :content, class: "form-control" %>
-    </div>
-    <%= f.submit "Ajouter", class: "btn btn-primary" %>
-  <% end %>
-<% else %>
-  <%= link_to 'Connectez-vous pour ajouter un commentaire', new_user_session_path, class: "btn btn-primary" %>
-<% end %>

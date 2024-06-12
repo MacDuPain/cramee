@@ -63,14 +63,9 @@ p {
   font-weight: normal;
 }
 
-
 .card {
   background: none;
   border: none;
-}
-
-.image {
-  margin: 20px; /* Ajustez cette valeur selon vos besoins */
 }
 
 .custom-line {
