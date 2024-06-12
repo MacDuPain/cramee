@@ -70,3 +70,25 @@
   color: #555454;
   text-align: center;
 }
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-right {
+  margin-left: auto;
+}
+
+.text-black {
+  color: black;
+}
+
+.order-details p, .order-item p {
+  margin: 0;
+}
+
+.order-item div {
+  flex-grow: 1;
+}
