@@ -6,4 +6,5 @@ class DeliveryInfo < ApplicationRecord
   validates :adresse, presence: true
   validates :code_postal, presence: true
   validates :ville, presence: true
+
 end

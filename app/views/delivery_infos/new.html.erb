@@ -2,6 +2,18 @@
   <h2 class="delivery-info-title">INFORMATIONS DE LIVRAISON</h2>
 
   <%= form_for [@order, @delivery_info], html: { class: 'custom-form' } do |f| %>
+    <% if @delivery_info.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@delivery_info.errors.count, "erreur") %> ont empêché l'enregistrement :</h2>
+
+        <ul>
+          <% @delivery_info.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <div class="field">
@@ -24,6 +36,6 @@
       <%= f.text_field :ville, class: "input", placeholder: "Ville", required: true %>
     </div>
 
-    <%= link_to 'VALIDER', checkout_create_path(order_id: @order.id, total: @order.items.sum(:price)), method: :get, class: "custom-submit-button" %>
+    <%= f.submit 'VALIDER', class: 'custom-submit-button' %>
   <% end %> 
 </div>
