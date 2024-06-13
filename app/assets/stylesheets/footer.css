@@ -30,7 +30,7 @@
 
 .nav-item {
   list-style: none; /* Enlever les puces de la liste */
-  margin: 0 5px; /* Marge entre les éléments de la liste */
+  margin: 0 10px; /* Marge entre les éléments de la liste */
 }
 
 .nav-item img {
@@ -49,27 +49,3 @@
 .text-body-secondary {
   color: #6c757d; /* Couleur de texte secondaire */
 }
-
-.compact-footer .py-2 {
-  padding-top: 1rem !important;
-  padding-bottom: 0.5rem !important;
-}
-
-.compact-footer .my-2 {
-  margin-top: 1rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.compact-footer .mt-2 {
-  margin-top: 1rem !important;
-}
-
-.compact-footer .mb-2 {
-  margin-bottom: 0.5rem !important;
-}
-
-.compact-footer .ml-2 {
-  margin-left: 0.5rem !important;
-}
-
-
