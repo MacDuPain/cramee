@@ -21,6 +21,20 @@
               <p class="custom-padding-sides text-muted">Taille unique : noeuds ajustables</p>
             </div>
 
+            <!-- Affichage de l'état du stock -->
+            <% if @item.in_stock %>
+              <div class="badge bg-success">En stock</div>
+            <% end %>
+
+            <!-- Affichage du contenu en fonction de l'état de stock -->
+            <div class="mt-3">
+              <% if @item.in_stock %>
+                <p>Nos produits en stock sont généralement livrés sous 3 à 7 jours</p>
+              <% else %>
+                <p>Tout nos bijoux sont faits mains et nécessitent des délais de fabrication importants (entre 1 et 3 semaines)</p>
+              <% end %>
+            </div>
+
             <!-- Bouton "Ajouter au panier" conditionnel -->
             <div class="d-flex align-items-center mt-3">
               <% if user_signed_in? %>
@@ -34,12 +48,7 @@
                 <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'custom-link', style: 'margin-top: 25px;' %>
               <% end %>
             </div>
-            <br>
-            <div class="d-flex align-items-center">
-              <%= image_tag 'prayer 2.png', class: 'me-2', style: 'margin-bottom: 5px;' %> <!-- Utilisation de l'image -->
-              <p class="m-0">DELAIS DE FABRICATION</p>
-            </div>
-            <p>Tout nos bijoux sont fait mains et nécessitent des délais de fabrication importants (entre 1 et 3 semaines)</p>
+
             <!-- Bouton Edit -->
             <% if current_user&.is_admin? %>
               <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
