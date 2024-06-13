@@ -1,8 +1,8 @@
-<footer>
-  <div style="background-color: #E8E0D3; padding: 0; margin: 0;">
+<footer class="small-font compact-footer">
+  <div style="background-color: #E8E0D3; padding: 0; margin: 0; margin-top: 20px">
     <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 justify-content-center">
-      <div class="col mb-3" style="margin-bottom: 10px;">  
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-2 my-2 justify-content-center">
+        <div class="col mb-3">
           <h5>COLLECTIONS</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><%= link_to 'Sorties de l\'atelier', bracelets_path, class:"nav-link p-0 text-body-secondary" %></li>
@@ -19,7 +19,6 @@
             <li class="nav-item mb-2"><%= link_to 'Boucles d\'Oreille', boucles_oreilles_path, class:"nav-link p-0 text-body-secondary" %></li>
             <li class="nav-item mb-2"><%= link_to 'Porte Clés', porte_cles_path, class:"nav-link p-0 text-body-secondary" %></li>
             <li class="nav-item mb-2"><%= link_to 'Marque Pages', marque_page_path, class:"nav-link p-0 text-body-secondary" %></li>
-            <li class="nav-item mb-2"><%= link_to 'Pièces Uniques', piece_unique_path, class:"nav-link p-0 text-body-secondary" %></li>
           </ul>
         </div>
 
@@ -30,28 +29,28 @@
         </div>
       </footer>
       
-      <p class="text-center text-body-secondary" style="margin-bottom: 20px;">CONTACT: MISS.CRAMEE@EMAIL.COM</p>
-
-      <div class="d-flex justify-content-center mb-3">
-        <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class:"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" do %>
-          <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %> 
+      <p class="text-center text-body-secondary mt-2" style="font-size: 0.75rem;">
+      <%= link_to "CONTACT: CHRISTELLEBOBICHON@ORANGE.FR", "mailto:christellebobichon@orange.fr", class: "mention-link" %>
+    </p>
+      <div class="d-flex justify-content-center mb-2">
+        <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class:"d-flex align-items-center mb-2 link-body-emphasis text-decoration-none" do %>
+          <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %>
         <% end %>
-        <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class:"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none ml-3" do %>
+        <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class:"d-flex align-items-center mb-2 link-body-emphasis text-decoration-none ml-2" do %>
           <%= image_tag 'instagram.svg', alt: 'Logo Instagram' %>
-        <% end %>  
+        <% end %>
       </div>
     </div>
   </div>
 
   <div class="container">
     <ul class="nav justify-content-center">
-      <li class="nav-item"><%= image_tag 'stripe.svg', alt: 'Logo Stripe', class:"nav-link px-2 text-body-secondary" %></li>
-      <li class="nav-item"><%= image_tag 'paypal.svg', alt: 'Logo Paypal', class:"nav-link px-2 text-body-secondary" %></li>
-      <li class="nav-item"><%= image_tag 'mastercard.svg', alt: 'Logo Mastercard', class:"nav-link px-2 text-body-secondary" %></li>
-      <li class="nav-item"><%= image_tag 'visa.svg', alt: 'Logo Visa', class:"nav-link px-2 text-body-secondary" %></li>
+      <li class="nav-item"><%= image_tag 'stripe.svg', alt: 'Logo Stripe', class:"nav-link px-1 text-body-secondary" %></li>
+      <li class="nav-item"><%= image_tag 'paypal.svg', alt: 'Logo Paypal', class:"nav-link px-1 text-body-secondary" %></li>
+      <li class="nav-item"><%= image_tag 'mastercard.svg', alt: 'Logo Mastercard', class:"nav-link px-1 text-body-secondary" %></li>
+      <li class="nav-item"><%= image_tag 'visa.svg', alt: 'Logo Visa', class:"nav-link px-1 text-body-secondary" %></li>
     </ul>
 
-    <p class="text-center text-body-secondary">&copy; 2024 LES MONDES DE MISS CRAMEÉ</p>
-    <p class="text-center text-body-secondary mention-link">MENTIONS LÉGALES</p>
-  </div>
+    <p class="text-center text-body-secondary mt-2" style="font-size: 0.75rem;">&copy; 2024 LES MONDES DE MISS CRAMEÉ</p>
+    <%= link_to "MENTIONS LÉGALES", mentions_legales_path, class: "mention-link" %>    </div>
 </footer>
