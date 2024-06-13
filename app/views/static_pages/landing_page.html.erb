@@ -1,155 +1,80 @@
-<div class="carousel-container">
-  <h1>Nos Bijoux</h1>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- Défilement automatique toutes les 3 secondes -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-card">
-          <%= image_tag 'about_us.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Furret</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'bracelet.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Bracelets</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'collier.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Colliers</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'boucles.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Boucles d'oreilles</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'porte-cle.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Porte-clés</h5>
-        </div>
+<h1 class="text-center my-4">Nos Bijoux</h1>
+
+<div class="row row-cols-1 row-cols-md-6 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <%= image_tag 'about_us.jpg' %>
+      <div class="card-body">
+        <h5><%= link_to 'BRACELETS >', bracelets_path, class: "text-center custom-link" %></h5>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <%= image_tag 'about_us.jpg' %>
+      <div class="card-body">
+        <h5><%= link_to 'COLLIERS >', colliers_path, class: "text-center custom-link" %></h5>
+      </div>
+    </div>
+  </div>
+
+    <div class="col">
+    <div class="card h-100">
+      <%= image_tag 'about_us.jpg' %>
+      <div class="card-body">
+        <h5><%= link_to 'BOUCLES D\'OREILLE >', boucles_oreilles_path, class: "text-center custom-link" %></h5>
+      </div>
+    </div>
+  </div>
+
+    <div class="col">
+    <div class="card h-100">
+      <%= image_tag 'about_us.jpg' %>
+      <div class="card-body">
+        <h5><%= link_to 'PORTES CLES >', porte_cles_path, class: "text-center custom-link" %></h5>
+      </div>
+    </div>
+  </div>
+
+    <div class="col">
+    <div class="card h-100">
+      <%= image_tag 'about_us.jpg' %>
+      <div class="card-body">
+        <h5><%= link_to 'MARQUE PAGES >', marque_page_path, class: "text-center custom-link" %></h5>
+      </div>
+    </div>
+  </div>
+
+    <div class="col">
+    <div class="card h-100">
+      <%= image_tag 'about_us.jpg' %>
+      <div class="card-body">
+        <h5><%= link_to 'PIECES UNIQUES >', piece_unique_path, class: "text-center custom-link" %></h5>
+      </div>
+    </div>
   </div>
 </div>
 
+<div class="custom-line mb-3"></div>
 
-
-<%# #################################################################################################### %>
-
-
-<div class="custom-line"></div>
-
-<%# #################################################################################################### %>
-
-
-
-<div class="container d-flex flex-column flex-md-row align-items-center">
-  <div class="card text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
-    <div class="card-body">
-      <h1 class="card-title">Joaillerie Artisanale</h1>
-      <p class="card-text">Tous nos bijoux sont faits main par Miss Cramée dans son atelier niché au cœur de l'Occitanie. Chaque pièce est unique, et cela demande du temps. Merci de votre patience pour la livraison, en espérant que vous serez enchanté par l'âme de chaque bijou.</p>
-      <p class="card-text">A propos de Miss cramée ></p>
+<div class="custom-container-about d-flex flex-column flex-md-row align-items-center">
+  <div class="card flex-grow-1 mr-md-3 mb-3 mb-md-0">
+    <div class="card-body d-flex flex-column align-items-start">
+      <h1 class="mb-4 text-center">Bijouterie Artisanale</h1>
+      <p class="fs-9 mb-3 text-center">Tous nos bijoux sont faits main par Miss Cramée dans son atelier niché au cœur de l'Occitanie.</p>
+      <p class="fs-9 mb-3 text-center">Chaque pièce est unique, et cela demande du temps. </p>
+      <p class="fs-9 text-center">Merci de votre patience pour la livraison, en espérant que vous serez enchanté par l'âme de chaque bijou.</p><br>
+        <h5><%= link_to 'A propos de Miss Cramée >', about_path, class: "text-center custom-link" %></h5>
     </div>
   </div>
   <div class="image">
-    <%= image_tag 'artisan-bijoutier.png', class:"img-fluid", alt: 'Photo artisan-bijoutier' %>
+    <%= image_tag 'about_us.jpg', class:"img-fluid  mb-3", alt: 'Photo de présentation Miss Cramée' %>
   </div>
 </div>
-
-<%# #################################################################################################### %>
-
 
 <div class="custom-line"></div>
 
-<%# #################################################################################################### %>
-
-<div class="carousel-container">
-  <h1>Déjà sortis de l'atelier</h1>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- Défilement automatique toutes les 3 secondes -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-card">
-          <%= image_tag 'about_us.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Furret</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'bracelet.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Bracelets</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'collier.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Colliers</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'boucles.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Boucles d'oreilles</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-card">
-          <%= image_tag 'porte-cle.jpg', class: 'card-img-top rounded' %>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Porte-clés</h5>
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
-  </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-md-6 text-center">
-    <%= link_to "VOIR LES BIJOUX EN STOCK", items_path,class: 'btn custom-submit-button' %>
-  </div>
-</div>
-
-<%# #################################################################################################### %>
-
-<div class="custom-line"></div>
-
-<%# #################################################################################################### %>
-
-<!-- app/views/images/index.html.erb -->
 <div class="image-grid">
   <div class="image-item"><%= image_tag 'Made in France.png', alt: 'Image 1' %></div>
   <div class="image-item"><%= image_tag 'Fait-Main.png', alt: 'Image 2' %></div>
@@ -157,22 +82,9 @@
   <div class="image-item"><%= image_tag 'Livraison Rapide.png', alt: 'Image 4' %></div>
 </div>
 
-
-<%# #################################################################################################### %>
-
 <div class="custom-line"></div>
 
-<%# #################################################################################################### %>
+      <h1 class="text-center my-4">Quelques mots d’amour...</h1>
+      <p class="fs-9 mb-3 text-center">“Mon bracelet est magnifique, c’est exactement ce que je voulais et la livraison a été extremement rapide, merci pour tout Miss cramé”</p>
+      <p class="fs-9 mb-3 text-center"> - Joséphine</p>
 
-<div class="container d-flex flex-column flex-md-row align-items-center">
-  <div class="card text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
-    <div class="card-body">
-      <h1 class="card-title">Quelques mots d’amour...</h1>
-      <p class="card-text">“Mon bracelet est magnifique, c’est exactement ce que je voulais et la livraison a été extremement rapide, merci pour tout Miss cramé”</p>
-      <p class="card-text">-Joséphine</p>
-    </div>
-  </div>
-  <div class="image">
-    <%= image_tag 'desk.png', class:"img-fluid", alt: 'Photo desk' %>
-  </div>
-</div>
