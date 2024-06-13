@@ -11,7 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validate :password_complexity
-  validates :email, format: { with: /\A[\w+\-.]+@(gmail\.com|outlook\.com|yahoo\.com|aol\.com|icloud\.com|protonmail\.com|zoho\.com|yandex\.com|mail\.com|gmx\.com|outlook\.fr|yahoo\.fr|aol\.fr|icloud\.fr|protonmail\.fr|zoho\.fr|yandex\.fr|mail\.fr|gmx\.fr)\z/i, message: "doit être une adresse email valide de services populaires" }
+  validates :email, format: { with: /\A[\w+\-.]+@(gmail\.com|outlook\.com|yahoo\.com|aol\.com|icloud\.com|protonmail\.com|zoho\.com|yandex\.com|mail\.com|gmx\.com|outlook\.fr|yahoo\.fr|aol\.fr|icloud\.fr|protonmail\.fr|zoho\.fr|yandex\.fr|mail\.fr|gmx\.fr)\z/i, message: "doit être une adresse email valide de services populaires se terminant par .fr ou .com" }
 
   private
 
