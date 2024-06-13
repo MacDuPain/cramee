@@ -12,42 +12,59 @@
 }
 
 .footer-container {
-  text-align: center; /* Centrer tout le contenu du conteneur */
+  text-align: center; /* Center all content in the container */
 }
 
 .custom-line {
-  margin: 0 auto; /* Centrer la ligne si elle a une largeur définie */
-  width: 80%; /* Définissez la largeur de la ligne comme vous le souhaitez */
-  height: 2px; /* Hauteur de la ligne */
-  background-color: #E8E0D3; /* Couleur de la ligne */
+  margin: 0 auto; /* Center the line if it has a defined width */
+  width: 80%; /* Define the width of the line as needed */
+  height: 2px; /* Height of the line */
+  background-color: #E8E0D3; /* Color of the line */
 }
 
 .nav {
   display: flex;
-  justify-content: center; /* Centrer les éléments de la navigation */
-  padding: 0; /* Enlever le padding par défaut de la liste */
+  justify-content: center; /* Center navigation items */
+  padding: 0; /* Remove default padding from list */
 }
 
 .nav-item {
-  list-style: none; /* Enlever les puces de la liste */
-  margin: 0 5px; /* Marge entre les éléments de la liste */
+  list-style: none; /* Remove list bullets */
+  margin: 0 5px; /* Margin between list items */
 }
 
 .nav-item img {
-  max-height: 50px; /* Ajuster la hauteur des logos */
-  display: block; /* Assurer que les images soient des blocs pour un alignement correct */
+  max-height: 50px; /* Adjust height of logos */
+  display: block; /* Ensure images are block elements for proper alignment */
 }
 
 .text-center {
-  margin: 10px 0; /* Marge pour espacer les paragraphes */
+  margin: 10px 0; /* Margin to space out paragraphs */
 }
 
 .mention-link {
-  cursor: pointer; /* Changer le curseur au survol pour les mentions légales */
+  cursor: pointer; /* Change cursor on hover for legal mentions */
 }
 
 .text-body-secondary {
-  color: #6c757d; /* Couleur de texte secondaire */
+  color: #6c757d; /* Secondary text color */
+}
+
+.heading-mention-link {
+  font-size: 1rem; /* Set font size to match h5 and h6 */
+  color: #000; /* Set text color to black */
+  text-decoration: none; /* Remove underline by default */
+  margin-top: 10px; /* Adjust margin as needed */
+  display: block; /* Ensure link takes full width */
+  text-align: center; /* Center align text */
+}
+
+.heading-mention-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.compact-footer {
+  font-size: 0.75rem; /* Set a smaller font size for the entire footer */
 }
 
 .compact-footer .py-2 {
@@ -71,5 +88,3 @@
 .compact-footer .ml-2 {
   margin-left: 0.5rem !important;
 }
-
-

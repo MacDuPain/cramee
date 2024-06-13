@@ -108,3 +108,10 @@ p {
   text-decoration: underline; /* Underline on hover */
 }
 
+
+
+.redirect-about a {
+  text-decoration: underline; /* Underline the text */
+  color: #6c757d; /* Ensure the link color matches the surrounding text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
