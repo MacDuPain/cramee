@@ -4,12 +4,11 @@ module Admin
     before_action :check_if_admin
 
     def index
-    @orders_count = Order.count
-    @new_orders = Order.where(is_processed: false)
-    @processed_orders = Order.where(is_processed: true)
-    @orders = Order.includes(:user).order(created_at: :desc)
-    # Ajouter d'autres statistiques nécessaires ici
-  end
+      @orders_count = Order.count
+      #@average_price = Order.average(:total_price)
+      @orders = Order.includes(:user).order(created_at: :desc)
+      # Ajouter d'autres statistiques nécessaires ici
+    end
 
     private
 
