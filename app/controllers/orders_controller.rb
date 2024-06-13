@@ -1,7 +1,18 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_order, only: [:show]
+  before_action :set_order, only: [:show, :mark_as_processed]
 
+
+  def index
+    @new_orders = Order.where(is_processed: false)
+    @processed_orders = Order.where(is_processed: true)
+  end
+
+  def mark_as_processed
+    @order = Order.find(params[:id])
+    @order.update(is_processed: true)
+    redirect_to orders_path, notice: 'La commande a été marquée comme traitée.'
+  end
 
   def show
     @order
