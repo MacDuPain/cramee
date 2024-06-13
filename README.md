@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TITLE
+Les Mondes de Miss Cramée
 
-Things you may want to cover:
+# Useful links
 
-* Ruby version
+Product Brief (PRD) -> https://carnation-plane-2c9.notion.site/Product-Brief-PRD-cf70fd0175df4969b96136d624d58367
+Trello -> https://trello.com/b/DTak0NdU/projet-final
+Schema de la database -> 
 
-* System dependencies
+- schema database
+- PRD
+- lien vers le trello
 
-* Configuration
+## Description
+Dans le cadre de notre projet final pour THP, nous avons pour objectif de développer et livrer un site web fonctionnel pour la mère de Thomas (la cliente), lui permettant de présenter et vendre ses produits, ainsi que de fournir des informations sur son activité globale de créatrice de bijoux.
 
-* Database creation
 
-* Database initialization
+## Fonctionnalités
+- Inscription et connexion des utilisateurs
+- Catalogue de produits avec des images de haute qualité et des descriptions détaillées
+- Gestion du panier et processus de paiement sécurisé
+- Contact facile avec la vendeuse
+- Compatibilité mobile
+- Optimisation SEO de base
 
-* How to run the test suite
+## Installation
+### Prérequis
+- Ruby 3.0.0
+- Rails 6.1.4
+- PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+### Étapes
+1. Clonez le repository :
+    ```sh
+    git clone https://github.com/username/MyMarketplace.git
+    ```
+2. Installez les dépendances :
+    ```sh
+    cd MyMarketplace
+    bundle install
+    yarn install
+    ```
+3. Configurez la base de données :
+    ```sh
+    rails db:create
+    rails db:migrate
+    rails db:seed
+    ```
 
-* Deployment instructions
-
-* ...
+## Utilisation
+1. Lancez le serveur :
+    ```sh
+    rails server
+    ```
+2. Ouvrez votre navigateur et allez à `http://localhost:3000`
