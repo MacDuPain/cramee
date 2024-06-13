@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     post 'add_item/:item_id', to: 'carts#add_item', as: 'add_item'
     post 'confirm_order', to: 'carts#confirm_order', as: 'confirm_order'
     patch 'items/:id', to: 'carts#update_item_quantity', as: 'update_cart_item'
+    member do
+      patch 'items/:item_id', to: 'carts#update_item_quantity', as: 'update_item_quantity'
+    end
 
   end
 
