@@ -2,18 +2,21 @@
 <h3 class="custom-h3">On est ravis de vous revoir !</h3>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "custom-form" }) do |f| %>
+  <% if flash[:alert].present? %>
+    <div class="field-error"><%= flash[:alert] %></div>
+  <% end %>
 
   <div class="field">
-    <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class: 'input', required: true %>
     <% if resource.errors[:email].any? %>
-      <p class="custom-error"><%= resource.errors.full_messages_for(:email).join(", ") %></p>
+      <div class="field-error"><%= resource.errors.full_messages_for(:email).join(", ") %></div>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "current-password" %>
+    <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "current-password", class: 'input', required: true %>
     <% if resource.errors[:password].any? %>
-      <p class="custom-error"><%= resource.errors.full_messages_for(:password).join(", ") %></p>
+      <div class="field-error"><%= resource.errors.full_messages_for(:password).join(", ") %></div>
     <% end %>
   </div>
 
