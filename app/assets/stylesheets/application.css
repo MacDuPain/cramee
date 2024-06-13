@@ -23,9 +23,10 @@
  @import "font-awesome";
 
  @import 'about';
+ @import 'admin';
  @import 'carousel';
  @import 'cart';
- @import 'delivery_info';
+ @import 'delivery_order';
  @import 'footer';
  @import 'header';
  @import 'nav';

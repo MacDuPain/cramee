@@ -1,25 +1,26 @@
-<h1 class="text-center my-4">Livre d'Or</h1>
-<h3 class="text-center my-4">Merci la communauté pour tous ces partages et cet amour !</h3>
+  <h1 class="text-center my-4">Livre d'Or</h1>
+  <p class="topic-content text-center my-4">Merci la communauté pour tous ces partages et cet amour !</p>
 
-<% if user_signed_in? %>
-  <%= link_to 'Votre avis m\'intéresse', new_review_path, class: "custom-submit-button mb-4" %>
-<% else %>
-  <%= link_to 'Connectez-vous pour laisser un avis', new_user_session_path, class: "custom-link mb-4" %>
-<% end %>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Votre avis m\'intéresse', new_review_path, class: "custom-submit-button mb-4" %>
+  <% else %>
+    <%= link_to 'Connectez-vous pour laisser un avis', new_user_session_path, class: "custom-link mb-4" %>
+  <% end %>
+
 <div class="topics-container">
   <% @reviews.each_with_index do |review, index| %>
     <div class="card topic-card mb-4">
-      <div class="card-body">
-        <h2 class="card-title text-center my-4">‘‘<%= review.content %>’’</h2>
-        <p class="card-text text-center my-4">Auteur: <%= review.name %></p>
+        <h2 class="topic-content text-center">“<%= review.content %>”</h2>
+        <p class="topic-meta text-center">Auteur: <%= review.name %></p>
         <% if user_signed_in? && current_user.is_admin? %>
           <%= link_to 'Supprimer', reviews_path, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
         <% end %>
-      </div>
     </div>
     <% if index < @reviews.length - 1 %>
       <div class="custom-line mb-4"></div>
     <% end %>
   <% end %>
-<%= link_to 'Revenir à l\'accueil', root_path, class: "custom-link" %>
-</div>
+</div><br>
+  <%= link_to 'Revenir à l\'accueil', root_path, class: "custom-link" %>
+
