@@ -95,3 +95,16 @@ p {
   color: #A1BBA3;
 }
 
+.mention-link {
+  font-size: 0.75rem; /* Match the font size */
+  color: #6c757d; /* Match the text color */
+  text-decoration: none; /* Remove underline by default */
+  margin-top: 10px; /* Adjust margin as needed */
+  display: block; /* Ensures link takes full width */
+  text-align: center; /* Center align text */
+}
+
+.mention-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#landing_page'
   get 'static_pages/about', as: 'about'
+  get 'mentions_legales', to: 'static_pages#mentions_legales'
   get 'tags/show'
 
   devise_for :users
@@ -63,5 +64,6 @@ Rails.application.routes.draw do
 
   #Routes livre d'or
   resources :reviews, only: [:new, :create, :index]
+
 
 end
