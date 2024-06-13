@@ -10,7 +10,6 @@
 
   <h2>Liste des commandes</h2>
 
-  <h3>Nouvelles commandes</h3>
   <table class="table">
     <thead>
       <tr>
@@ -22,34 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @new_orders.each do |order| %>
-        <tr>
-          <td><%= order.id %></td>
-          <td><%= order.user.email %></td>
-          <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
-          <td><%= number_to_currency(order.total_price) %></td>
-          <td>
-            <%= link_to 'Voir', order_path(order), class: 'btn btn-info' %>
-            <%= button_to 'Marquer comme traitée', mark_as_processed_order_path(order), method: :put, class: 'btn btn-success' %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <h3>Commandes traitées</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Utilisateur</th>
-        <th>Date de commande</th>
-        <th>Total</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @processed_orders.each do |order| %>
+      <% @orders.each do |order| %>
         <tr>
           <td><%= order.id %></td>
           <td><%= order.user.email %></td>

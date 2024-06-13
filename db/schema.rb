@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_12_115807) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_141351) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -103,8 +103,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_115807) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
-    t.boolean "in_stock"
-    t.boolean "visible_on_site"
   end
 
   create_table "items_tags", id: false, force: :cascade do |t|
@@ -130,7 +128,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_115807) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
-    t.string "is_processed", default: "f"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
