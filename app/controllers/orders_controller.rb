@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   def mark_as_processed
     @order = Order.find(params[:id])
     @order.update(is_processed: true)
-    redirect_to orders_path, notice: 'La commande a été marquée comme traitée.'
+    redirect_to orders_path, notice: 'La commande a été marquée comme traitée'
   end
 
   def show

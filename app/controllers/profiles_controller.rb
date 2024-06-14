@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      flash[:notice] = "Adresse e-mail modifiée avec succès"
+      flash[:notice] = "Votre adresse e-mail a été modifiée avec succès"
       redirect_to profile_path
     else
       render :edit

@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @topic, notice: 'Commentaire ajouté avec succès!'
+      redirect_to @topic, notice: 'Votre commentaire a été ajouté avec succès!'
     else
       redirect_back fallback_location: @topic, alert: 'Le champ de commentaire ne peut pas être vide.'
     end
