@@ -7,6 +7,7 @@
   z-index: 1000;
 }
 
+
 .navbar .nav-link,
 .navbar .navbar-brand {
   color: #000000; /* Couleur du texte de la barre de navigation en noir */
@@ -63,5 +64,9 @@
 /* Modifier l'icône de la toggler */
 .navbar-toggler-icon {
   filter: invert(0); /* Pour s'assurer que l'icône de la toggler est bien visible */
+}
+
+.text-color {
+  color: black !important;
 }
 
