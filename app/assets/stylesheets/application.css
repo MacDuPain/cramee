@@ -35,6 +35,8 @@
  @import 'topics';
  @import 'topics_new';
  @import 'topics_show';
+ @import 'mentions_legales';
+ @import 'landing_page';
 
 
  body {
@@ -46,6 +48,8 @@
   height: 100%;
   width: 100%;
   background-color: var(--background_color);
+  padding-top: 70px;
+  margin-top: 60px;
 }
 
 h1 {
@@ -69,10 +73,35 @@ p {
   border: none;
 }
 
+
+.image {
+  text-align: right; /* Aligne l'image à droite */
+  margin-top: 20px; /* Ajoute un espace au-dessus de l'image */
+}
+
+@media (min-width: 768px) {
+  .custom-container-about {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 991.98px) {
+    body {
+      padding-top: 0; /* Supprime le padding en haut du body pour les petits écrans */
+    }
+  }
+
+  .image {
+    flex: 1;
+    text-align: right;
+    margin-top: 0;
+  }
+}
+
 .custom-line {
-  border-bottom: 1px solid #E8E0D3; /* Crée une ligne de bordure grise de 1 pixel */
-  width: 50%; /* Définissez la largeur de la ligne, ajustez selon vos besoins */
-  margin: 0 auto; /* Centre la ligne horizontalement */
+  border-bottom: 1px solid #E8E0D3;
+  width: 50%;
+  margin: 0 auto;
   margin-bottom: 15px;
 }
 
@@ -96,22 +125,21 @@ p {
 }
 
 .mention-link {
-  font-size: 0.75rem; /* Match the font size */
-  color: #6c757d; /* Match the text color */
-  text-decoration: none; /* Remove underline by default */
-  margin-top: 10px; /* Adjust margin as needed */
-  display: block; /* Ensures link takes full width */
-  text-align: center; /* Center align text */
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
 }
 
 .mention-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
-
-
 
 .redirect-about a {
-  text-decoration: underline; /* Underline the text */
-  color: #6c757d; /* Ensure the link color matches the surrounding text */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  text-decoration: underline;
+  color: #6c757d;
+  cursor: pointer;
 }
+
