@@ -14,8 +14,11 @@ Rails.application.routes.draw do
   # Route pour afficher les articles en stock, pointant vers le contrôleur 'items' et l'action 'stocked_items'
   get '/stocked_items', to: 'items#stocked_items'
 
-  # Routes de Devise pour l'authentification des utilisateurs
-  devise_for :users
+  devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  registrations: 'users/registrations',
+  passwords: 'users/passwords'
+}
 
   # Resource pour les utilisateurs, générant toutes les routes RESTful pour les utilisateurs
   resources :users

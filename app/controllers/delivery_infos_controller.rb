@@ -14,7 +14,7 @@ class DeliveryInfosController < ApplicationController
 
     # Sauvegarde les informations de livraison dans la base de données
     if @delivery_info.save
-      redirect_to checkout_create_path(order_id: @order.id), notice: 'Informations de livraison enregistrées.'
+      redirect_to checkout_create_path(order_id: @order.id)
     else
       render :new
     end

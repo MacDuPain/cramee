@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   # Action pour marquer une commande comme traitée
   def mark_as_processed
     @order.update(is_processed: true)
-    redirect_to orders_path, notice: 'La commande a été marquée comme traitée.'
+    redirect_to orders_path, notice: 'La commande a été marquée comme traitée'
   end
 
   # Action pour afficher les détails d'une commande spécifique

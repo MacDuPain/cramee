@@ -1,5 +1,14 @@
 .custom-container-about {
-  max-width: 80%; /* Adjust the percentage as needed */
+  max-width: 80%; /* Ajustez le pourcentage si nécessaire */
   margin-left: auto;
   margin-right: auto;
+  padding: 20px; /* Ajoute un padding pour l'espace autour du contenu */
+  padding-top: 100px; /* Ajoute un padding en haut pour créer de l'espace entre la navbar et le contenu */
+  margin-top: 50px; /* Ajoute une marge en haut pour créer de l'espace entre la navbar et le conteneur */
 }
+
+@media (min-width: 768px) {
+  .custom-container-about {
+    display: flex;
+    align-items: center;
+  }

@@ -1,70 +1,65 @@
-.carousel-container {
-  text-align: center;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 20px;  /* Ajoute une marge en haut */
-  margin-bottom: 20px; /* Ajoute une marge en bas */
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carousel-container h1 {
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item .col-md-4 {
+  padding: 15px;
+}
+
+.carousel-image {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px; /* Ajout des bords arrondis */
+}
+
+.carousel-title {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+}
+
+.carousel-title:hover {
+  text-decoration: underline;
+}
+
+.carousel-controls-container {
   position: absolute;
-  top: -10px; 
+  top: 50%;
   left: 0;
   right: 0;
-  margin: auto;
-  z-index: 1; 
-}
-
-.carousel-card {
-  width: 300px; 
-  height: 300px; 
-  margin-top: 50px;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  width: 5%; 
-  height: 100%;
-  background: none; /* Enlève le fond au survol et par défaut */
-}
-
-.carousel-control-prev {
-  left: -20px; 
-}
-
-.carousel-control-next {
-  right: -20px; 
+  width: auto;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%);
-  background-color: transparent; /* Supprime le fond */
-  background-size: 100%, 100%;
+  background-color: black;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
 }
 
-.carousel-item {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 0;
+.outer-control {
+  margin: 0 10px;
 }
 
-.carousel-item.active {
-  display: flex;
-}
-
-.card-img-top {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
 }

@@ -23,7 +23,8 @@ class TopicsController < ApplicationController
   def create
     @topic = current_user.topics.build(topic_params)  # Crée un sujet associé à l'utilisateur actuel
     if @topic.save
-      redirect_to @topic, notice: 'Le sujet a été créé avec succès.'
+
+      redirect_to @topic, notice: 'Votre Topic a été créé avec succès'
     else
       render :new  # Si la sauvegarde échoue, réaffiche le formulaire de création
     end

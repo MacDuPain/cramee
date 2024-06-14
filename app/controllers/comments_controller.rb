@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
     # Sauvegarde le commentaire dans la base de données
     if @comment.save
-      redirect_to @topic, notice: 'Commentaire ajouté avec succès!'
+      redirect_to @topic, notice: 'Votre commentaire a été ajouté avec succès!'
     else
       # En cas d'échec de la sauvegarde, redirige l'utilisateur vers la page précédente avec un message d'erreur
       redirect_back fallback_location: @topic, alert: 'Le champ de commentaire ne peut pas être vide.'
