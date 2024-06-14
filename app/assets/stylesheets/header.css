@@ -1,13 +1,13 @@
 .header-background {
   position: relative;
   background: url('header4.jpg') no-repeat center center;
-  background-size: cover;
+  background-size: cover; /* Image de fond couvrant toute la zone */
   height: 100vh; /* Hauteur égale à la hauteur de l'écran */
-  display: flex; /* Utilisation de Flexbox pour centrer le contenu */
-  align-items: center; /* Centrage vertical */
-  justify-content: center; /* Centrage horizontal */
-  text-align: center; /* Centrage du texte à l'intérieur du header */
-  color: #E8E0D3; /* Couleur du texte pour assurer la lisibilité */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #E8E0D3;
 }
 
 .header-background::before {
@@ -17,8 +17,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35); /* Couleur noire semi-transparente */
-  z-index: 1; /* Placer la superposition sous le contenu */
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 
 .header-background > * {
@@ -30,3 +30,4 @@
   position: relative;
   z-index: 2;
 }
+

@@ -1,5 +1,13 @@
-.custom-container-about {
-  max-width: 80%; /* Adjust the percentage as needed */
-  margin-left: auto;
-  margin-right: auto;
+
+.mention-link {
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+
+.mention-link:hover {
+  text-decoration: underline;
 }
