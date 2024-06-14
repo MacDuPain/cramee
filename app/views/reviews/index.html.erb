@@ -13,9 +13,6 @@
     <div class="card topic-card mb-4">
         <h2 class="topic-content text-center">“<%= review.content %>”</h2>
         <p class="topic-meta text-center">Auteur: <%= review.name %></p>
-        <% if user_signed_in? && current_user.is_admin? %>
-          <%= link_to 'Supprimer', reviews_path, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
-        <% end %>
     </div>
     <% if index < @reviews.length - 1 %>
       <div class="custom-line mb-4"></div>
