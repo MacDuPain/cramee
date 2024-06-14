@@ -3,8 +3,13 @@ class ReviewsController < ApplicationController
   before_action :authorize_admin, only: [:destroy]
 
   def index
-    @reviews = Review.all
+    @reviews = if current_user&.is_admin?
+                 Review.all
+               else
+                 Review.where(approved: true)
+               end
   end
+
 
   def new
     @review = Review.new
