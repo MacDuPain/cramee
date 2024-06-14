@@ -1,95 +1,109 @@
-<h1 class="text-center display-4">Découvrez Nos Bijoux</h1>
-<p class="text-center lead">Artisanat fait main au cœur de l'Occitanie</p>
+<div class="row align-items-center">
+  <div class="col-auto">
+    <a class="carousel-control-prev outer-control" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon mt-3" aria-hidden="true"></span>
+      <span class="visually-hidden mt-3">Previous</span>
+    </a>
+  </div>
+  <div class="col text-center">
+    <h1 class="display-4">Nos Bijoux</h1>
+  </div>
+  <div class="col-auto">
+    <a class="carousel-control-next outer-control" href="#carouselExampleControls" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</div>
 
 <section id="products" class="py-5">
   <div class="container position-relative">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
+
         <div class="carousel-item active">
           <div class="row">
             <div class="col-md-4">
-              <%= image_tag 'about_us.jpg', class: 'd-block w-100 carousel-image', alt: 'Furret' %>
+              <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'bracelet' %>
               <div class="text-center mt-2">
-                <%= link_to 'Furret', '#', class: 'carousel-title' %>
+                <%= link_to 'BRACELETS >', bracelets_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
             <div class="col-md-4">
-              <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image', alt: 'Bracelets' %>
+              <%= image_tag 'collier_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Colliers' %>
               <div class="text-center mt-2">
-                <%= link_to 'Bracelets', '#', class: 'carousel-title' %>
+                <%= link_to 'COLLIERS >', colliers_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
             <div class="col-md-4">
-              <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image', alt: 'Colliers' %>
+              <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Boucles d\'oreilles' %>
               <div class="text-center mt-2">
-                <%= link_to 'Colliers', '#', class: 'carousel-title' %>
+                <%= link_to "BOUCLES D'OREILLES >", boucles_oreilles_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
           </div>
         </div>
+
         <div class="carousel-item">
           <div class="row">
             <div class="col-md-4">
-              <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image', alt: 'Boucles d\'oreilles' %>
+              <%= image_tag 'porte-cle.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Porte-clés' %>
               <div class="text-center mt-2">
-                <%= link_to 'Boucles d\'oreilles', '#', class: 'carousel-title' %>
+                <%= link_to 'PORTE CLES >', porte_cles_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
             <div class="col-md-4">
-              <%= image_tag 'porte-cle.jpg', class: 'd-block w-100 carousel-image', alt: 'Porte-clés' %>
+              <%= image_tag 'about_us.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Marque pages' %>
               <div class="text-center mt-2">
-                <%= link_to 'Porte-clés', '#', class: 'carousel-title' %>
+                <%= link_to 'MARQUE PAGES >', marque_page_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
             <div class="col-md-4">
-              <%= image_tag 'about_us.jpg', class: 'd-block w-100 carousel-image', alt: 'Furret' %>
+              <%= image_tag 'l_elfique_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Pièces uniques' %>
               <div class="text-center mt-2">
-                <%= link_to 'Furret', '#', class: 'carousel-title' %>
+                <%= link_to 'PIECES UNIQUES >', piece_unique_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+
+       <div class="carousel-item">
           <div class="row">
             <div class="col-md-4">
-              <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image', alt: 'Bracelets' %>
+              <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'bracelet' %>
               <div class="text-center mt-2">
-                <%= link_to 'Bracelets', '#', class: 'carousel-title' %>
+                <%= link_to 'BRACELETS >', bracelets_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
             <div class="col-md-4">
-              <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image', alt: 'Colliers' %>
+              <%= image_tag 'collier_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Colliers' %>
               <div class="text-center mt-2">
-                <%= link_to 'Colliers', '#', class: 'carousel-title' %>
+                <%= link_to 'COLLIERS >', colliers_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
             <div class="col-md-4">
-              <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image', alt: 'Boucles d\'oreilles' %>
+              <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Boucles d\'oreilles' %>
               <div class="text-center mt-2">
-                <%= link_to 'Boucles d\'oreilles', '#', class: 'carousel-title' %>
+                <%= link_to "BOUCLES D'OREILLES >", boucles_oreilles_path, class: 'carousel-title custom-link' %>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
-      <a class="carousel-control-prev outer-control" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </a>
-      <a class="carousel-control-next outer-control" href="#carouselExampleControls" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </a>
     </div>
   </div>
 </section>
 
 
 
-  <section class="artisan-section py-5 bg-light">
+<section id="products" class="py-5">
+
     <div class="container d-flex flex-column flex-md-row align-items-center">
       <div class="text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
         <h1 class="text-center display-4">Joaillerie Artisanale</h1>
         <p>Tous nos bijoux sont faits main par Miss Cramée dans son atelier niché au cœur de l'Occitanie. Chaque pièce est unique, et cela demande du temps. Merci de votre patience pour la livraison, en espérant que vous serez enchanté par l'âme de chaque bijou.</p>
-        <%= link_to 'A propos de Miss cramée', about_path, class: 'custom-link' %>
+        <%= link_to 'A propos de Miss cramée >', about_path, class: 'custom-link' %>
       </div>
       <div class="image">
         <%= image_tag 'artisan-bijoutier.png', class:"img-fluid rounded", alt: 'Photo artisan-bijoutier' %>
@@ -105,7 +119,7 @@
           <div class="card">
             <div class="card-body text-center">
               <p class="card-text">“Mon bracelet est magnifique, c’est exactement ce que je voulais et la livraison a été extremement rapide, merci pour tout Miss cramé”</p>
-              <br><p class="card-text text-center"><strong>- Joséphine</strong></p>
+              <p class="card-text text-center"><strong>- Joséphine</strong></p>
             </div>
           </div>
         </div>
@@ -113,7 +127,8 @@
     </div>
   </section>
 
-  <section class="image-grid-section py-5 bg-light">
+
+<section id="products" class="py-5">
     <div class="container">
               <h1 class="text-center display-4 mb-3">Nos Engagements</h1>
       <div class="row">
@@ -135,6 +150,5 @@
 
 
 
-  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
 </body>
 </html>
