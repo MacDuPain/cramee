@@ -1,26 +1,22 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!  # Assure que l'utilisateur est connecté pour accéder à toutes les actions
+  before_action :authenticate_user!
 
-  # Action pour afficher le profil de l'utilisateur actuel
   def show
-    @user = current_user  # Récupère l'utilisateur actuellement connecté
-    @orders = @user.orders  # Récupère toutes les commandes de l'utilisateur
+    @user = current_user
+    @orders = @user.orders
   end
 
-  # Action pour afficher le formulaire d'édition du profil de l'utilisateur actuel
   def edit
-    @user = current_user  # Récupère l'utilisateur actuellement connecté
+    @user = current_user
   end
 
-  # Méthode pour vérifier si l'utilisateur est un administrateur
   def admin?
-    self.admin  # Vérifie si l'utilisateur a le rôle d'administrateur
+    self.admin
   end
 
   private
 
-  # Méthode pour définir l'utilisateur courant, utilisée pour les filtres
   def set_user
-    @user = current_user  # Récupère l'utilisateur actuellement connecté
+    @user = current_user
   end
 end
