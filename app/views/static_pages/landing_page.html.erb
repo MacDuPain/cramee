@@ -1,3 +1,4 @@
+<section id="products" class="py-5">
 <div class="row align-items-center">
   <div class="col-auto">
     <a class="carousel-control-prev outer-control" href="#carouselExampleControls" role="button" data-bs-slide="prev">
@@ -6,7 +7,7 @@
     </a>
   </div>
   <div class="col text-center">
-    <h1 class="display-4">Nos Bijoux</h1>
+     <h1 class="text-center display-4 mb-5">Nos Bijoux</h1>
   </div>
   <div class="col-auto">
     <a class="carousel-control-next outer-control" href="#carouselExampleControls" role="button" data-bs-slide="next">
@@ -16,7 +17,6 @@
   </div>
 </div>
 
-<section id="products" class="py-5">
   <div class="container position-relative">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
@@ -97,26 +97,27 @@
 
 
 
-<section id="products" class="py-5">
-
-    <div class="container d-flex flex-column flex-md-row align-items-center">
-      <div class="text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
-        <h1 class="text-center display-4">Joaillerie Artisanale</h1>
-        <p>Tous nos bijoux sont faits main par Miss Cramée dans son atelier niché au cœur de l'Occitanie. Chaque pièce est unique, et cela demande du temps. Merci de votre patience pour la livraison, en espérant que vous serez enchanté par l'âme de chaque bijou.</p>
-        <%= link_to 'A propos de Miss cramée >', about_path, class: 'custom-link' %>
-      </div>
-      <div class="image">
-        <%= image_tag 'artisan-bijoutier.png', class:"img-fluid rounded", alt: 'Photo artisan-bijoutier' %>
+<section class="py-5">
+  <div class="container d-flex flex-column flex-md-row align-items-center">
+    <div class="text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
+      <h1 class="text-center display-4 mb-5">Joaillerie Artisanale</h1>
+      <div>
+        <h4>Tous nos bijoux sont faits main par Miss Cramée dans son atelier niché au cœur de l'Occitanie.</h4>
+        <h4>Chaque pièce est unique, et cela demande du temps.</h4>
+        <h4 class="mb-4">Merci de votre patience pour la livraison, en espérant que vous serez enchanté par l'âme de chaque bijou.</h4>
+        <%= link_to 'A PROPOS DE MISS CRAMEE >', about_path, class: 'custom-link' %>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
 <div class="row align-items-center">
   <div class="col-auto">
     <a class="carousel-control-prev outer-control" href="#carouselExampleControls" role="button" data-bs-slide="prev">
       <span class="carousel-control-prev-icon mt-3" aria-hidden="true"></span>
-      <span class="visually-hidden mt-3">Previous</span>
+      <span class="visually-hidden">Previous</span>
     </a>
   </div>
   <div class="col text-center">
@@ -210,43 +211,63 @@
 </section>
 
 
-      <section class="testimonial-section py-5">
-    <div class="container">
-                    <h1 class="text-center display-4">Quelques mots d’amour...</h1>
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">“Mon bracelet est magnifique, c’est exactement ce que je voulais et la livraison a été extremement rapide, merci pour tout Miss cramé”</p>
-              <p class="card-text text-center"><strong>- Joséphine</strong></p>
-            </div>
+
+  
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center display-4 mb-5">Nos Engagements</h1>
+    <div class="row">
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'france.png', class: 'img-fluid rounded', alt: 'Made in France' %>
+        <h4 class="mt-3">Fabriqué en France</h4>
+                    <h5>Réalisés au coeur de l’occitanie</h5>
+
+      </div>
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'hands.png', class: 'img-fluid rounded', alt: 'Fait Main' %>
+        <h4 class="mt-3">Fait Main</h4>
+                    <h5>Réalisés avec le coeur</h5>
+
+      </div>
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'lock.png', class: 'img-fluid rounded', alt: 'Paiement Sécurisé' %>
+        <h4 class="mt-3">Paiement Sécurisé</h4>
+                    <h5>Paiement sécurisé via Stripe</h5>
+
+      </div>
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'truck.png', class: 'img-fluid rounded', alt: 'Livraison Rapide' %>
+        <h4 class="mt-3">Livraison Rapide</h4>
+                    <h5>Livraison gratuite dès 40€</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5">
+    <div class="container d-flex flex-column flex-md-row align-items-center">
+      <div class="text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
+        <h1 class="text-center display-4 mb-5">Quelques mots d’amour...</h1>
+<div>
+        <div class="row">
+          <div class="col-md-4 col-12 mb-4">
+            <h4 class="mb-4">“Mon bracelet est magnifique, c’est exactement ce que je voulais et la livraison a été rapide, merci pour tout Miss Cramé”</h4>
+            <h5>- Joséphine</h5>
+          </div>
+          <div class="col-md-4 col-12 mb-4">
+            <h4 class="mb-4">“Ma bague est incroyable! La qualité est exceptionnelle et le service clientèle est impeccable. Merci beaucoup !”</h4>
+            <h5>- Pauline</h5>
+          </div>
+          <div class="col-md-4 col-12 mb-4">
+            <h4 class="mb-4">“Je suis très satisfait de mon collier. Il est unique en son genre et je ne peux pas attendre pour l'offrir à ma femme, elle va être heureuse !”</h4>
+            <h5>- Antoine</h5>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-<section id="products" class="py-5">
-    <div class="container">
-              <h1 class="text-center display-4 mb-3">Nos Engagements</h1>
-      <div class="row">
-        <div class="col-md-3 col-6 mb-4">
-          <%= image_tag 'Made in France.png', class: 'img-fluid rounded', alt: 'Made in France' %>
-        </div>
-        <div class="col-md-3 col-6 mb-4">
-          <%= image_tag 'Fait-Main.png', class: 'img-fluid rounded', alt: 'Fait Main' %>
-        </div>
-        <div class="col-md-3 col-6 mb-4">
-          <%= image_tag 'paiement sécurisé.png', class: 'img-fluid rounded', alt: 'Paiement Sécurisé' %>
-        </div>
-        <div class="col-md-3 col-6 mb-4">
-          <%= image_tag 'Livraison Rapide.png', class: 'img-fluid rounded', alt: 'Livraison Rapide' %>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 
-
-</body>
-</html>
