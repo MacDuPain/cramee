@@ -1,3 +1,6 @@
+<% content_for :title, "Livre d or" %>
+
+  
   <h1 class="text-center my-4">Livre d'Or</h1>
   <p class="topic-content text-center my-4">Merci la communauté pour tous ces partages et cet amour !</p>
 
@@ -12,7 +15,7 @@
   <% @reviews.each_with_index do |review, index| %>
     <div class="card topic-card mb-4">
         <h2 class="topic-content text-center">“<%= review.content %>”</h2>
-        <p class="topic-meta text-center">Auteur: <%= review.name %></p>
+        <p class="topic-meta text-center">- <%= review.name %></p>
         <% if user_signed_in? && current_user.is_admin? %>
           <%= link_to 'Supprimer', reviews_path, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
         <% end %>
@@ -22,5 +25,3 @@
     <% end %>
   <% end %>
 </div><br>
-  <%= link_to 'Revenir à l\'accueil', root_path, class: "custom-link" %>
-
