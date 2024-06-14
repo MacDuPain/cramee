@@ -9,6 +9,7 @@ import "controllers"
 //= require turbolinks
 //= require_tree .
 
+import 'bootstrap'
 import * as bootstrap from "bootstrap"
 
 document.addEventListener('turbolinks:load', function() {
