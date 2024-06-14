@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
   def create
     @topic = current_user.topics.build(topic_params)
     if @topic.save
-      redirect_to @topic, notice: 'Topic was successfully created.'
+      redirect_to @topic, notice: 'Votre Topic a été créé avec succès'
     else
       render :new
     end

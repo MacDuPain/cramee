@@ -25,7 +25,7 @@ class CartsController < ApplicationController
   def create
     @cart = current_user.build_cart
     if @cart.save
-      redirect_to @cart, notice: 'Votre panier a été créé avec succès.'
+      redirect_to @cart
     else
       render :new
     end
@@ -48,7 +48,7 @@ class CartsController < ApplicationController
   def destroy
     @cart = current_user.cart
     @cart.destroy
-    redirect_to root_path, notice: 'Votre panier a été supprimé avec succès.'
+    redirect_to root_path, notice: 'Votre panier a été supprimé avec succès'
   end
 
   def add_item
@@ -84,7 +84,7 @@ class CartsController < ApplicationController
       @cart.items.delete(item)
     end
 
-    redirect_to @cart, notice: 'Un article a été retiré de votre panier.'
+    redirect_to @cart, notice: 'Cet article a été retiré de votre panier'
   end
 
 
