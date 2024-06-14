@@ -1,6 +1,3 @@
-<% content_for :title, "Mon Profil" %>
-
-
 <h3 class="custom-h3">Modifier le profil</h3>
     <%= form_with(model: current_user, url: profile_path, method: :patch, class: 'custom-form') do |form| %>
       <div class="field">
