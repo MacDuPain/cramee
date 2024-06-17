@@ -14,11 +14,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.text_field :name, placeholder: "Votre nom d'utilisateur", autofocus: true, autocomplete: "Votre nom d'utilisateur" %>
+    <%= form.text_field :name, placeholder: "Votre nom d'utilisateur", autofocus: true, autocomplete: "Votre nom d'utilisateur", required: true %>
   </div>
 
   <div class="field">
-    <%= form.text_field :content, placeholder: "Votre message d'amour", autofocus: true, autocomplete: "Votre message d'amour" %>
+    <%= form.text_field :content, placeholder: "Votre message d'amour", autofocus: true, autocomplete: "Votre message d'amour", required: true %>
   </div>
 
   <div class="actions">
@@ -27,5 +27,3 @@
 <% end %>
 
 <%= link_to 'Retour', reviews_path, class: "custom-link mb-4"  %>
-
-

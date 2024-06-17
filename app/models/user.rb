@@ -11,7 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validate :password_complexity
-  validates :email, format: { with: /\A[\w+\-.]+@(gmail\.com|outlook\.com|yahoo\.com|aol\.com|icloud\.com|protonmail\.com|zoho\.com|yandex\.com|mail\.com|gmx\.com|outlook\.fr|yahoo\.fr|aol\.fr|icloud\.fr|protonmail\.fr|zoho\.fr|yandex\.fr|mail\.fr|gmx\.fr)\z/i, message: "doit être une adresse email valide de services populaires" }
+  validate :validate_email_format
 
   private
 
@@ -30,6 +30,14 @@ class User < ApplicationRecord
 
     if types < 2
       errors.add :password, 'must include at least two of the following: uppercase letters, lowercase letters, numbers, and special characters'
+    end
+  end
+
+  def validate_email_format
+    return if email.blank? || email =~ /\A[\w+\-.]+@(gmail\.com|outlook\.com|yahoo\.com|aol\.com|icloud\.com|protonmail\.com|zoho\.com|yandex\.com|mail\.com|gmx\.com|outlook\.fr|yahoo\.fr|aol\.fr|icloud\.fr|protonmail\.fr|zoho\.fr|yandex\.fr|mail\.fr|gmx\.fr)\z/i
+
+    unless email =~ /\.(fr|com)\z/i
+      errors.add :email, 'doit se terminer par .fr ou .com'
     end
   end
 end

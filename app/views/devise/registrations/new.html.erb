@@ -3,26 +3,28 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "custom-form" }) do |f| %>
 
+  <% if resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resource.errors.count, "erreur") %> ont empêché l'enregistrement :</h2>
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
-    <%= f.email_field :email, placeholder: "Email", autocomplete: "email" %>
-    <% if resource.errors[:email].any? %>
-      <p class="custom-error"><%= resource.errors.full_messages_for(:email).join("") %></p>
-    <% end %>
+    <%= f.email_field :email, placeholder: "Email", autocomplete: "email", class: "input", required: true %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "new-password" %>
-    <% if resource.errors[:password].any? %>
-      <p class="custom-error"><%= resource.errors.full_messages_for(:password).first %></p>
-    <% end %>
+    <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "new-password", class: "input", required: true %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, placeholder: "Confirmer le mot de passe", autocomplete: "new-password" %>
-    <% if resource.errors[:password_confirmation].any? %>
-      <p class="custom-error"><%= resource.errors.full_messages_for(:password_confirmation) %></p>
-    <% end %>
-    <p  class="custom-text-password">Le mot de passe doit contenir au moins 8 caractères, incluant au moins deux des types suivants : majuscules, minuscules, chiffres, caractères spéciaux.</p>
+    <%= f.password_field :password_confirmation, placeholder: "Confirmer le mot de passe", autocomplete: "new-password", class: "input", required: true %>
+    <p class="custom-text-password">Le mot de passe doit contenir au moins 8 caractères, incluant au moins deux des types suivants : majuscules, minuscules, chiffres, caractères spéciaux.</p>
   </div>
 
   <div class="actions">
@@ -35,7 +37,7 @@
 <div class="actions custom-text">
   <p>Déjà un compte ? 
     <% if controller_name != 'sessions' %>
-      <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link"%>
+      <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link" %>
     <% end %>
   </p>
 </div>

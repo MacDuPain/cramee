@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-
   def create
     @topic = Topic.find(params[:topic_id])
     @comment = @topic.comments.build(comment_params)
@@ -14,7 +13,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @topic, notice: 'Votre commentaire a été ajouté avec succès!'
     else
-      redirect_back fallback_location: @topic, alert: 'Le champ de commentaire ne peut pas être vide.'
+      redirect_to @topic, alert: 'Le commentaire ne peut pas être vide.'
     end
   end
 
@@ -23,5 +22,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
-
 end

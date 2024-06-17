@@ -7,6 +7,8 @@ fr:
       expired: "a expiré, merci d'en faire une nouvelle demande"
       not_found: "n'a pas été trouvé(e)"
       not_locked: "n'était pas verrouillé(e)"
+      invalid_email_or_password: "L'email ou le mot de passe est incorrect."
+      invalid_email_format: "Le format de l'email est incorrect."
     attributes:
       email:
         blank: "L'adresse email ne peut pas être vide."

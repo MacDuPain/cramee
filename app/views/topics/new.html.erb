@@ -1,13 +1,24 @@
 <h2 class="custom-h2">Ajouter un Topic</h2>
 <h3 class="custom-h3">Une question vous taraude ou vous voulez simplement bavarder ? C'est ici !</h3>
 
-<%= form_with(model: @topic, local: true, class: 'custom-form') do |form| %>
+<%= form_with(model: @topic, local: true, html: { class: 'custom-form' }) do |form| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "erreur") %> ont empêché l'enregistrement :</h2>
+      <ul>
+        <% @topic.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
-    <%= form.text_field :title, placeholder: "Titre de votre topic", autofocus: true, autocomplete: "Titre de votre topic" %>
+    <%= form.text_field :title, placeholder: "Titre de votre topic", autofocus: true, autocomplete: "Titre de votre topic", class: 'input', required: true %>
   </div>
 
   <div class="field">
-    <%= form.text_field :content, placeholder: "Contenu de votre topic", autofocus: true, autocomplete: "Contenu de votre topic" %>
+    <%= form.text_field :content, placeholder: "Contenu de votre topic", autofocus: true, autocomplete: "Contenu de votre topic", class: 'input', required: true %>
   </div>
 
   <div class="field">
@@ -26,5 +37,4 @@
     <%= form.submit 'Enregistrer', class: 'custom-submit-button mb-4' %>
   </div>
   <%= link_to 'Revenir en arrière', 'javascript:history.back()', class: "custom-link mb-4" %>
-
 <% end %>

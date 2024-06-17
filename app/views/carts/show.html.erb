@@ -1,9 +1,7 @@
-<h1 class="text-center my-4">Votre panier</h1>
-
 <% if @cart.cart_items.any? %>
   <div class="topics-container">
     <% @cart.cart_items.each do |cart_item| %>
-      <div class="card topic-card mb-4">
+      <div class="card topic-card mb-4 cart-item" data-price="<%= cart_item.item.price %>">
         <div class="card-body">
           <div class="row">
             <div class="col-md-2">
@@ -13,13 +11,18 @@
               <h2 class="card-title"><%= cart_item.item.name %></h2>
             </div>
             <div class="col-md-2">
-              <p class="card-text"><%= cart_item.quantity %></p>
+              <%= form_with(url: cart_add_item_path(current_user.cart || current_user.create_cart, cart_item.item), method: :post, local: true) do |form| %>
+                <%= form.hidden_field :item_id, value: cart_item.item.id, class: 'quantity-box' %>
+                <button type="button" class="btn btn-light decrease-quantity">-</button>
+                <span class="quantity"><%= cart_item.quantity %></span>
+                <button type="button" class="btn btn-light increase-quantity">+</button>
+              <% end %>
             </div>
             <div class="col-md-2">
               <p class="card-text"><%= number_to_currency(cart_item.item.price) %></p>
             </div>
             <div class="col-md-1">
-              <p class="card-text"><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></p>
+              <p class="card-text price"><%= number_to_currency(cart_item.item.price * cart_item.quantity) %></p>
             </div>
             <div class="col-md-2">
               <%= button_to cart_remove_item_path(@cart, cart_item.item), method: :delete, class: 'btn btn-link' do %>
@@ -34,7 +37,7 @@
     <div class="card topic-card mb-4">
       <div class="card-body">
         <h2 class="card-title">TOTAL</h2>
-        <p class="card-text text-right text-black"><%= number_to_currency(@total_price) %></p>
+        <p class="card-text text-right text-black"><span id="total-price"><%= number_to_currency(@total_price) %></span></p>
       </div>
     </div>
 
@@ -52,5 +55,4 @@
   <div class="col-md-6 text-center">
     <%= link_to "Continuer vos achats", items_path, class: 'custom-link' %>
   </div>
-</div>
 </div>
