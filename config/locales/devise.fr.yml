@@ -9,9 +9,11 @@ fr:
       not_locked: "n'était pas verrouillé(e)"
       invalid_email_or_password: "L'email ou le mot de passe est incorrect."
       invalid_email_format: "Le format de l'email est incorrect."
+      taken: "a déjà été pris"  # Ajout du message d'erreur pour les emails déjà utilisés
     attributes:
       email:
         blank: "L'adresse email ne peut pas être vide."
+        taken: "déjà utilisée."  # Ajout du message d'erreur pour les emails déjà utilisés
       password:
         blank: "Le mot de passe ne peut pas être vide."
   devise:
@@ -59,8 +61,8 @@ fr:
       updated: "Votre compte a été modifié avec succès."
       updated_but_not_signed_in: "Votre compte a été modifié avec succès. Merci de vous reconnecter."
     sessions:
-      signed_in: "Vous êtes maintenant Connecté."
-      signed_out: "Vous êtes maintenant Déconnecté"
+      signed_in: "Vous êtes maintenant connecté."
+      signed_out: "Vous êtes maintenant déconnecté"
       already_signed_out: "Déconnecté."
     unlocks:
       send_instructions: "Vous allez recevoir les instructions nécessaires au déverrouillage de votre compte dans quelques instants."

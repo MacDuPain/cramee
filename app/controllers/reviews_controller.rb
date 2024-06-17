@@ -42,6 +42,6 @@ class ReviewsController < ApplicationController
   end
 
   def authorize_admin
-    redirect_to(root_path, alert: 'Accès interdit.') unless current_user.admin?
+    redirect_to(root_path, alert: 'Accès interdit.') unless current_user.is_admin?
   end
 end

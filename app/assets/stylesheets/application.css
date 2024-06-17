@@ -118,6 +118,8 @@ p {
 
 .alert {
   position: relative;
+  display: flex;
+  align-items: center;
   top: 5px; /* Ajustez cette valeur pour changer la position verticale */
   left: 50%;
   transform: translateX(-50%);
@@ -130,9 +132,14 @@ p {
 
 .alert-dismissible .btn-close {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1.25rem 1.5rem;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+}
+
+.alert-dismissible .btn-close:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .alert-success {
