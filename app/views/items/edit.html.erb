@@ -1,7 +1,7 @@
 <!-- app/views/items/edit.html.erb -->
 <h1>Edit Item</h1>
 
-<%= form_with(model: @item, local: true) do |form| %>
+<%= form_with(model: @item, local: true, class: 'custom-form' ) do |form| %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -9,7 +9,7 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_field :description %>
   </div>
 
   <div class="field">
