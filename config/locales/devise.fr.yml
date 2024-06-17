@@ -9,9 +9,11 @@ fr:
       not_locked: "n'était pas verrouillé(e)"
       invalid_email_or_password: "L'email ou le mot de passe est incorrect."
       invalid_email_format: "Le format de l'email est incorrect."
+      taken: "a déjà été pris"  # Ajout du message d'erreur pour les emails déjà utilisés
     attributes:
       email:
         blank: "L'adresse email ne peut pas être vide."
+        taken: "déjà utilisée."  # Ajout du message d'erreur pour les emails déjà utilisés
       password:
         blank: "Le mot de passe ne peut pas être vide."
   devise:
