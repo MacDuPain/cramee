@@ -9,16 +9,22 @@
 
 <div class="topics-container">
   <% @reviews.each_with_index do |review, index| %>
-    <% if review.approved || current_user&.is_admin? %>
-      <div class="card topic-card mb-4">
-        <h2 class="topic-content text-center">“<%= review.content %>”</h2>
-        <p class="topic-meta text-center">Auteur: <%= review.name %></p>
-      </div>
-      <% if index < @reviews.length - 1 %>
-        <div class="custom-line mb-4"></div>
+    <div class="card topic-card mb-4">
+      <h2 class="topic-content text-center">“<%= review.content %>”</h2>
+      <p class="topic-meta text-center">Auteur: <%= review.name %></p>
+      <% if current_user&.admin? %>
+        <% if review.approved %>
+          <%= link_to 'Désapprouver', toggle_approval_review_path(review), method: :patch, class: "btn btn-danger btn-sm" %>
+        <% else %>
+          <%= link_to 'Approuver', toggle_approval_review_path(review), method: :patch, class: "btn btn-success btn-sm" %>
+        <% end %>
       <% end %>
+    </div>
+    <% if index < @reviews.length - 1 %>
+      <div class="custom-line mb-4"></div>
     <% end %>
   <% end %>
 </div><br>
+
 
 <%= link_to 'Revenir à l\'accueil', root_path, class: "custom-link" %>

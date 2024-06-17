@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:destroy]
-  before_action :authorize_admin, only: [:destroy]
+  before_action :authorize_admin, only: [:destroy, :toggle_approval]
 
   def index
     @reviews = if current_user&.is_admin?
@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
                  Review.where(approved: true)
                end
   end
-
 
   def new
     @review = Review.new
@@ -28,6 +27,12 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to reviews_path, notice: 'Avis supprimé avec succès.'
+  end
+
+  def toggle_approval
+    @review = Review.find(params[:id])
+    @review.update(approved: !@review.approved)
+    redirect_back(fallback_location: reviews_path)
   end
 
   private
