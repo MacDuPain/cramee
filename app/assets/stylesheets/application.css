@@ -108,3 +108,44 @@ p {
   text-decoration: underline; /* Underline on hover */
 }
 
+
+
+.redirect-about a {
+  text-decoration: underline; /* Underline the text */
+  color: #6c757d; /* Ensure the link color matches the surrounding text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.alert {
+  position: relative;
+  top: 5px; /* Ajustez cette valeur pour changer la position verticale */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 50%; /* Limite la largeur à 80% de l'écran, ajustez si nécessaire */
+  padding: 10px 20px; /* Ajustez le padding selon vos préférences */
+  z-index: 1050; /* Assurez-vous qu'il est au-dessus des autres éléments */
+  opacity: 0.1; /* Opacité */
+}
+
+.alert-dismissible .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.alert-success {
+  background-color: #A1BBA3;
+  border-color: #A1BBA3;
+  color: #2A3C2C; /* ou une autre couleur de texte pour assurer une bonne lisibilité */
+  opacity: 0.9;
+}
+
+.alert-danger {
+  background-color: #D9534F; /* Vous pouvez ajuster cette couleur aussi si nécessaire */
+  border-color: #D9534F;
+  color: #2A3C2C; /* ou une autre couleur de texte pour assurer une bonne lisibilité */
+  opacity: 0.9;
+}
+

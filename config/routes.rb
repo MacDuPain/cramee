@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'tags/show'
   get '/stocked_items', to: 'items#stocked_items'
 
-  devise_for :users
+  devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  registrations: 'users/registrations',
+  passwords: 'users/passwords'
+}
 
   resources :users
 

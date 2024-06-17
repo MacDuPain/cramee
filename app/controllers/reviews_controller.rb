@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to reviews_path, notice: 'Votre avis a été ajouté avec succès.'
+      redirect_to reviews_path, notice: 'Votre commentaire a été ajouté avec succès !'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to reviews_path, notice: 'Avis supprimé avec succès.'
+    redirect_to reviews_path, notice: 'Votre avis a été supprimé avec succès '
   end
 
   def toggle_approval

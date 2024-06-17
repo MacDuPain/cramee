@@ -12,7 +12,7 @@
     <div class="card topic-card mb-4">
       <h2 class="topic-content text-center">“<%= review.content %>”</h2>
       <p class="topic-meta text-center">Auteur: <%= review.name %></p>
-      <% if current_user&.admin? %>
+      <% if current_user&.is_admin? %>
         <% if review.approved %>
           <%= link_to 'Désapprouver', toggle_approval_review_path(review), method: :patch, class: "btn btn-danger btn-sm" %>
         <% else %>
