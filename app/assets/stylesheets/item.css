@@ -20,3 +20,18 @@
     height: auto;
     object-fit: cover;
   }
+
+  /* Police dyslexique */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url(asset_path('opendyslexic/OpenDyslexic-Regular.otf')) format('opentype'),
+       url(asset_path('opendyslexic/OpenDyslexic-Bold.otf')) format('opentype'),
+       url(asset_path('opendyslexic/OpenDyslexic-Italic.otf')) format('opentype'),
+       url(asset_path('opendyslexic/OpenDyslexic-BoldItalic.otf')) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dyslexia-font {
+  font-family: 'OpenDyslexic', Arial, sans-serif;
+}

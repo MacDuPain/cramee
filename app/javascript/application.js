@@ -10,6 +10,7 @@ import "controllers"
 //= require_tree .
 
 import * as bootstrap from "bootstrap"
+console.log('application.js is loaded');
 
 document.addEventListener('turbolinks:load', function() {
     // Réinitialiser Bootstrap dropdowns
@@ -32,3 +33,6 @@ document.addEventListener('turbolinks:load', function() {
     }, 4000); // 4 seconds
   });
   
+
+
+
