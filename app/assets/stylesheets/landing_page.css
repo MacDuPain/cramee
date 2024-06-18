@@ -22,3 +22,29 @@
   display: block;
 }
 
+
+.artisan-section {
+  padding: 60px 0;
+}
+
+.artisan-section .btn {
+  border: none;
+}
+
+
+.testimonial-section {
+  padding: 60px 0;
+}
+
+.image-grid-section {
+  padding: 60px 0;
+}
+
+.image-grid-section .img-fluid {
+  transition: transform 0.3s;
+}
+
+.image-grid-section .img-fluid:hover {
+  transform: scale(1.05);
+}
+

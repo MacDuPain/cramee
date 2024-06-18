@@ -33,6 +33,18 @@
                   <p>Nos produits en stock sont généralement livrés sous 3 à 7 jours</p>
                 <% else %>
                   <p>Tout nos bijoux sont faits mains et nécessitent des délais de fabrication importants (entre 1 et 3 semaines)</p>
+            <!-- Bouton "Ajouter au panier" conditionnel -->
+            <div class="d-flex align-items-center mt-3">
+              <% if user_signed_in? %>
+                <%= form_with(url: cart_add_item_path(current_user.cart || current_user.create_cart, @item), method: :post, local: true) do |form| %>
+                  <%= form.hidden_field :item_id, value: @item.id %>
+                  <%= form.label :quantity, "Quantité", class: 'me-2' %>
+                  <%= form.number_field :quantity, value: 1, min: 1, class: 'custom-number-field me-2' %>
+                  <%= form.submit "Ajouter au panier", class: "custom-submit-button", style: 'margin-top: 25px;' %>
+                              <!-- Bouton Edit -->
+            <% if current_user&.is_admin? %>
+              <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
+            <% end %>
                 <% end %>
               </div>
 
@@ -55,6 +67,8 @@
                 <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
               <% end %>
             </div>
+
+
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 .profile-container {
-  background-color: #FCF7EE; /* Same as navbar background color */
   padding: 20px;
   min-height: 100vh; /* Ensure the container covers the full height of the viewport */
   display: flex;
@@ -22,6 +21,11 @@
   margin-top: 20px; /* Add some top margin to space out from the title */
   margin-left: 20px; /* Adjust the margin to push content to the left */
   align-self: flex-start; /* Align content to the start of the flex container */
+}
+
+.item-thumbnail {
+  max-width: 100px;
+  height: auto;
 }
 
 .profile-subtitle {

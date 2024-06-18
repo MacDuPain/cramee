@@ -46,6 +46,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--background_color);
+  overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 
@@ -68,6 +69,10 @@ p {
 .card {
   background: none;
   border: none;
+}
+
+.card-title{
+  text-align: center;
 }
 
 .custom-line {

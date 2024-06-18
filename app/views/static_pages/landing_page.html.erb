@@ -42,6 +42,109 @@
           <div class="carousel-caption d-none d-md-block">
             <h5>Porte-clés</h5>
           </div>
+<body>
+  <section id="products" class="py-5">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <a class="carousel-control-prev outer-control" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon mt-3" aria-hidden="true"></span>
+          <span class="visually-hidden mt-3">Previous</span>
+        </a>
+      </div>
+      <div class="col text-center">
+        <h1 class="text-center mb-5">Nos Bijoux</h1>
+      </div>
+      <div class="col-auto">
+        <a class="carousel-control-next outer-control" href="#carouselExampleControls" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container position-relative">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'bracelet' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'BRACELETS >', bracelets_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'collier_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Colliers' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'COLLIERS >', colliers_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Boucles d\'oreilles' %>
+                <div class="text-center mt-2">
+                  <%= link_to "BOUCLES D'OREILLES >", boucles_oreilles_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag 'porte-cle.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Porte-clés' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'PORTE CLES >', porte_cles_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'about_us.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Marque pages' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'MARQUE PAGES >', marque_page_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'l_elfique_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Pièces uniques' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'PIECES UNIQUES >', piece_unique_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'bracelet' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'BRACELETS >', bracelets_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'collier_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Colliers' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'COLLIERS >', colliers_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Boucles d\'oreilles' %>
+                <div class="text-center mt-2">
+                  <%= link_to "BOUCLES D'OREILLES >", boucles_oreilles_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container d-flex flex-column flex-md-row align-items-center">
+      <div class="text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
+        <h1 class="text-center mb-5">Bijouterie Artisanale</h1>
+        <div>
+          <p>Tous nos bijoux sont faits main par Miss Cramée dans son atelier niché au cœur de l'Occitanie.</p>
+          <p>Chaque pièce est unique, et cela demande du temps.</p>
+          <p class="mb-4">Merci de votre patience pour la livraison, en espérant que vous serez enchanté par l'âme de chaque bijou.</p>
+          <%= link_to 'A propos de Miss Cramée >', about_path, class: 'custom-link' %>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -129,6 +232,132 @@
             <h5>Porte-clés</h5>
           </div>
         </div>
+
+  </section>
+
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <a class="carousel-control-prev outer-control" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon mt-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+    </div>
+    <div class="col text-center">
+      <h1  class="text-center">Déjà sorti de l’atelier</h1>
+    </div>
+    <div class="col-auto">
+      <a class="carousel-control-next outer-control" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <section id="products" class="py-5">
+    <div class="container position-relative">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'bracelet' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'BRACELETS >', bracelets_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'collier_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Colliers' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'COLLIERS >', colliers_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Boucles d\'oreilles' %>
+                <div class="text-center mt-2">
+                  <%= link_to "BOUCLES D'OREILLES >", boucles_oreilles_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag 'porte-cle.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Porte-clés' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'PORTE CLES >', porte_cles_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'about_us.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Marque pages' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'MARQUE PAGES >', marque_page_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'l_elfique_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Pièces uniques' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'PIECES UNIQUES >', piece_unique_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <%= image_tag 'bracelet.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'bracelet' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'BRACELETS >', bracelets_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'collier_carousel.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Colliers' %>
+                <div class="text-center mt-2">
+                  <%= link_to 'COLLIERS >', colliers_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag 'boucles.jpg', class: 'd-block w-100 carousel-image rounded', alt: 'Boucles d\'oreilles' %>
+                <div class="text-center mt-2">
+                  <%= link_to "BOUCLES D'OREILLES >", boucles_oreilles_path, class: 'carousel-title custom-link' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+
+
+  
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-5">Nos Engagements</h1>
+    <div class="row">
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'france.png', class: 'img-fluid rounded', alt: 'Made in France' %>
+        <h4 class="mt-3">Fabriqué en France</h4>
+                    <p>Réalisés au coeur de l’occitanie</p>
+
+      </div>
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'hands.png', class: 'img-fluid rounded', alt: 'Fait Main' %>
+        <h4 class="mt-3">Fait Main</h4>
+                    <p>Réalisés avec le coeur</p>
+
+      </div>
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'lock.png', class: 'img-fluid rounded', alt: 'Paiement Sécurisé' %>
+        <h4 class="mt-3">Paiement Sécurisé</h4>
+                    <p>Paiement sécurisé via Stripe</p>
+
+      </div>
+      <div class="col-md-3 col-6 mb-4 text-center">
+        <%= image_tag 'truck.png', class: 'img-fluid rounded', alt: 'Livraison Rapide' %>
+        <h4 class="mt-3">Livraison Rapide</h4>
+                    <p>Livraison gratuite dès 40€</p>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -179,3 +408,33 @@
     </div>
   </div>
 </body>
+
+</section>
+
+
+
+<section class="py-5">
+    <div class="container d-flex flex-column flex-md-row align-items-center">
+      <div class="text-center flex-grow-1 mr-md-3 mb-3 mb-md-0">
+        <h1 class="text-center mb-5">Quelques mots d’amour...</h1>
+<div>
+        <div class="row">
+          <div class="col-md-4 col-12 mb-4">
+            <p class="mb-4">“Mon bracelet est magnifique, c’est exactement ce que je voulais et la livraison a été rapide, merci pour tout Miss Cramé”</p>
+            <p>- Joséphine</p>
+          </div>
+          <div class="col-md-4 col-12 mb-4">
+            <p class="mb-4">“Ma bague est incroyable! La qualité est exceptionnelle et le service clientèle est impeccable. Merci beaucoup pour ces bijoux incroyables !”</p>
+            <p>- Pauline</p>
+          </div>
+          <div class="col-md-4 col-12 mb-4">
+            <p class="mb-4">“Je suis très satisfait de mon collier. Il est unique en son genre et je ne peux pas attendre pour l'offrir à ma femme, elle va être heureuse !”</p>
+            <p>- Antoine</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
