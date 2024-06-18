@@ -35,9 +35,9 @@
  @import 'topics';
  @import 'topics_new';
  @import 'topics_show';
+@import 'main';
 
-
- body {
+body {
   font-family: "Josefin Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -48,6 +48,7 @@
   background-color: var(--background_color);
   overflow-x: hidden; /* Empêche le défilement horizontal */
 }
+
 
 h1 {
   font-family: "Libre Baskerville", serif;
@@ -161,3 +162,17 @@ p {
   opacity: 0.9;
 }
 
+/* Police dyslexique */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url(asset_path('opendyslexic/OpenDyslexic-Regular.otf')) format('opentype'),
+       url(asset_path('opendyslexic/OpenDyslexic-Bold.otf')) format('opentype'),
+       url(asset_path('opendyslexic/OpenDyslexic-Italic.otf')) format('opentype'),
+       url(asset_path('opendyslexic/OpenDyslexic-BoldItalic.otf')) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dyslexia-font {
+  font-family: 'OpenDyslexic', Arial, sans-serif;
+}
