@@ -43,16 +43,17 @@
                   <%= form.label :quantity, "Quantité", class: 'me-2' %>
                   <%= form.number_field :quantity, value: 1, min: 1, class: 'custom-number-field me-2' %>
                   <%= form.submit "Ajouter au panier", class: "custom-submit-button", style: 'margin-top: 25px;' %>
+                              <!-- Bouton Edit -->
+            <% if current_user&.is_admin? %>
+              <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
+            <% end %>
                 <% end %>
               <% else %>
                 <%= link_to 'Connectez-vous pour ajouter au panier', new_user_session_path, class: 'custom-link', style: 'margin-top: 25px;' %>
               <% end %>
             </div>
 
-            <!-- Bouton Edit -->
-            <% if current_user&.is_admin? %>
-              <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
-            <% end %>
+
           </div>
         </div>
       </div>

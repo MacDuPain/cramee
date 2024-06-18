@@ -1,5 +1,6 @@
 <% content_for :title, "Mon Profil" %>
 
+<section class="my-5">
 <h3 class="custom-h3">Modifier le profil</h3>
     <%= form_with(model: current_user, url: profile_path, method: :patch, class: 'custom-form') do |form| %>
       <div class="field">
@@ -15,5 +16,6 @@
 <%= link_to 'Revenir à mon profil', profile_path, class: "custom-link" %>
   </div>
 
+</section>
 
 
