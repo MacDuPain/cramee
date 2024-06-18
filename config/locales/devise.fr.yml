@@ -1,6 +1,7 @@
 fr:
   errors:
     messages:
+      confirmation: "ne correspond pas à la confirmation"  # Message par défaut pour la confirmation
       too_short: "est trop court (minimum %{count} caractères)"
       already_confirmed: "a déjà été validé(e), veuillez essayer de vous connecter"
       confirmation_period_expired: "à confirmer dans les %{period}, merci de faire une nouvelle demande"
@@ -9,13 +10,20 @@ fr:
       not_locked: "n'était pas verrouillé(e)"
       invalid_email_or_password: "L'email ou le mot de passe est incorrect."
       invalid_email_format: "Le format de l'email est incorrect."
-      taken: "a déjà été pris"  # Ajout du message d'erreur pour les emails déjà utilisés
+      taken: "a déjà été pris"
     attributes:
       email:
         blank: "L'adresse email ne peut pas être vide."
-        taken: "déjà utilisée."  # Ajout du message d'erreur pour les emails déjà utilisés
+        taken: "déjà utilisée."
       password:
         blank: "Le mot de passe ne peut pas être vide."
+      password_confirmation:
+        confirmation: "Les mots de passe ne correspondent pas."
+  activerecord:
+    attributes:
+      user:  # Remplacez 'user' par le nom de votre modèle si différent
+        password_confirmation: ""
+
   devise:
     confirmations:
       confirmed: "Votre compte a été validé."
