@@ -1,48 +1,46 @@
-<h1>Edit Item</h1>
+<h1 class="text-center my-4">Editer un article</h1>
 
 <%= form_with(model: @item, local: true, class: 'custom-form' ) do |form| %>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price, step: 0.01 %>
+    <%= form.number_field :price, step: 0.01, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :item_tag_ids, 'Tags' %><br>
+  <div class="form-group">
+    <%= form.label :item_tag_ids, 'Tags' %>
     <% ItemTag.all.each do |tag| %>
-      <%= check_box_tag 'item[item_tag_ids][]', tag.id, @item.item_tags.include?(tag) %>
-      <%= tag.name %><br>
+      <div class="form-check">
+        <%= check_box_tag 'item[item_tag_ids][]', tag.id, @item.item_tags.include?(tag), class: 'form-check-input' %>
+        <%= label_tag "item[item_tag_ids][]_#{tag.id}", tag.name, class: 'form-check-label' %>
+      </div>
     <% end %>
-  </div>
-
-  <div class="field">
-    <%= form.label :in_stock, class: "checkbox" do %>
-      <%= form.check_box :in_stock %>
-      En stock
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= form.label :visible_on_site %>
-    <%= form.check_box :visible_on_site %>
+       <div class="form-check">
+       <%= form.check_box :in_stock, class: 'form-check-input' %>
+    <%= form.label :in_stock, class: 'form-check-label' %>
+      </div>
+             <div class="form-check">
+    <%= form.check_box :visible_on_site, class: 'form-check-input' %>
+    <%= form.label :visible_on_site, class: 'form-check-label' %>
+      </div>
   </div>
 
 
   <div class="actions">
-    <%= form.submit 'Update Item', class: 'btn btn-primary' %>
+    <%= form.submit 'Mettre à jour l\'article', class: 'custom-submit-button' %>
   </div>
 <% end %>
