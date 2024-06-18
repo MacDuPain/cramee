@@ -70,6 +70,10 @@ p {
   border: none;
 }
 
+.card-title{
+  text-align: center;
+}
+
 .custom-line {
   border-bottom: 1px solid #E8E0D3; /* Crée une ligne de bordure grise de 1 pixel */
   width: 50%; /* Définissez la largeur de la ligne, ajustez selon vos besoins */
