@@ -1,9 +1,12 @@
 class CartsController < ApplicationController
+  # Avant chaque action dans ce contrôleur, vérifier que l'utilisateur est authentifié
   before_action :authenticate_user!
+
+  # Avant certaines actions spécifiques, définir le panier actuel de l'utilisateur
   before_action :set_cart, only: [:show, :edit, :destroy, :confirm_order]
 
+  # Action pour afficher le panier actuel de l'utilisateur
   def show
-    @cart = current_user.cart
     @cart_items = @cart.cart_items
     @total_price = @cart.cart_items.sum do |cart_item|
       if cart_item.quantity.present?
@@ -12,16 +15,16 @@ class CartsController < ApplicationController
         0
       end
     end
-
     # Si le panier est vide, initialiser @total_price à zéro
     @total_price ||= 0
   end
 
-
+  # Action pour éditer un panier existant
   def edit
     @cart = Cart.find(params[:id])
-   end
+  end
 
+  # Action pour créer un nouveau panier pour l'utilisateur actuel
   def create
     @cart = current_user.build_cart
     if @cart.save
@@ -31,8 +34,8 @@ class CartsController < ApplicationController
     end
   end
 
+  # Action pour mettre à jour la quantité d'un article dans le panier de l'utilisateur
   def update_item_quantity
-    # Trouver l'article dans le panier de l'utilisateur actuel
     cart_item = current_user.cart.items.find_by(id: params[:item_id])
 
     if cart_item.nil?
@@ -44,13 +47,14 @@ class CartsController < ApplicationController
     end
   end
 
-
+  # Action pour supprimer le panier actuel de l'utilisateur
   def destroy
     @cart = current_user.cart
     @cart.destroy
     redirect_to root_path, notice: 'Votre panier a été supprimé avec succès'
   end
 
+  # Action pour ajouter un article au panier de l'utilisateur
   def add_item
     @cart = current_user.cart || current_user.create_cart
     item = Item.find(params[:item_id])
@@ -71,7 +75,7 @@ class CartsController < ApplicationController
     redirect_to @cart, notice: 'L\'article a été ajouté à votre panier.'
   end
 
-
+  # Action pour retirer un article du panier de l'utilisateur
   def remove_item
     @cart = current_user.cart
     item = Item.find(params[:item_id])
@@ -87,7 +91,7 @@ class CartsController < ApplicationController
     redirect_to @cart, notice: 'Cet article a été retiré de votre panier'
   end
 
-
+  # Action pour confirmer une commande à partir du panier actuel de l'utilisateur
   def confirm_order
     @cart = current_user.cart
     if @cart.items.any?
@@ -102,13 +106,14 @@ class CartsController < ApplicationController
     end
   end
 
-
   private
 
+  # Méthode privée pour définir le panier actuel de l'utilisateur
   def set_cart
     @cart = current_user.cart || current_user.create_cart
   end
 
+  # Méthode privée pour définir les paramètres autorisés lors de la création/modification d'un panier
   def cart_params
     params.require(:cart).permit(:user_id)
   end
