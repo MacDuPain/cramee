@@ -7,11 +7,6 @@
   <p class="topic-meta">Date de création: <%= @topic.created_at.strftime("%d/%m/%Y") %></p>
 </div>
 
-<% if flash[:alert] %>
-  <div class="alert alert-danger" role="alert">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
 
 <% if user_signed_in? %>
   <%= form_with(model: [@topic, @comment || Comment.new], local: true, html: { class: "custom-form", id: "comment-form" }) do |f| %>
