@@ -2,7 +2,6 @@
   <% if cart.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
-
       <ul>
         <% cart.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -15,4 +14,3 @@
     <%= form.submit %>
   </div>
 <% end %>
-
