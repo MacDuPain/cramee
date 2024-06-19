@@ -2,13 +2,11 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    
     <title>Les M'Ondes de Miss Cramée : Boutique bijoux macramé</title>
     <%= favicon_link_tag 'white_logo.svg' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="bijoux en macramé, bijoux faits main, pierres naturelles, bracelets, colliers, boucles d'oreilles, artisanat, Miss Cramée">
     <meta name="author" content="Miss Cramée">
-    
     <meta name="description" content="Découvrez les bijoux en macramé faits main par Miss Cramée, artisan passionnée. Explorez nos bracelets, colliers et boucles d'oreilles en pierres naturelles.">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -17,25 +15,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body class="dyslexia-font">
-
-  <body>
-  <% if current_page?(root_path) %> <!-- Vérifie si la page actuelle est la landing page -->
-    <%= render "layouts/header" %>
-  <% end %>
-  <section class="py-5 mb-3 mt-3">
-
-  <%= render "layouts/nav" %>
-  <%= render "shared/flash_messages" %>
-  <%= yield %>
-</section>
-
-  
-  <%= render "layouts/footer" %>
+    <% if current_page?(root_path) %>
+      <%= render "layouts/header" %>
+    <% end %>
+    <section class="py-5 mb-3 mt-3">
+      <%= render "layouts/nav" %>
+      <%= render "shared/flash_messages" %>
+      <%= yield %>
+    </section>
+    <%= render "layouts/footer" %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="<%= asset_path('open_dyslexic.js') %>"></script>  </body>
+    <script src="<%= asset_path('open_dyslexic.js') %>"></script>
+  </body>
 </html>

@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
-*= require profiles
+ *= require profiles
  */
 
  @import 'bootstrap/scss/bootstrap';
@@ -29,13 +29,15 @@
  @import 'delivery_order';
  @import 'footer';
  @import 'header';
+ @import 'item';
+ @import 'landing_page';
+ @import 'mentions_legales';
  @import 'nav';
  @import 'sign_in_up';
- @import 'item';
- @import 'topics';
  @import 'topics_new';
  @import 'topics_show';
-@import 'main';
+ @import 'topics';
+
 
 body {
   font-family: "Josefin Sans", sans-serif;
@@ -46,7 +48,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--background_color);
-  overflow-x: hidden; /* Empêche le défilement horizontal */
+  overflow-x: hidden;
 }
 
 
@@ -76,9 +78,9 @@ p {
 }
 
 .custom-line {
-  border-bottom: 1px solid #E8E0D3; /* Crée une ligne de bordure grise de 1 pixel */
-  width: 50%; /* Définissez la largeur de la ligne, ajustez selon vos besoins */
-  margin: 0 auto; /* Centre la ligne horizontalement */
+  border-bottom: 1px solid #E8E0D3;
+  width: 50%; 
+  margin: 0 auto; 
   margin-bottom: 15px;
 }
 
@@ -104,38 +106,36 @@ p {
 
 .mention-link {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 0.75rem; /* Match the font size */
-  color: #6c757d; /* Match the text color */
-  text-decoration: none; /* Remove underline by default */
-  margin-top: 10px; /* Adjust margin as needed */
-  display: block; /* Ensures link takes full width */
-  text-align: center; /* Center align text */
+  font-size: 0.75rem; 
+  color: #6c757d; 
+  text-decoration: none; 
+  margin-top: 10px; 
+  display: block; 
+  text-align: center; 
 }
 
 .mention-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
-
-
 .redirect-about a {
-  text-decoration: underline; /* Underline the text */
-  color: #6c757d; /* Ensure the link color matches the surrounding text */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  text-decoration: underline; 
+  color: #6c757d; 
+  cursor: pointer; 
 }
 
 .alert {
   position: relative;
   display: flex;
   align-items: center;
-  top: 5px; /* Ajustez cette valeur pour changer la position verticale */
+  top: 5px; 
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  max-width: 50%; /* Limite la largeur à 80% de l'écran, ajustez si nécessaire */
-  padding: 10px 20px; /* Ajustez le padding selon vos préférences */
-  z-index: 1050; /* Assurez-vous qu'il est au-dessus des autres éléments */
-  opacity: 0.1; /* Opacité */
+  max-width: 50%; 
+  padding: 10px 20px; 
+  z-index: 1050; 
+  opacity: 0.1; 
 }
 
 .alert-dismissible .btn-close {
@@ -153,14 +153,14 @@ p {
 .alert-success {
   background-color: #A1BBA3;
   border-color: #A1BBA3;
-  color: #2A3C2C; /* ou une autre couleur de texte pour assurer une bonne lisibilité */
+  color: #2A3C2C; 
   opacity: 0.9;
 }
 
 .alert-danger {
-  background-color: #D9534F; /* Vous pouvez ajuster cette couleur aussi si nécessaire */
+  background-color: #D9534F; 
   border-color: #D9534F;
-  color: #2A3C2C; /* ou une autre couleur de texte pour assurer une bonne lisibilité */
+  color: #2A3C2C; 
   opacity: 0.9;
 }
 

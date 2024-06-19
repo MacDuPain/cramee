@@ -12,59 +12,59 @@
 }
 
 .footer-container {
-  text-align: center; /* Center all content in the container */
+  text-align: center;
 }
 
 .custom-line {
-  margin: 0 auto; /* Center the line if it has a defined width */
-  width: 80%; /* Define the width of the line as needed */
-  height: 2px; /* Height of the line */
-  background-color: #E8E0D3; /* Color of the line */
+  margin: 0 auto;
+  width: 80%;
+  height: 2px;
+  background-color: #E8E0D3;
 }
 
 .nav {
   display: flex;
-  justify-content: center; /* Center navigation items */
-  padding: 0; /* Remove default padding from list */
+  justify-content: center;
+  padding: 0;
 }
 
 .nav-item {
-  list-style: none; /* Remove list bullets */
-  margin: 0 5px; /* Margin between list items */
+  list-style: none;
+  margin: 0 5px;
 }
 
 .nav-item img {
-  max-height: 50px; /* Adjust height of logos */
-  display: block; /* Ensure images are block elements for proper alignment */
+  max-height: 50px;
+  display: block;
 }
 
 .text-center {
-  margin: 10px 0; /* Margin to space out paragraphs */
+  margin: 10px 0;
 }
 
 .mention-link {
-  cursor: pointer; /* Change cursor on hover for legal mentions */
+  cursor: pointer;
 }
 
 .text-body-secondary {
-  color: #6c757d; /* Secondary text color */
+  color: #6c757d;
 }
 
 .heading-mention-link {
-  font-size: 1rem; /* Set font size to match h5 and h6 */
-  color: #000; /* Set text color to black */
-  text-decoration: none; /* Remove underline by default */
-  margin-top: 10px; /* Adjust margin as needed */
-  display: block; /* Ensure link takes full width */
-  text-align: center; /* Center align text */
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
 }
 
 .heading-mention-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
 .compact-footer {
-  font-size: 0.75rem; /* Set a smaller font size for the entire footer */
+  font-size: 0.75rem;
 }
 
 .compact-footer .py-2 {

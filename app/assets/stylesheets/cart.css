@@ -1,28 +1,25 @@
 .custom-container {
-  margin-left: 20px;  /* Marge à gauche */
-  margin-right: 20px;  /* Marge à droite */
-  background-color: transparent; /* Fond transparent */
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: transparent;
 }
 
-
 .fw-bold.delivery-info-title {
-  margin-top: 20px;  /* Marge au-dessus */
-  margin-bottom: 20px;  /* Marge en dessous */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .item-image {
-  border-radius: 4px; /* Pour arrondir légèrement les images, optionnel */
+  border-radius: 4px;
 }
 
 .table-transparent {
-  background-color: transparent !important; /* Fond transparent */
-  border: none; /* Add border with color E8E0D3 */
+  background-color: transparent !important;
+  border: none;
 }
 
 .table-transparent th,
 .table-transparent td {
-  background-color: transparent !important; /* Fond transparent */
-  border: none; /* Add border with color E8E0D3 to table cells */
+  background-color: transparent !important;
+  border: none;
 }
-
-
