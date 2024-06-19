@@ -1,5 +1,5 @@
 # README
-<img width="250" src="cramee/app/assets/images/full_logo.svg" alt="Logo">
+<img width="250" src="app/assets/images/full_logo.svg" alt="Logo">
 
 
 # Title
