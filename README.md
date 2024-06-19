@@ -66,13 +66,13 @@ Pour utiliser Stripe et SendGrid dans l'application, vous devez intégrer vos pr
 
 Exemple de configuration dans config/initializers/stripe.rb :
 
-    ```bash
+<code>
     Rails.configuration.stripe = {
     publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
     secret_key: ENV['STRIPE_SECRET_KEY']
     Stripe.api_key = Rails.configuration.stripe[:secret_key]
     }
-    ```
+</code>
 
 Assurez-vous de définir STRIPE_PUBLISHABLE_KEY et STRIPE_SECRET_KEY dans vos variables d'environnement (par exemple, dans un fichier .env).
 
@@ -99,7 +99,6 @@ ActionMailer::Base.smtp_settings = {
 }
 </code>
 </pre>
-
 
 Assurez-vous de définir SENDGRID_API_KEY dans vos variables d'environnement.
 
