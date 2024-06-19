@@ -1,4 +1,6 @@
 # README
+<img width="250" src="cramee/app/assets/images/full_logo.svg" alt="Logo">
+
 
 # Title
 Les Mondes de Miss Cramée
