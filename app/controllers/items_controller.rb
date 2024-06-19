@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
     @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Bracelet") })
   end
   def boucles_oreilles
-    @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Boucles d'Oreilles") })
+    @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Boucle d'Oreille") })
   end
   def colliers
     @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Collier") })
