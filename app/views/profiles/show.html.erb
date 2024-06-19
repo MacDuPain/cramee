@@ -3,13 +3,11 @@
 <div class="profile-container">
   <h1 class="text-center my-4">Mon compte</h1>
 
-  <!-- Profile Section -->
   <div class="profile-section">
     <div class="section-body">
       <p class="profile-email">Vous êtes connecté avec l'adresse mail <%= @user.email %></p>
       <%= link_to "MODIFIER MON PROFIL", edit_profile_path, class: 'custom-submit-button mb-4' %>
 
-      <!-- Form to edit email address -->
       <div id="edit-email-form" style="display: none;">
         <h2 class="profile-subtitle">MODIFIER LE PROFIL</h2>
         <%= form_with(model: @user, url: profile_path, method: :patch) do |form| %>
@@ -23,7 +21,6 @@
     </div>
   </div>
 
-  <!-- Order History Section -->
   <div class="order-history-section">
     <h3 class="text-center my-4">HISTORIQUE DE VOS COMMANDES</h3>
     <div class="section-body">

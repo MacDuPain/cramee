@@ -1,6 +1,6 @@
 
-/* Styles pour le formulaire personnalisé */
 .custom-form {
+  font-family: "Josefin Sans", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,7 @@
 }
 
 .custom-form .field {
+  font-family: "Josefin Sans", sans-serif;
   width: 100%;
   margin-bottom: 10px;
   text-align: center;
@@ -32,7 +33,6 @@
   font-size: 12px;
 }
 
-/* Bouton de soumission personnalisé */
 .custom-submit-button {
   width: calc(100% - 32px);
   background-color: #A1BBA3;
@@ -44,17 +44,16 @@
   border-radius: 10px;
   display: block;
   margin: 0 auto 20px;
-  text-align: center; /* Centre le texte */
-  text-decoration: none; /* Retire le soulignement */
+  text-align: center; 
+  text-decoration: none; 
 }
 
 .custom-submit-button:hover {
   background-color: #657166;
   color: #fff;
-  text-decoration: none; /* Retire le soulignement au survol */
+  text-decoration: none;
 }
 
-/* Lien personnalisé */
 .custom-link {
   color: black;
   text-decoration: underline;
@@ -63,7 +62,6 @@
   margin-top: 20px;
 }
 
-/* Texte personnalisé */
 .custom-text {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px;

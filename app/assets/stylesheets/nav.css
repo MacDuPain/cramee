@@ -1,75 +1,69 @@
-/* Styles pour la barre de navigation */
 .navbar {
-  position: fixed; /* Position fixée en haut de la page */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--background_color); /* Utilisation de la variable de couleur de fond */
-  z-index: 10; /* Assure que la barre de navigation est au-dessus du contenu */
+  background-color: var(--background_color);
+  z-index: 10;
 }
 
 .navbar-brand img {
-  animation: logoBounce 2s infinite; /* Animation du logo */
+  animation: logoBounce 2s infinite;
 }
 
 .navbar-nav {
   display: flex;
-  justify-content: space-between; /* Espacement égal entre les éléments */
-  align-items: center; /* Centre les éléments verticalement */
-  padding: 0 20px; /* Ajoute un peu de padding aux extrémités */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .nav-link {
   font-family: "Josefin Sans", sans-serif;
-  color: black; /* Utilisation de la variable de couleur de texte */
+  color: black;
   font-weight: normal;
-  text-transform: uppercase; /* Transforme le texte en majuscules */
-  margin-left: 20px; /* Espacement entre les liens de navigation */
-  transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+  text-transform: uppercase;
+  margin-left: 20px;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .dropdown-item:hover,
 .dropdown-item:focus {
-  color: #2A3C2C; /* Couleur plus foncée au survol et au focus */
+  color: #2A3C2C;
 }
 
-/* Changer la couleur de fond au survol pour les éléments du dropdown */
 .navbar-nav .dropdown-item:hover,
 .navbar-nav .dropdown-item:focus {
-  background-color: #2A3C2C; /* Fond plus foncé sur hover */
+  background-color: #2A3C2C;
 }
 
-/* Styles pour le menu déroulant */
 .dropdown-menu {
-  background-color: #2C3E50; /* Fond plus foncé du menu déroulant */
-  border: none; /* Supprime les bordures */
-  box-shadow: none; /* Supprime l'ombre portée */
+  background-color: #2C3E50;
+  border: none;
+  box-shadow: none;
 }
 
 .dropdown-item {
-  color: #2A3C2C; /* Couleur du texte des éléments du menu */
+  color: #2A3C2C;
   font-family: "Josefin Sans", sans-serif;
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: #E8E0D3; /* Fond plus foncé sur hover */
-  color: #E8E0D3; /* Couleur du texte plus claire au survol et au focus */
+  background-color: #E8E0D3;
+  color: #E8E0D3;
 }
 
-/* Ajout de la couleur noire au dropdown */
 .navbar-nav .dropdown-menu {
-  background-color: #A1BBA3; /* Fond plus foncé */
+  background-color: #A1BBA3;
 }
 
-/* Aligner à droite */
 .navbar-nav .right-align {
-  margin-left: auto; /* Déplace le contenu à droite */
+  margin-left: auto;
 }
 
-/* Ajout d'une animation pour le logo */
 @keyframes logoBounce {
   0%, 100% {
     transform: translateY(0);

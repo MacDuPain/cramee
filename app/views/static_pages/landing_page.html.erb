@@ -134,31 +134,25 @@
 
   <section id="products" class="py-5">
     <div class="container position-relative">
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="500">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
               <% @items.take(3).each do |item| %>
                 <% if item.in_stock %>
                   <div class="col mb-5">
                     <div class="card h-100 shadow-sm border-0">
-                      <!-- Product details-->
+                      <h5 class="card-title"><%= item.name %></h5>
+                      <% if item.image.attached? %>
+                        <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
+                      <% end %>
                       <div class="card-body p-4 text-center">
-                        <% if item.image.attached? %>
-                          <%= image_tag item.image, class: 'item-image mb-3', alt: item.name %>
-                        <% end %>
-                        <!-- Product name-->
-                        <h5 class="fw-bolder"><%= item.name %></h5>
-                        <!-- Product price-->
-                        <div class="product-price">
-                          <%= number_to_currency(item.price) %>
-                        </div>
-                        <!-- Stock status -->
-                        <% if item.in_stock %> <!-- Vérifiez si l'article est en stock -->
+                        <h5><%= number_to_currency(item.price) %></h5>
+                        <p class="card-text"><%= item.description %></p>
+                        <% if item.in_stock %>
                           <div class="badge bg-success">En stock</div>
                         <% end %>
                       </div>
-                      <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
                           <%= link_to "Voir plus", item_path(item), class: "custom-submit-button" %>
@@ -171,28 +165,22 @@
             </div>
           </div>  
           <div class="carousel-item">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
               <% @items.offset(3).take(3).each do |item| %>
                 <% if item.in_stock %>
                   <div class="col mb-5">
                     <div class="card h-100 shadow-sm border-0">
-                      <!-- Product details-->
+                      <h5 class="card-title"><%= item.name %></h5>
+                      <% if item.image.attached? %>
+                        <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
+                      <% end %>
                       <div class="card-body p-4 text-center">
-                        <% if item.image.attached? %>
-                          <%= image_tag item.image, class: 'item-image mb-3', alt: item.name %>
-                        <% end %>
-                        <!-- Product name-->
-                        <h5 class="fw-bolder"><%= item.name %></h5>
-                        <!-- Product price-->
-                        <div class="product-price">
-                          <%= number_to_currency(item.price) %>
-                        </div>
-                        <!-- Stock status -->
-                        <% if item.in_stock %> <!-- Vérifiez si l'article est en stock -->
+                        <h5><%= number_to_currency(item.price) %></h5>
+                        <p class="card-text"><%= item.description %></p>
+                        <% if item.in_stock %>
                           <div class="badge bg-success">En stock</div>
                         <% end %>
                       </div>
-                      <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
                           <%= link_to "Voir plus", item_path(item), class: "custom-submit-button" %>
@@ -205,28 +193,22 @@
             </div>
           </div>
           <div class="carousel-item">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
               <% @items.offset(6).take(3).each do |item| %>
                 <% if item.in_stock %>
                   <div class="col mb-5">
                     <div class="card h-100 shadow-sm border-0">
-                      <!-- Product details-->
+                      <h5 class="card-title"><%= item.name %></h5>
+                      <% if item.image.attached? %>
+                        <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
+                      <% end %>
                       <div class="card-body p-4 text-center">
-                        <% if item.image.attached? %>
-                          <%= image_tag item.image, class: 'item-image mb-3', alt: item.name %>
-                        <% end %>
-                        <!-- Product name-->
-                        <h5 class="fw-bolder"><%= item.name %></h5>
-                        <!-- Product price-->
-                        <div class="product-price">
-                          <%= number_to_currency(item.price) %>
-                        </div>
-                        <!-- Stock status -->
-                        <% if item.in_stock %> <!-- Vérifiez si l'article est en stock -->
+                        <h5><%= number_to_currency(item.price) %></h5>
+                        <p class="card-text"><%= item.description %></p>
+                        <% if item.in_stock %>
                           <div class="badge bg-success">En stock</div>
                         <% end %>
                       </div>
-                      <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
                           <%= link_to "Voir plus", item_path(item), class: "custom-submit-button" %>
@@ -242,6 +224,7 @@
       </div>
     </div>
   </section>
+
 
   <section class="py-5">
     <div class="container">
