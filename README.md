@@ -1,9 +1,8 @@
-# README
-<img width="250" src="app/assets/images/full_logo.svg" alt="Logo">
+<img src="app/assets/images/full_logo.svg" alt="Logo">
 
 
-# Title
-Les Mondes de Miss Cramée
+# Les M'Ondes de Miss Cramée
+Les M'Ondes de Miss Cramée
 
 # Useful links
 
