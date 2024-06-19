@@ -83,6 +83,7 @@ p {
 }
 
 .custom-submit-button {
+  font-family: "Josefin Sans", sans-serif;
   width: 300px;
   max-width: 100%;
   padding: 8px 16px;
@@ -102,6 +103,7 @@ p {
 }
 
 .mention-link {
+  font-family: "Josefin Sans", sans-serif;
   font-size: 0.75rem; /* Match the font size */
   color: #6c757d; /* Match the text color */
   text-decoration: none; /* Remove underline by default */
