@@ -61,7 +61,7 @@ Rails.application.routes.draw do
   get 'colliers', to: 'items#colliers'
   get 'piece_unique', to: 'items#piece_unique'
   get 'marque_page', to: 'items#marque_page'
-  get 'porte_cles', to: 'items#porte_cles'
+  get 'autres', to: 'items#autres'
 
   # Profile route
   resource :profile, only: [:show, :edit, :update]

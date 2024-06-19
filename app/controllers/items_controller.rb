@@ -66,8 +66,8 @@ class ItemsController < ApplicationController
     @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Marque Page") })
   end
 
-  def porte_cles
-    @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Porte Clés") })
+  def autres
+    @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Autres") })
   end
 
 
