@@ -14,10 +14,19 @@
             <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
           <% end %>
           <br>
-              <%= link_to "Voir plus", item_path(item), class: "custom-submit-button" %>
+              <%= link_to "Voir plus", item_path(item), class: "custom-submit-button mt-3" %>
+
           <div class="card-body p-4 text-center">
             <p class="card-text"><%= item.description %></p>
           </div>
+
+          <div class="card-body p-4 text-center">
+            <h5 class="text-center"><%= number_to_currency(item.price) %></h5>
+            <% if item.in_stock %>
+              <div class="badge bg-success mb-3 josefin-sans">En stock</div>
+            <% end %>
+          </div>
+
         </div>
       </div>
     <% end %>
