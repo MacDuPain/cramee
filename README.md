@@ -1,7 +1,7 @@
 <img src="app/assets/images/full_logo.svg" alt="Logo">
 
 # Les M'Ondes de Miss Cramée
-"Les M'Ondes de Miss Cramée" représente une enseigne française spécialisée dans la vente de bijoux artisanaux confectionnés à partir de fils en polyester ciré et ornés de pierres naturelles. Fondée par Christelle Bobichon en 2014, cette boutique était jusqu'à présent exclusivement présente sur la plateforme Facebook. Afin de donner davantage de visibilité à Miss Cramée, [Thomas Bobichon](https://github.com/ZealRa/), [Céline Brezin](https://github.com/linexploit), [Sacha Godel ](https://github.com/MacDuPain) et [Xavier Kerleau](https://github.com/xv1106), dans le cadre du projet final de [THP (The Hacking Project)](https://www.thehackingproject.org/), ont proposé le développement d'une application web, dont nous vous mettons le code source en open-source.
+*Les M'Ondes de Miss Cramée* représente une enseigne française spécialisée dans la vente de bijoux artisanaux confectionnés à partir de fils en polyester ciré et ornés de pierres naturelles. Fondée par Christelle Bobichon en 2014, cette boutique était jusqu'à présent exclusivement présente sur la plateforme Facebook. Afin de donner davantage de visibilité à Miss Cramée, [Thomas Bobichon](https://github.com/ZealRa/), [Céline Brezin](https://github.com/linexploit), [Sacha Godel ](https://github.com/MacDuPain) et [Xavier Kerleau](https://github.com/xv1106), dans le cadre du projet final de [THP (The Hacking Project)](https://www.thehackingproject.org/), ont proposé le développement d'une application web, dont nous vous mettons le code source en open-source.
 
 # Useful links
 - [Product Brief (PRD)](https://carnation-plane-2c9.notion.site/Product-Brief-PRD-cf70fd0175df4969b96136d624d58367)
