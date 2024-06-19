@@ -66,12 +66,11 @@ Pour utiliser Stripe et SendGrid dans l'application, vous devez intégrer vos pr
 
 Exemple de configuration dans config/initializers/stripe.rb :
 
-    ```sh
-  Rails.configuration.stripe = {
-  publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
-  secret_key: ENV['STRIPE_SECRET_KEY']
-  
-  Stripe.api_key = Rails.configuration.stripe[:secret_key]
+    ```ruby
+    Rails.configuration.stripe = {
+    publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
+    secret_key: ENV['STRIPE_SECRET_KEY']
+    Stripe.api_key = Rails.configuration.stripe[:secret_key]
     ```
 
 Assurez-vous de définir STRIPE_PUBLISHABLE_KEY et STRIPE_SECRET_KEY dans vos variables d'environnement (par exemple, dans un fichier .env).
@@ -86,16 +85,16 @@ Assurez-vous de définir STRIPE_PUBLISHABLE_KEY et STRIPE_SECRET_KEY dans vos va
 
 Exemple de configuration dans config/initializers/sendgrid.rb :
 
-    ```sh
-ActionMailer::Base.smtp_settings = {
-  :user_name => 'apikey',
-  :password => ENV['SENDGRID_API_KEY'],
-  :domain => 'yourdomain.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
+    ```ruby
+    ActionMailer::Base.smtp_settings = {
+    :user_name => 'apikey',
+    :password => ENV['SENDGRID_API_KEY'],
+    :domain => 'yourdomain.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+    }
     ```
 Assurez-vous de définir SENDGRID_API_KEY dans vos variables d'environnement.
 
