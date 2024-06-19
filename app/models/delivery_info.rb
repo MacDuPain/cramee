@@ -6,5 +6,4 @@ class DeliveryInfo < ApplicationRecord
   validates :adresse, presence: true
   validates :code_postal, presence: true, format: { with: /\A\d+\z/, message: "doit contenir uniquement des chiffres" }
   validates :ville, presence: true
-
 end
