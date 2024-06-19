@@ -1,3 +1,6 @@
+<% content_for :title, "Inscription" %>
+
+
 <h2 class="custom-h2">Inscrivez-vous</h2>
 <h3 class="custom-h3">Heureux de vous compter parmi nous !</h3>
 
@@ -7,9 +10,7 @@
     <div id="error_explanation">
       <h2><%= pluralize(resource.errors.count, "erreur") %> ont empêché l'enregistrement :</h2>
       <ul>
-        <% resource.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+        <%= resource.errors.full_messages.map { |message| "<li>#{message}</li>" }.join.html_safe %>
       </ul>
     </div>
   <% end %>
@@ -35,7 +36,7 @@
 <div class="custom-line"></div>
 
 <div class="actions custom-text">
-  <p>Déjà un compte ? 
+  <p>Déjà un compte ?
     <% if controller_name != 'sessions' %>
       <%= link_to "Se connecter", new_session_path(resource_name), class: "custom-link" %>
     <% end %>

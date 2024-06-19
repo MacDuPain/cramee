@@ -10,6 +10,7 @@ import "controllers"
 //= require_tree .
 
 import * as bootstrap from "bootstrap"
+console.log('application.js is loaded');
 
 document.addEventListener('turbolinks:load', function() {
     // Réinitialiser Bootstrap dropdowns
@@ -18,3 +19,20 @@ document.addEventListener('turbolinks:load', function() {
         return new bootstrap.Dropdown(dropdownToggleEl)
     });
 });
+
+document.addEventListener('turbolinks:load', function() {
+    setTimeout(function() {
+      var alerts = document.querySelectorAll('.alert');
+      alerts.forEach(function(alert) {
+        alert.style.transition = 'opacity 0.5s ease';
+        alert.style.opacity = '0';
+        setTimeout(function() {
+          alert.remove();
+        }, 500); // Correspond à la durée de la transition
+      });
+    }, 4000); // 4 seconds
+  });
+  
+
+
+

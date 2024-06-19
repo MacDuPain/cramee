@@ -1,3 +1,74 @@
+/* Styles pour la barre de navigation */
+.navbar {
+  position: fixed; /* Position fixée en haut de la page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background_color); /* Utilisation de la variable de couleur de fond */
+  z-index: 10; /* Assure que la barre de navigation est au-dessus du contenu */
+}
+
+.navbar-brand img {
+  animation: logoBounce 2s infinite; /* Animation du logo */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between; /* Espacement égal entre les éléments */
+  align-items: center; /* Centre les éléments verticalement */
+  padding: 0 20px; /* Ajoute un peu de padding aux extrémités */
+}
+
+.nav-link {
+  font-family: "Josefin Sans", sans-serif;
+  color: black; /* Utilisation de la variable de couleur de texte */
+  font-weight: normal;
+  text-transform: uppercase; /* Transforme le texte en majuscules */
+  margin-left: 20px; /* Espacement entre les liens de navigation */
+  transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #2A3C2C; /* Couleur plus foncée au survol et au focus */
+}
+
+/* Changer la couleur de fond au survol pour les éléments du dropdown */
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+  background-color: #2A3C2C; /* Fond plus foncé sur hover */
+}
+
+/* Styles pour le menu déroulant */
+.dropdown-menu {
+  background-color: #2C3E50; /* Fond plus foncé du menu déroulant */
+  border: none; /* Supprime les bordures */
+  box-shadow: none; /* Supprime l'ombre portée */
+}
+
+.dropdown-item {
+  color: #2A3C2C; /* Couleur du texte des éléments du menu */
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #E8E0D3; /* Fond plus foncé sur hover */
+  color: #E8E0D3; /* Couleur du texte plus claire au survol et au focus */
+}
+
+/* Ajout de la couleur noire au dropdown */
+.navbar-nav .dropdown-menu {
+  background-color: #A1BBA3; /* Fond plus foncé */
+}
+
+/* Aligner à droite */
+.navbar-nav .right-align {
+  margin-left: auto; /* Déplace le contenu à droite */
+}
+
 /* Ajout d'une animation pour le logo */
 @keyframes logoBounce {
   0%, 100% {
@@ -10,77 +81,4 @@
 
 .navbar-brand img {
   animation: logoBounce 2s infinite;
-}
-
-/* Styles pour la barre de navigation */
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-.color-primary {
-  color: white;
-}
-
-.nav-link {
-  font-family: "Libre Baskerville", serif;
-  color: white;
-  font-weight: bold;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.dropdown-item:hover,
-.dropdown-item:focus {
-  color: #E8E0D3; /* Changer la couleur au survol et au focus */
-}
-
-/* Changer la couleur au survol pour les éléments du dropdown */
-.navbar-nav .dropdown-item:hover,
-.navbar-nav .dropdown-item:focus {
-  background-color: #E8E0D3;
-}
-
-/* Styles pour le menu déroulant */
-.dropdown-menu {
-  background-color: transparent; /* Fond transparent */
-  border: none; /* Supprime les bordures */
-  box-shadow: none; /* Supprime l'ombre portée */
-}
-
-.dropdown-item {
-  color: white; /* Couleur du texte des éléments du menu */
-  font-family: "Libre Baskerville", serif; 
-}
-
-.dropdown-item:hover, .dropdown-item:focus {
-  background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent sur hover */
-}
-
-/* Ajout de la couleur noire au dropdown */
-.navbar-nav .dropdown-menu {
-  background-color: black;
-}
-
-
-
-.keep-white-on-hover:hover {
-  color: white !important;
-}
-
-
-.keep-white-on-click:active, .keep-white-on-click:focus, .keep-white-on-click:visited {
-  color: white !important;
-}
-
-.dropdown-item:hover, .dropdown-item:focus {
-  color: #555454; /* Changer la couleur au survol et au focus */
-}
-
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }

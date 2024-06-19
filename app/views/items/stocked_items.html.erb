@@ -1,3 +1,5 @@
+<% content_for :title, "En Stock" %>
+
 <h1 class="text-center my-4">Tous les bijoux fraîchement sortis de l'atelier ! (<%= @items.count %>)</h1>
 
 <div class="container">
@@ -9,7 +11,7 @@
             <!-- Product details-->
             <div class="card-body p-4 text-center">
               <% if item.image.attached? %>
-                <%= image_tag item.image.variant(resize_to_fill: [300, 300]), class: 'item-image mb-3', alt: item.name %>
+                <%= image_tag item.image), class: 'item-image mb-3', alt: item.name %>
               <% end %>
               <!-- Product name-->
               <h5 class="fw-bolder"><%= item.name %></h5>
