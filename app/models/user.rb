@@ -25,7 +25,7 @@ class User < ApplicationRecord
     types += 1 if password =~ /[^a-zA-Z0-9]/ # Special characters
 
     if types < 2
-      errors.add :password, 'must include at least two of the following: uppercase letters, lowercase letters, numbers, and special characters'
+      errors.add :password, 'Le mot de passe ne contient pas au moins deux des catégories précisées ci dessous'
     end
   end
 
