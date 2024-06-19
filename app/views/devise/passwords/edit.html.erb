@@ -1,28 +1,26 @@
 <% content_for :title, "Mot de passe" %>
 
+<h2 class="custom-h2">Changement de votre mot de passe</h2>
+<h3 class="custom-h3">Tapez votre nouveau mot de passe</h3>
 
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "custom-form", method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+     <%= f.password_field :password, autofocus: true, placeholder: "Nouveau mot de passe", autocomplete: "new-password", class: "input", required: true %>
+      <p class="custom-text-password">Le mot de passe doit contenir au moins 8 caractères, incluant au moins deux des types suivants : majuscules, minuscules, chiffres, caractères spéciaux.</p>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation,  placeholder: "Confirmer le nouveau mot de passe", autocomplete: "new-password", class: "input", required: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%= f.submit "Changer mon mot de passe", class: "custom-submit-button" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
