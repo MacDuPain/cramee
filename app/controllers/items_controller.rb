@@ -69,14 +69,9 @@ class ItemsController < ApplicationController
   def marque_page
     @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Marque Page") })
   end
-<<<<<<< HEAD
 
   def autres
     @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Autres") })
-=======
-  def porte_cles
-    @items = visible_items.joins(:item_taggings).where(item_taggings: { item_tag_id: ItemTag.find_by(name: "Porte Clés") })
->>>>>>> 3278ae58b3de6705a0cbc05ac939ddedd9a14fcc
   end
 
   # Action pour afficher les articles en stock
