@@ -26,6 +26,7 @@
 }
 
 .custom-link {
+  font-family: "Josefin Sans", sans-serif;
   color: black;
   text-decoration: underline;
   margin: 0;
