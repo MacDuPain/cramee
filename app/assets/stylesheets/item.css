@@ -21,6 +21,10 @@
     object-fit: cover;
   }
 
+  .josefin-sans {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
   /* Police dyslexique */
 @font-face {
   font-family: 'OpenDyslexic';
