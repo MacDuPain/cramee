@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
-*= require profiles
+ *= require profiles
  */
 
  @import 'bootstrap/scss/bootstrap';
@@ -29,13 +29,15 @@
  @import 'delivery_order';
  @import 'footer';
  @import 'header';
+ @import 'item';
+ @import 'landing_page';
+ @import 'mentions_legales';
  @import 'nav';
  @import 'sign_in_up';
- @import 'item';
- @import 'topics';
  @import 'topics_new';
  @import 'topics_show';
-@import 'main';
+ @import 'topics';
+
 
 body {
   font-family: "Josefin Sans", sans-serif;
@@ -115,8 +117,6 @@ p {
 .mention-link:hover {
   text-decoration: underline; /* Underline on hover */
 }
-
-
 
 .redirect-about a {
   text-decoration: underline; /* Underline the text */
