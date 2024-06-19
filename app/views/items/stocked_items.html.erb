@@ -10,7 +10,7 @@
           <div class="card h-100 shadow-sm border-0">
             <div class="card-body p-4 text-center">
               <% if item.image.attached? %>
-                <%= image_tag item.image.variant(resize: "500x500"), class: 'item-image mb-3', alt: item.name %>
+                <%= image_tag item.image, class: 'item-image mb-3', alt: item.name %>
               <% end %>
               <h5 class="fw-bolder"><%= item.name %></h5>
               <div class="product-price">
