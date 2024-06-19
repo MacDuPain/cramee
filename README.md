@@ -70,7 +70,8 @@ Exemple de configuration dans config/initializers/stripe.rb :
     Rails.configuration.stripe = {
     publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
     secret_key: ENV['STRIPE_SECRET_KEY']
-    Stripe.api_key = Rails.configuration.stripe[:secret_key]}
+    Stripe.api_key = Rails.configuration.stripe[:secret_key]
+    }
     ```
 
 Assurez-vous de définir STRIPE_PUBLISHABLE_KEY et STRIPE_SECRET_KEY dans vos variables d'environnement (par exemple, dans un fichier .env).
@@ -93,8 +94,10 @@ Exemple de configuration dans config/initializers/sendgrid.rb :
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
-    :enable_starttls_auto => true}
+    :enable_starttls_auto => true
+    }
     ```
+    
 Assurez-vous de définir SENDGRID_API_KEY dans vos variables d'environnement.
 
 **Remarque importante**
