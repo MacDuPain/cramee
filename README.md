@@ -1,13 +1,12 @@
 <img src="app/assets/images/full_logo.svg" alt="Logo">
 
 # Les M'Ondes de Miss Cramée
-*Les M'Ondes de Miss Cramée* représente une enseigne française spécialisée dans la vente de bijoux artisanaux confectionnés à partir de fils en polyester ciré et ornés de pierres naturelles. Fondée par Christelle Bobichon en 2014, cette boutique était jusqu'à présent exclusivement présente sur la plateforme Facebook. Afin de donner davantage de visibilité à Miss Cramée, [Thomas Bobichon](https://github.com/ZealRa/), [Céline Brezin](https://github.com/linexploit), [Sacha Godel ](https://github.com/MacDuPain) et [Xavier Kerleau](https://github.com/xv1106), dans le cadre du projet final de [THP (The Hacking Project)](https://www.thehackingproject.org/), ont proposé le développement d'une application web, dont nous vous mettons le code source en open-source.
+*Les M'Ondes de Miss Cramée* représente une enseigne française spécialisée dans la vente de bijoux artisanaux confectionnés à partir de fils en polyester ciré et ornés de pierres naturelles. Fondée par Christelle Bobichon en 2014, cette boutique était jusqu'à présent exclusivement présente sur la plateforme Facebook. Afin de donner davantage de visibilité à Miss Cramée, [Thomas Bobichon](https://github.com/ZealRa/), [Céline Brezin](https://github.com/linexploit), [Sacha Godel](https://github.com/MacDuPain) et [Xavier Kerleau](https://github.com/xv1106), dans le cadre du projet final de [THP (The Hacking Project)](https://www.thehackingproject.org/), ont proposé le développement d'une application web, dont nous vous mettons le code source en open-source.
 
 # Liens utiles
 - [Product Brief (PRD)](https://carnation-plane-2c9.notion.site/Product-Brief-PRD-cf70fd0175df4969b96136d624d58367)
 - [Trello](https://trello.com/b/DTak0NdU/projet-final)
 - [Schema de la database](https://www.figma.com/board/Uz8RzqJXWkn1pYHt5ZyXZT/Untitled?node-id=0-1&t=AqopS2rj0IW8LMHn-1)
-
 
 # Fonctionnalités
 - Inscription et connexion des utilisateurs
@@ -51,3 +50,14 @@
     ```
 
 5. Ouvrez votre navigateur et allez à `http://localhost:3000`
+
+# Contribution
+Nous accueillons favorablement les contributions pour améliorer *Les M'Ondes de Miss Cramée*. Si vous souhaitez contribuer, veuillez ouvrir une pull request. Assurez-vous que votre proposition soit conforme aux bonnes pratiques de développement et respecte le code de conduite.
+
+## APIs Utilisées
+Nous utilisons deux APIs importantes pour notre application :
+- **Stripe**: Pour le processus de paiement sécurisé.
+- **SendGrid**: Pour la gestion et l'envoi d'e-mails.
+
+Ces APIs sont intégrées dans notre application afin de fournir une expérience utilisateur optimale et sécurisée lors des transactions et des communications par e-mail.
+
