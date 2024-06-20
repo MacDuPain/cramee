@@ -25,7 +25,11 @@ class User < ApplicationRecord
     types += 1 if password =~ /[^a-zA-Z0-9]/ # Special characters
 
     if types < 2
-      errors.add :password, 'Le mot de passe ne contient pas au moins deux des catégories précisées ci dessous'
+      errors.add :base, 'Le mot de passe ne contient pas au moins deux types de caractères'
+    end
+
+    if password.length < 8
+      errors.add :base, 'Le mot de passe est trop court (minimum 8 caractères)'
     end
   end
 
