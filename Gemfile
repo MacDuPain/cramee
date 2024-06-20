@@ -19,7 +19,7 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'sendgrid-ruby'
 
-gem 'letter_opener'
+gem 'letter_opener_web'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"

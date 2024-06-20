@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email
   after_create :create_cart
   has_one :cart, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -14,6 +15,10 @@ class User < ApplicationRecord
   validate :validate_email_format
 
   private
+
+  def send_welcome_email
+    WelcomeMailer.welcome_email(self).deliver_later
+  end
 
   def password_complexity
     return if password.blank?
