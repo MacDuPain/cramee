@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#landing_page'
   get 'static_pages/about', as: 'about'
   get 'mentions_legales', to: 'static_pages#mentions_legales'
-  get 'tags/show'
+
   get '/stocked_items', to: 'items#stocked_items'
   get 'boucles_oreilles', to: 'items#boucles_oreilles'
   get 'bracelets', to: 'items#bracelets'
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'piece_unique', to: 'items#piece_unique'
   get 'marque_page', to: 'items#marque_page'
   get 'autres', to: 'items#autres'
+
   get 'forum', to: 'topics#index', as: 'forum'
   get "up" => "rails/health#show", as: :rails_health_check
 
