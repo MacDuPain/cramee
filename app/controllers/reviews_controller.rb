@@ -4,11 +4,12 @@ class ReviewsController < ApplicationController
 
   # Action pour afficher tous les avis
   def index
-    @reviews = if current_user&.is_admin?
-                 Review.all
-               else
-                 Review.where(approved: true)
-               end
+    @reviews =
+      if current_user&.is_admin?
+        Review.all
+      else
+        Review.where(approved: true)
+      end
   end
 
   # Action pour afficher le formulaire de création d'un nouvel avis

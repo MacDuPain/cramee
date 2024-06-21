@@ -1,11 +1,11 @@
-<% content_for :title, "Page d'accueil" %>
+<% content_for :title, "Page d`accueil" %>
 <% content_for :meta_description, "Miss Cramée est une artisane qui produit des bijoux en fil de macramé en série ou sur demande" %>
 
 <body>
 <section id="firstCarousel" class="py-5">
   <div class="row align-items-center mb-4">
     <div class="col text-center">
-      <h1 class="text-center mb-5">Nos Bijoux</h1>
+      <h1 class=" mb-5">Nos Bijoux</h1>
     </div>
   </div>
 
@@ -109,54 +109,53 @@
 
 
 <section id="products" class="py-5">
-  <div class="row align-items-center mb-4">
-    <div class="col-auto">
-      <a class="carousel-control-prev outer-control" href="#carouselSecond" role="button" data-bs-slide="prev">
-        <span class="visually-hidden">Previous</span>
-      </a>
+    <div class="row align-items-center mb-4">
+      <div class="col-auto">
+        <a class="carousel-control-prev outer-control" href="#carouselSecond" role="button" data-bs-slide="prev">
+          <span class="visually-hidden">Previous</span>
+        </a>
+      </div>
+      <div class="col text-center">
+        <h1 class="text-center mb-5">Déjà sortis de l’atelier</h1>
+      </div>
+      <div class="col-auto">
+        <a class="carousel-control-next outer-control" href="#carouselSecond" role="button" data-bs-slide="next">
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
     </div>
-    <div class="col text-center">
-      <h1 class="text-center mb-5">Déjà sortis de l’atelier</h1>
-    </div>
-    <div class="col-auto">
-      <a class="carousel-control-next outer-control" href="#carouselSecond" role="button" data-bs-slide="next">
-        <span class="visually-hidden">Next</span>
-      </a>
-    </div>
-  </div>
 
-<div class="container position-relative">
-  <div id="carouselSecond" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
-      <% @items.each_slice(3).with_index do |items_slice, index| %>
-        <div class="carousel-item <%= 'active' if index == 0 %>">
-          <div class="row">
-            <% items_slice.each do |item| %>
-              <% if item.in_stock %>
-                <div class="col-md-4">
-                  <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
-                  <div class="text-center mt-2">
-                    <%= link_to 'Voir plus', item_path(item), class: 'carousel-title custom-link' %>
+  <div class="container position-relative">
+    <div id="carouselSecond" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <% @items.each_slice(3).with_index do |items_slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+              <% items_slice.each do |item| %>
+                <% if item.in_stock %>
+                  <div class="col-md-4">
+                    <%= image_tag url_for(item.image), class: 'card-img-top', alt: item.name %>
+                    <div class="text-center mt-2">
+                      <%= link_to 'Voir plus', item_path(item), class: 'carousel-title custom-link' %>
+                    </div>
                   </div>
-                </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselSecond" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselSecond" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSecond" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselSecond" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-</div>
-
 </section>
 
 
