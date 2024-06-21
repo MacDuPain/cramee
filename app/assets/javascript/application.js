@@ -13,7 +13,6 @@ import * as bootstrap from "bootstrap"
 console.log('application.js is loaded');
 
 document.addEventListener('turbolinks:load', function() {
-    // Réinitialiser Bootstrap dropdowns
     var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
     var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
         return new bootstrap.Dropdown(dropdownToggleEl)
@@ -28,9 +27,9 @@ document.addEventListener('turbolinks:load', function() {
         alert.style.opacity = '0';
         setTimeout(function() {
           alert.remove();
-        }, 500); // Correspond à la durée de la transition
+        }, 500);
       });
-    }, 4000); // 4 seconds
+    }, 4000);
   });
   
 

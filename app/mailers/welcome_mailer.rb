@@ -4,6 +4,6 @@ class WelcomeMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
     @url  = 'http://mondesmisscramee.com/login'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    mail(to: @user.email, subject: "Bienvenue dans les M'Ondes de Miss Cramée")
   end
 end
