@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # Route racine de l'application, pointant vers le contrôleur 'static_pages' et l'action 'landing_page'
   root 'static_pages#landing_page'
   get 'static_pages/about', as: 'about'
   get 'mentions_legales', to: 'static_pages#mentions_legales'
