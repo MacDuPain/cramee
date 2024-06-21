@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
   # Méthode privée pour calculer les frais de livraison en fonction du sous-total de la commande
   def delivery_fee
     case subtotal
-    when 0..20
+    when 0..19
       4
     when 20..49
       6

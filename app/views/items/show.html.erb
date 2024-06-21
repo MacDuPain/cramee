@@ -42,7 +42,7 @@
                     <%= form.number_field :quantity, value: 1, min: 1, class: 'custom-number-field me-2' %>
                     <%= form.submit "Ajouter au panier", class: "custom-submit-button", style: 'margin-top: 25px;' %>
                     <% if current_user&.is_admin? %>
-                    <%= link_to 'Edit', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
+                    <%= link_to 'Editer', edit_item_path(@item), class: 'custom-submit-button', style: 'margin-top: 25px;' %>
                    <% end %>
                   <% end %>
                 <% else %>
