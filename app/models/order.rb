@@ -7,7 +7,6 @@ class Order < ApplicationRecord
 
   def subtotal
     subtotal_amount = order_items.sum { |order_item| order_item.item.price * order_item.quantity }
-    puts "Subtotal: #{subtotal_amount}" # Ajoutez ce journal de débogage
     subtotal_amount
   end
 
