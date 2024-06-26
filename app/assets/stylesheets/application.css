@@ -104,6 +104,16 @@ p {
   font-weight: normal;
 }
 
+.custom-submit-button img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  border: none;
+  padding: 0; 
+  background: none;
+}
+
 .custom-submit-button:hover {
   background-color: #2A3C2C;
   color: #A1BBA3;
