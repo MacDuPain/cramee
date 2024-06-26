@@ -57,6 +57,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  flex-grow: 1;
+}
+
 h1 {
   font-family: "Libre Baskerville", serif;
   font-style: normal;
