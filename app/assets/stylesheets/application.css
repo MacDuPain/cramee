@@ -57,6 +57,9 @@ body {
   overflow-x: hidden;
 }
 
+.footer {
+  margin-top: auto;
+}
 
 h1 {
   font-family: "Libre Baskerville", serif;
