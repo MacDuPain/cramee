@@ -40,6 +40,10 @@
           <%= link_to 'LIVRE D\'OR', reviews_path, class: 'nav-link color-primary' %>
         </li>
       </ul>
+        <a href="#" id="toggleFont" class="toggle-font-link">
+          <%= image_tag 'dyslexic.png', alt: 'Activer la police pour dyslexie', class: 'toggle-font-image' %>
+        </a>
+
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
