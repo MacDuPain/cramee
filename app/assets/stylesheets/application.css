@@ -57,6 +57,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  flex: 1;
+}
+
 .footer {
   margin-top: auto;
 }
