@@ -1,37 +1,39 @@
 <% content_for :title, "Livre d or" %>
 
-<h1 class="text-center my-4">Livre d'Or</h1>
-<p class="topic-content text-center my-4">Merci la communauté pour tous ces partages et cet amour !</p>
+<main>
+  <h1 class="text-center my-4">Livre d'Or</h1>
+  <p class="topic-content text-center my-4">Merci la communauté pour tous ces partages et cet amour !</p>
 
-<% if user_signed_in? %>
-  <%= link_to 'Votre avis nous intéresse', new_review_path, class: "custom-submit-button mb-4" %>
-<% else %>
-  <%= link_to 'Connectez-vous pour laisser un avis', new_user_session_path, class: "custom-link mb-4" %>
-<% end %>
-
-<div class="topics-container">
-  <% @reviews.each_with_index do |review, index| %>
-    <div class="card topic-card mb-4">
-      <h2 class="topic-content text-center">“<%= review.content %>”</h2>
-      <p class="topic-meta text-center">Auteur: <%= review.name %></p>
-      <% if current_user&.is_admin? %>
-        <div class="button-container">
-          <% if review.approved %>
-            <%= button_to 'Désapprouver', toggle_approval_review_path(review), method: :patch, class: "btn btn-danger btn-sm" %>
-          <% else %>
-            <%= button_to 'Approuver', toggle_approval_review_path(review), method: :patch, class: "btn btn-success btn-sm" %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    <% if index < @reviews.length - 1 %>
-      <div class="custom-line mb-4"></div>
-    <% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Votre avis nous intéresse', new_review_path, class: "custom-submit-button mb-4" %>
+  <% else %>
+    <%= link_to 'Connectez-vous pour laisser un avis', new_user_session_path, class: "custom-link mb-4" %>
   <% end %>
-</div><br>
+
+  <div class="topics-container">
+    <% @reviews.each_with_index do |review, index| %>
+      <div class="card topic-card mb-4">
+        <h2 class="topic-content text-center">“<%= review.content %>”</h2>
+        <p class="topic-meta text-center">Auteur: <%= review.name %></p>
+        <% if current_user&.is_admin? %>
+          <div class="button-container">
+            <% if review.approved %>
+              <%= button_to 'Désapprouver', toggle_approval_review_path(review), method: :patch, class: "btn btn-danger btn-sm" %>
+            <% else %>
+              <%= button_to 'Approuver', toggle_approval_review_path(review), method: :patch, class: "btn btn-success btn-sm" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <% if index < @reviews.length - 1 %>
+        <div class="custom-line mb-4"></div>
+      <% end %>
+    <% end %>
+  </div><br>
 
 
-<%= link_to 'Revenir à l\'accueil', root_path, class: "custom-link" %>
+  <%= link_to 'Revenir à l\'accueil', root_path, class: "custom-link" %>
+</main>
 
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_link_tag 'topics', media: 'all', 'data-turbolinks-track': 'reload' %>
