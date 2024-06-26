@@ -76,18 +76,3 @@
 .navbar-brand img {
   animation: logoBounce 2s infinite;
 }
-
-.toggle-font-link {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.toggle-font-image {
-  display: block;
-  max-width: 15%;
-  height: auto;
-  cursor: pointer;
-  border: none; /* Retirer la bordure éventuelle de l'image */
-  padding: 0;   /* Retirer le padding éventuel de l'image */
-  background: none; /* Retirer le fond éventuel de l'image */
-}
