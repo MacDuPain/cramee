@@ -1,12 +1,11 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email
   after_create :create_cart
   has_one :cart, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :topics, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -14,6 +13,10 @@ class User < ApplicationRecord
   validate :validate_email_format
 
   private
+
+  def send_welcome_email
+    WelcomeMailer.welcome_email(self).deliver_later
+  end
 
   def password_complexity
     return if password.blank?
@@ -25,7 +28,11 @@ class User < ApplicationRecord
     types += 1 if password =~ /[^a-zA-Z0-9]/ # Special characters
 
     if types < 2
-      errors.add :password, 'Le mot de passe ne contient pas au moins deux des catégories précisées ci dessous'
+      errors.add :base, 'Le mot de passe ne contient pas au moins deux types de caractères'
+    end
+
+    if password.length < 8
+      errors.add :base, 'Le mot de passe est trop court (minimum 8 caractères)'
     end
   end
 

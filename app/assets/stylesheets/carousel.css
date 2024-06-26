@@ -34,14 +34,15 @@
   width: 5%; 
   height: 100%;
   background: none; 
+
 }
 
 .carousel-control-prev {
-  left: -20px; 
+  left: -50px; 
 }
 
 .carousel-control-next {
-  right: -20px; 
+  right: -50px; 
 }
 
 .carousel-control-prev-icon,
@@ -68,3 +69,20 @@
   width: 100%;
   height: 100%;
 }
+
+.outer-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-control-prev.outer-control {
+  left: -50px;
+}
+
+.carousel-control-next.outer-control {
+  right: -50px;
+}
+
+

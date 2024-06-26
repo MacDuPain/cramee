@@ -183,3 +183,30 @@ p {
 .dyslexia-font {
   font-family: 'OpenDyslexic', Arial, sans-serif;
 }
+
+.back-to-top {
+  width: 50px;
+  max-width: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #A1BBA3;
+  color: #2A3C2C;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  z-index: 1000;
+  display: none; /* Cacher le bouton par défaut */
+  margin: 0 auto;
+  border: 1px solid #657166;
+  transition: background-color 0.3s ease;
+  font-weight: normal;
+}
+
+.back-to-top:hover {
+  background-color: #2A3C2C;
+  color: #A1BBA3;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style>
+      .content {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      .header {
+        background-color: #f2e3e3;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      .footer {
+        background-color: #f2e3e3;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 0.8em;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 20px 0;
+        text-decoration: none;
+        color: #fff;
+        background-color: #d64a4a;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Bienvenue chez Les M'Ondes de Miss Cramée!</h1>
+    </div>
+    <div class="content">
+      <p>Bonjour <%= @user.email %>,</p>
+      <p>
+        Nous sommes ravis de vous accueillir dans l'univers de Miss Cramée, où chaque bijou est une création unique faite main en macramé et ornée de pierres naturelles soigneusement sélectionnées.
+      </p>
+      <p>
+        Vous pouvez dès à présent explorer notre collection et découvrir les merveilles que nous avons à offrir. Connectez-vous à votre compte pour commencer votre voyage avec nous :
+      </p>
+      <p>
+        <a href="<%= @url %>" class="button">Se connecter</a>
+      </p>
+      <p>
+        Si vous avez des questions ou besoin d'aide, n'hésitez pas à nous contacter. Nous sommes là pour vous aider et nous espérons que vous serez enchanté par l'âme de chaque bijou.
+      </p>
+      <p>Merci de faire partie de notre communauté !</p>
+      <p>
+        Avec amour,<br>
+        L'équipe des M'Ondes de Miss Cramée
+      </p>
+    </div>
+    <div class="footer">
+      <p>&copy; 2024 Les M'Ondes de Miss Cramée. Tous droits réservés.</p>
+      <p>
+        Suivez-nous sur nos réseaux sociaux pour ne manquer aucune de nos nouveautés et offres exclusives !
+      </p>
+    </div>
+  </body>
+</html>
