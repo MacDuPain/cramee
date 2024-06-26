@@ -1,3 +1,4 @@
+/* Styles pour le header */
 .header-background {
   position: relative;
   background: url('header4_retouched.jpg') no-repeat center center;
@@ -24,4 +25,23 @@
 .header-background > * {
   position: relative;
   z-index: 2;
+}
+
+.toggle-font-link {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 20px; /* Ajustez la valeur en fonction de l'espacement souhaité */
+  right: 20px; /* Ajustez la valeur en fonction de l'espacement souhaité */
+  z-index: 3; /* Assure que le lien est au-dessus de l'overlay */
+}
+
+.toggle-font-image {
+  display: block;
+  max-width: 80px; /* Ajustez la taille selon vos besoins */
+  height: auto;
+  cursor: pointer;
+  border: none;
+  padding: 0;   
+  background: none;
 }
