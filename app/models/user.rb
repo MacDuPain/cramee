@@ -10,7 +10,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validate :password_complexity
-  validate :validate_email_format
+  validates :email, format: { :with => /\A[^@,\s]+@[^@,\s]+\.[^@,\s]+\z/, message: "non valide."  }
 
   private
 
@@ -36,11 +36,4 @@ class User < ApplicationRecord
     end
   end
 
-  def validate_email_format
-    return if email.blank? || email =~ /\A[\w+\-.]+@(gmail\.com|outlook\.com|yahoo\.com|aol\.com|icloud\.com|protonmail\.com|zoho\.com|yandex\.com|mail\.com|gmx\.com|outlook\.fr|yahoo\.fr|aol\.fr|icloud\.fr|protonmail\.fr|zoho\.fr|yandex\.fr|mail\.fr|gmx\.fr)\z/i
-
-    unless email =~ /\.(fr|com)\z/i
-      errors.add :email, 'doit se terminer par .fr ou .com'
-    end
-  end
 end

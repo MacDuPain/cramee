@@ -39,18 +39,23 @@
  @import 'topics';
 
 
+ html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Josefin Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   --background_color: #F4EAE3;
   color: var(--current_color);
-  height: 100%;
   width: 100%;
   background-color: var(--background_color);
   overflow-x: hidden;
 }
-
 
 h1 {
   font-family: "Libre Baskerville", serif;
