@@ -1,36 +1,16 @@
 <footer class="small-font compact-footer">
   <div style="background-color: #E8E0D3; padding: 20px 0;">
     <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-md-2 mb-3">
-
-          <h6>COLLECTIONS</h6>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><%= link_to 'Sorties de l\'atelier', bracelets_path, class: "nav-link p-0 text-body-secondary" %></li>
-            <li class="nav-item mb-2"><%= link_to 'Tous les bijoux', items_path, class: "nav-link p-0 text-body-secondary" %></li>
-          </ul>
-        </div>
-
-        <div class="col-md-2 mb-3">
-          <h6>NOS BIJOUX</h6>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><%= link_to 'Bracelets', bracelets_path, class: "nav-link p-0 text-body-secondary" %></li>
-            <li class="nav-item mb-2"><%= link_to 'Colliers', colliers_path, class: "nav-link p-0 text-body-secondary" %></li>
-            <li class="nav-item mb-2"><%= link_to 'Boucles d\'Oreille', boucles_oreilles_path, class: "nav-link p-0 text-body-secondary" %></li>
-            <li class="nav-item mb-2"><%= link_to 'Autres', autres_path, class: "nav-link p-0 text-body-secondary" %></li>
-            <li class="nav-item mb-2"><%= link_to 'Marque Pages', marque_page_path, class: "nav-link p-0 text-body-secondary" %></li>
-          </ul>
-        </div>
-
+      <div class="row justify-content-center">
         <div class="col-md-4 mb-3 text-center">
           <p class="text-body-secondary" style="font-size: 0.75rem;">
             <%= link_to "CONTACT: CHRISTELLEBOBICHON@ORANGE.FR", "mailto:christellebobichon@orange.fr", class: "mention-link" %>
           </p>
           <div class="d-flex justify-content-center">
-            <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class: "d-flex align-items-center mb-2 link-body-emphasis text-decoration-none" do %>
+            <%= link_to "https://www.facebook.com/lesmondesdemisscramee/", target: "_blank", class: "d-flex align-items-center mb-2 link-body-emphasis text-decoration-none mx-2" do %>
               <%= image_tag 'facebook.svg', alt: 'Logo Facebook' %>
             <% end %>
-            <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class: "d-flex align-items-center mb-2 link-body-emphasis text-decoration-none ml-2" do %>
+            <%= link_to "https://www.instagram.com/les_mondes_de_miss_cramee/", target: "_blank", class: "d-flex align-items-center mb-2 link-body-emphasis text-decoration-none mx-2" do %>
               <%= image_tag 'instagram.svg', alt: 'Logo Instagram' %>
             <% end %>
           </div>
@@ -51,4 +31,3 @@
     </div>
   </div>
 </footer>
-
