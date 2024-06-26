@@ -38,7 +38,7 @@
 
 .toggle-font-image {
   display: block;
-  max-width: 80px; /* Ajustez la taille selon vos besoins */
+  max-width: 120px; /* Ajustez la taille selon vos besoins */
   height: auto;
   cursor: pointer;
   border: none;
